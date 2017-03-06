@@ -15,6 +15,21 @@
 		ADD801971E5DE65E00A0B6AA /* IOSProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD801961E5DE65E00A0B6AA /* IOSProjectTests.swift */; };
 		ADD801A21E5DE65E00A0B6AA /* IOSProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD801A11E5DE65E00A0B6AA /* IOSProjectUITests.swift */; };
 		ADFB49491E6E118500453DA7 /* iosProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49471E6E118500453DA7 /* iosProject.xcdatamodeld */; };
+		ADFB494B1E6E13AA00453DA7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB494A1E6E13AA00453DA7 /* LoginViewController.swift */; };
+		ADFB494D1E6E13DB00453DA7 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB494C1E6E13DB00453DA7 /* UserInfoViewController.swift */; };
+		ADFB494F1E6E140600453DA7 /* UserRoutineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB494E1E6E140600453DA7 /* UserRoutineTableViewController.swift */; };
+		ADFB49511E6E143E00453DA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49501E6E143E00453DA7 /* SettingsViewController.swift */; };
+		ADFB49531E6E145C00453DA7 /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49521E6E145C00453DA7 /* PasswordChangeViewController.swift */; };
+		ADFB49551E6E147D00453DA7 /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49541E6E147D00453DA7 /* TaskDetailsViewController.swift */; };
+		ADFB49571E6E14D600453DA7 /* TodaysTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49561E6E14D600453DA7 /* TodaysTaskTableViewController.swift */; };
+		ADFB49591E6E14FE00453DA7 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49581E6E14FE00453DA7 /* PageViewController.swift */; };
+		ADFB495B1E6E15BC00453DA7 /* WeeklyTasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB495A1E6E15BC00453DA7 /* WeeklyTasksTableViewController.swift */; };
+		ADFB495D1E6E15E400453DA7 /* SelectedDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB495C1E6E15E400453DA7 /* SelectedDayTableViewController.swift */; };
+		ADFB495F1E6E162200453DA7 /* GoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB495E1E6E162200453DA7 /* GoalDetailsViewController.swift */; };
+		ADFB49611E6E184200453DA7 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49601E6E184200453DA7 /* AddTaskViewController.swift */; };
+		ADFB49631E6E185400453DA7 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49621E6E185400453DA7 /* AddGoalViewController.swift */; };
+		ADFB49651E6E186600453DA7 /* CurrentGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49641E6E186600453DA7 /* CurrentGoalViewController.swift */; };
+		ADFB49671E6E188C00453DA7 /* CurrentTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49661E6E188C00453DA7 /* CurrentTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +64,21 @@
 		ADD801A11E5DE65E00A0B6AA /* IOSProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSProjectUITests.swift; sourceTree = "<group>"; };
 		ADD801A31E5DE65E00A0B6AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADFB49481E6E118500453DA7 /* iosProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iosProject.xcdatamodel; sourceTree = "<group>"; };
+		ADFB494A1E6E13AA00453DA7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ADFB494C1E6E13DB00453DA7 /* UserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		ADFB494E1E6E140600453DA7 /* UserRoutineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRoutineTableViewController.swift; sourceTree = "<group>"; };
+		ADFB49501E6E143E00453DA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ADFB49521E6E145C00453DA7 /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
+		ADFB49541E6E147D00453DA7 /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
+		ADFB49561E6E14D600453DA7 /* TodaysTaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysTaskTableViewController.swift; sourceTree = "<group>"; };
+		ADFB49581E6E14FE00453DA7 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		ADFB495A1E6E15BC00453DA7 /* WeeklyTasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTasksTableViewController.swift; sourceTree = "<group>"; };
+		ADFB495C1E6E15E400453DA7 /* SelectedDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedDayTableViewController.swift; sourceTree = "<group>"; };
+		ADFB495E1E6E162200453DA7 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
+		ADFB49601E6E184200453DA7 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		ADFB49621E6E185400453DA7 /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
+		ADFB49641E6E186600453DA7 /* CurrentGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentGoalViewController.swift; sourceTree = "<group>"; };
+		ADFB49661E6E188C00453DA7 /* CurrentTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +136,21 @@
 				ADD8018A1E5DE65D00A0B6AA /* LaunchScreen.storyboard */,
 				ADD8018D1E5DE65D00A0B6AA /* Info.plist */,
 				ADFB49471E6E118500453DA7 /* iosProject.xcdatamodeld */,
+				ADFB494A1E6E13AA00453DA7 /* LoginViewController.swift */,
+				ADFB494C1E6E13DB00453DA7 /* UserInfoViewController.swift */,
+				ADFB494E1E6E140600453DA7 /* UserRoutineTableViewController.swift */,
+				ADFB49501E6E143E00453DA7 /* SettingsViewController.swift */,
+				ADFB49521E6E145C00453DA7 /* PasswordChangeViewController.swift */,
+				ADFB49541E6E147D00453DA7 /* TaskDetailsViewController.swift */,
+				ADFB49561E6E14D600453DA7 /* TodaysTaskTableViewController.swift */,
+				ADFB49581E6E14FE00453DA7 /* PageViewController.swift */,
+				ADFB495A1E6E15BC00453DA7 /* WeeklyTasksTableViewController.swift */,
+				ADFB495C1E6E15E400453DA7 /* SelectedDayTableViewController.swift */,
+				ADFB495E1E6E162200453DA7 /* GoalDetailsViewController.swift */,
+				ADFB49601E6E184200453DA7 /* AddTaskViewController.swift */,
+				ADFB49621E6E185400453DA7 /* AddGoalViewController.swift */,
+				ADFB49641E6E186600453DA7 /* CurrentGoalViewController.swift */,
+				ADFB49661E6E188C00453DA7 /* CurrentTaskViewController.swift */,
 			);
 			path = IOSProject;
 			sourceTree = "<group>";
@@ -265,8 +310,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADFB495F1E6E162200453DA7 /* GoalDetailsViewController.swift in Sources */,
+				ADFB49631E6E185400453DA7 /* AddGoalViewController.swift in Sources */,
+				ADFB494B1E6E13AA00453DA7 /* LoginViewController.swift in Sources */,
+				ADFB49531E6E145C00453DA7 /* PasswordChangeViewController.swift in Sources */,
+				ADFB49591E6E14FE00453DA7 /* PageViewController.swift in Sources */,
+				ADFB49611E6E184200453DA7 /* AddTaskViewController.swift in Sources */,
+				ADFB494F1E6E140600453DA7 /* UserRoutineTableViewController.swift in Sources */,
+				ADFB49511E6E143E00453DA7 /* SettingsViewController.swift in Sources */,
+				ADFB495B1E6E15BC00453DA7 /* WeeklyTasksTableViewController.swift in Sources */,
+				ADFB49551E6E147D00453DA7 /* TaskDetailsViewController.swift in Sources */,
+				ADFB495D1E6E15E400453DA7 /* SelectedDayTableViewController.swift in Sources */,
+				ADFB49671E6E188C00453DA7 /* CurrentTaskViewController.swift in Sources */,
 				ADD801841E5DE65D00A0B6AA /* ViewController.swift in Sources */,
+				ADFB494D1E6E13DB00453DA7 /* UserInfoViewController.swift in Sources */,
 				ADFB49491E6E118500453DA7 /* iosProject.xcdatamodeld in Sources */,
+				ADFB49571E6E14D600453DA7 /* TodaysTaskTableViewController.swift in Sources */,
+				ADFB49651E6E186600453DA7 /* CurrentGoalViewController.swift in Sources */,
 				ADD801821E5DE65D00A0B6AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
