@@ -14,6 +14,7 @@
 		ADD8018C1E5DE65D00A0B6AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD8018A1E5DE65D00A0B6AA /* LaunchScreen.storyboard */; };
 		ADD801971E5DE65E00A0B6AA /* IOSProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD801961E5DE65E00A0B6AA /* IOSProjectTests.swift */; };
 		ADD801A21E5DE65E00A0B6AA /* IOSProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD801A11E5DE65E00A0B6AA /* IOSProjectUITests.swift */; };
+		ADFB49491E6E118500453DA7 /* iosProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49471E6E118500453DA7 /* iosProject.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		ADD8019D1E5DE65E00A0B6AA /* IOSProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD801A11E5DE65E00A0B6AA /* IOSProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSProjectUITests.swift; sourceTree = "<group>"; };
 		ADD801A31E5DE65E00A0B6AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADFB49481E6E118500453DA7 /* iosProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iosProject.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				ADD801881E5DE65D00A0B6AA /* Assets.xcassets */,
 				ADD8018A1E5DE65D00A0B6AA /* LaunchScreen.storyboard */,
 				ADD8018D1E5DE65D00A0B6AA /* Info.plist */,
+				ADFB49471E6E118500453DA7 /* iosProject.xcdatamodeld */,
 			);
 			path = IOSProject;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD801841E5DE65D00A0B6AA /* ViewController.swift in Sources */,
+				ADFB49491E6E118500453DA7 /* iosProject.xcdatamodeld in Sources */,
 				ADD801821E5DE65D00A0B6AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +518,7 @@
 				ADD801A81E5DE65E00A0B6AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADD801A91E5DE65E00A0B6AA /* Build configuration list for PBXNativeTarget "IOSProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				ADD801AB1E5DE65E00A0B6AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADD801AC1E5DE65E00A0B6AA /* Build configuration list for PBXNativeTarget "IOSProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,8 +536,22 @@
 				ADD801AE1E5DE65E00A0B6AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ADFB49471E6E118500453DA7 /* iosProject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ADFB49481E6E118500453DA7 /* iosProject.xcdatamodel */,
+			);
+			currentVersion = ADFB49481E6E118500453DA7 /* iosProject.xcdatamodel */;
+			path = iosProject.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ADD801761E5DE65D00A0B6AA /* Project object */;
 }
