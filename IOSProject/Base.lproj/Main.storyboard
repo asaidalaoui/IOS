@@ -54,7 +54,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="mrq-of-Rel" kind="show" id="JN8-Z0-Yjl"/>
+                                    <segue destination="ap7-a5-pjY" kind="show" id="WoM-gG-9Yp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVh-aO-vcI">
@@ -748,17 +748,17 @@
         <!--Current goal/task-->
         <scene sceneID="D0y-s2-Shj">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="ap7-a5-pjY" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="ap7-a5-pjY" customClass="PageViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Current goal/task" id="uwo-hX-NH0"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRH-iy-nqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="906" y="779"/>
         </scene>
-        <!--View Controller-->
+        <!--Current Task View Controller-->
         <scene sceneID="jyd-b4-QOo">
             <objects>
-                <viewController id="mrq-of-Rel" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentTaskView" id="mrq-of-Rel" customClass="CurrentTaskViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Ww-aa-OOF"/>
                         <viewControllerLayoutGuide type="bottom" id="arx-bU-jsz"/>
@@ -819,10 +819,10 @@
             </objects>
             <point key="canvasLocation" x="390" y="1522"/>
         </scene>
-        <!--View Controller-->
+        <!--Current Goal View Controller-->
         <scene sceneID="dNp-B3-7VX">
             <objects>
-                <viewController id="rOp-Ki-lUu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentGoalView" id="rOp-Ki-lUu" customClass="CurrentGoalViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UPF-pE-itp"/>
                         <viewControllerLayoutGuide type="bottom" id="hhI-zU-6s3"/>
@@ -1050,9 +1050,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pg5-oN-WRt"/>
-        <segue reference="MlN-oX-NoM"/>
+        <segue reference="WoM-gG-9Yp"/>
         <segue reference="Hkw-gY-SAn"/>
+        <segue reference="MlN-oX-NoM"/>
+        <segue reference="isb-nD-tUW"/>
         <segue reference="joC-zJ-KKh"/>
     </inferredMetricsTieBreakers>
 </document>

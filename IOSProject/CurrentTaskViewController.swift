@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentTaskViewController: UIPageViewController {
+class CurrentTaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
