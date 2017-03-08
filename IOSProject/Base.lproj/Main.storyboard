@@ -54,7 +54,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="ap7-a5-pjY" kind="show" id="WoM-gG-9Yp"/>
+                                    <segue destination="PDu-tO-7kf" kind="show" id="XPY-F1-phB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVh-aO-vcI">
@@ -221,9 +221,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="sNt-Dg-kjS" kind="relationship" relationship="viewControllers" id="ORB-YS-Rfu"/>
-                        <segue destination="ap7-a5-pjY" kind="relationship" relationship="viewControllers" id="pNu-Nl-wMu"/>
                         <segue destination="bD8-uk-oXG" kind="relationship" relationship="viewControllers" id="JQT-it-JQq"/>
                         <segue destination="ZRz-LT-PZu" kind="relationship" relationship="viewControllers" id="7nU-M2-YFJ"/>
+                        <segue destination="ap7-a5-pjY" kind="relationship" relationship="viewControllers" id="jqn-Jr-fW9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2X-m3-BuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -755,10 +755,10 @@
             </objects>
             <point key="canvasLocation" x="906" y="779"/>
         </scene>
-        <!--Current Task View Controller-->
+        <!--Current task-->
         <scene sceneID="jyd-b4-QOo">
             <objects>
-                <viewController storyboardIdentifier="CurrentTaskView" id="mrq-of-Rel" customClass="CurrentTaskViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentTaskView" title="Current task" id="mrq-of-Rel" customClass="CurrentTaskViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Ww-aa-OOF"/>
                         <viewControllerLayoutGuide type="bottom" id="arx-bU-jsz"/>
@@ -807,10 +807,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Current task" id="kS5-CL-auE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0TB-QS-mUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="390" y="1522"/>
+            <point key="canvasLocation" x="389.60000000000002" y="1521.5892053973014"/>
         </scene>
         <!--Current Goal View Controller-->
         <scene sceneID="dNp-B3-7VX">
@@ -1037,7 +1038,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WoM-gG-9Yp"/>
         <segue reference="Hkw-gY-SAn"/>
         <segue reference="MlN-oX-NoM"/>
         <segue reference="isb-nD-tUW"/>
