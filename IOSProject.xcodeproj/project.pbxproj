@@ -38,6 +38,7 @@
 		ADFB49631E6E185400453DA7 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49621E6E185400453DA7 /* AddGoalViewController.swift */; };
 		ADFB49651E6E186600453DA7 /* CurrentGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49641E6E186600453DA7 /* CurrentGoalViewController.swift */; };
 		ADFB49671E6E188C00453DA7 /* CurrentTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49661E6E188C00453DA7 /* CurrentTaskViewController.swift */; };
+		ADFB49891E79A8F100453DA7 /* UserRoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFB49881E79A8F100453DA7 /* UserRoutineTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		ADFB49621E6E185400453DA7 /* AddGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		ADFB49641E6E186600453DA7 /* CurrentGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentGoalViewController.swift; sourceTree = "<group>"; };
 		ADFB49661E6E188C00453DA7 /* CurrentTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTaskViewController.swift; sourceTree = "<group>"; };
+		ADFB49881E79A8F100453DA7 /* UserRoutineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRoutineTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				ADFB49471E6E118500453DA7 /* iosProject.xcdatamodeld */,
 				ADFB494A1E6E13AA00453DA7 /* LoginViewController.swift */,
 				ADFB494C1E6E13DB00453DA7 /* UserInfoViewController.swift */,
+				ADFB49881E79A8F100453DA7 /* UserRoutineTableViewCell.swift */,
 				ADFB494E1E6E140600453DA7 /* UserRoutineTableViewController.swift */,
 				ADFB49501E6E143E00453DA7 /* SettingsViewController.swift */,
 				ADFB49521E6E145C00453DA7 /* PasswordChangeViewController.swift */,
@@ -336,6 +339,7 @@
 			files = (
 				ADFB495F1E6E162200453DA7 /* GoalDetailsViewController.swift in Sources */,
 				ADFB49631E6E185400453DA7 /* AddGoalViewController.swift in Sources */,
+				ADFB49891E79A8F100453DA7 /* UserRoutineTableViewCell.swift in Sources */,
 				05078C5A1E78B44F001E587B /* User+CoreDataProperties.swift in Sources */,
 				05078C551E78B44F001E587B /* Goal+CoreDataClass.swift in Sources */,
 				ADFB494B1E6E13AA00453DA7 /* LoginViewController.swift in Sources */,

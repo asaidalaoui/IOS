@@ -36,6 +36,9 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let userRoutineTVC = segue.destination as! UserRoutineTableViewController
+        userRoutineTVC.username = userNameTxtFld.text
+        userRoutineTVC.password = fstPwEntryTxtLbl.text
     }
     
     //Perform checks prior to prepare for segue.

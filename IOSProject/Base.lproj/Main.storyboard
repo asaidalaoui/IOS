@@ -160,16 +160,16 @@
             </objects>
             <point key="canvasLocation" x="1724" y="-600.44977511244383"/>
         </scene>
-        <!--Table View Controller-->
+        <!--User Routine Table View Controller-->
         <scene sceneID="24P-wn-z9j">
             <objects>
-                <tableViewController id="Jhk-ZP-nfY" sceneMemberID="viewController">
+                <tableViewController id="Jhk-ZP-nfY" customClass="UserRoutineTableViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="e5i-17-HlX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="71" id="Zk9-wu-DHs">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="day" rowHeight="71" id="Zk9-wu-DHs" customClass="UserRoutineTableViewCell" customModule="IOSProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zk9-wu-DHs" id="XVA-5g-lsW">
@@ -199,6 +199,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="busyHours" destination="vSR-8f-sKa" id="Dqc-pi-xpj"/>
+                                    <outlet property="sleepHours" destination="Kdv-Jc-ayo" id="9Dr-hU-cws"/>
+                                    <outlet property="weekDayLbl" destination="52g-8o-0bM" id="smN-Ir-Isn"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1048,8 +1053,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dz6-Pf-Q8u"/>
-        <segue reference="joC-zJ-KKh"/>
-        <segue reference="MlN-oX-NoM"/>
+        <segue reference="08O-Qt-n0i"/>
         <segue reference="isb-nD-tUW"/>
+        <segue reference="joC-zJ-KKh"/>
     </inferredMetricsTieBreakers>
 </document>

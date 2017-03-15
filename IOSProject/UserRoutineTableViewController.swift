@@ -9,10 +9,15 @@
 import UIKit
 
 class UserRoutineTableViewController: UITableViewController {
-
+    var alertController:UIAlertController? = nil
+    var bhTxtFld: UITextField? = nil
+    var shTxtFld: UITextField? = nil
+    
+    var username: String?
+    var password: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,23 +34,77 @@ class UserRoutineTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 7
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "day", for: indexPath) as! UserRoutineTableViewCell
+        
+        switch(indexPath.row) {
+        case 0: cell.weekDayLbl.text = "Monday"
+            break
+        case 1: cell.weekDayLbl.text = "Tuesday"
+            break
+        case 2: cell.weekDayLbl.text = "Wednesday"
+            break
+        case 3: cell.weekDayLbl.text = "Thursday"
+            break
+        case 4: cell.weekDayLbl.text = "Friday"
+            break
+        case 5: cell.weekDayLbl.text = "Saturday"
+            break
+        case 6: cell.weekDayLbl.text = "Sunday"
+            break
+        default: break
+        }
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! UserRoutineTableViewCell
+        
+        self.alertController = UIAlertController(title: "\(cell.weekDayLbl.text!)", message: "Enter the number of hours you are busy and sleep for this day.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) -> Void in
+            cell.bhVal = Int((self.bhTxtFld?.text)!)
+            cell.shVal = Int((self.shTxtFld?.text)!)
+            
+            self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.left)
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) -> Void in
+        
+        }
+        
+        self.alertController!.addAction(ok)
+        self.alertController!.addAction(cancel)
+        
+        self.alertController!.addTextField { (textField) -> Void in
+            // Enter the textfield customization code here.
+            self.bhTxtFld = textField
+            self.bhTxtFld?.placeholder = "# busy hours"
+        }
+        
+        self.alertController!.addTextField { (textField) -> Void in
+            // Enter the textfield customization code here.
+            self.shTxtFld = textField
+            self.shTxtFld?.placeholder = "# sleep hours"
+        }
+        
+        present(self.alertController!, animated: true, completion: nil)
+        
+    }
+    
+    func btnAlertWithTextField(day: String) {
+        
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
