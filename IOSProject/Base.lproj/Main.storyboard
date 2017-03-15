@@ -168,6 +168,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="obU-IU-44p">
+                            <rect key="frame" x="0.0" y="99" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Save" id="MUT-Mt-U3B">
+                                    <connections>
+                                        <action selector="clickedSave:" destination="Jhk-ZP-nfY" id="K3x-yq-HzF"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="day" rowHeight="71" id="Zk9-wu-DHs" customClass="UserRoutineTableViewCell" customModule="IOSProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="71"/>
@@ -211,14 +222,12 @@
                             <outlet property="delegate" destination="Jhk-ZP-nfY" id="Cgw-QA-DrL"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Save" id="eZu-Zs-mDK">
-                            <connections>
-                                <segue destination="mrq-of-Rel" kind="show" id="08O-Qt-n0i"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableview" destination="e5i-17-HlX" id="dkq-Ym-XCK"/>
+                        <outlet property="toolbar" destination="obU-IU-44p" id="t1G-1D-IJ4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9Y-Jj-80A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1053,8 +1062,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dz6-Pf-Q8u"/>
-        <segue reference="08O-Qt-n0i"/>
-        <segue reference="isb-nD-tUW"/>
         <segue reference="joC-zJ-KKh"/>
+        <segue reference="isb-nD-tUW"/>
     </inferredMetricsTieBreakers>
 </document>

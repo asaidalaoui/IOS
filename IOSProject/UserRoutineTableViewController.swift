@@ -13,9 +13,15 @@ class UserRoutineTableViewController: UITableViewController {
     var bhTxtFld: UITextField? = nil
     var shTxtFld: UITextField? = nil
     
+    @IBOutlet var tableview: UITableView!
+    @IBOutlet weak var toolbar: UIToolbar!
+    
     var username: String?
     var password: String?
     
+    @IBAction func clickedSave(_ sender: Any) {
+        print("clicked save button")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -23,6 +29,8 @@ class UserRoutineTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.tableView.rowHeight = (self.tableView.frame.height-2*(toolbar.frame.height+10)) / 7
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,7 +71,6 @@ class UserRoutineTableViewController: UITableViewController {
             break
         default: break
         }
-
         return cell
     }
     
