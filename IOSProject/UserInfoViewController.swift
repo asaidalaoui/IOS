@@ -20,6 +20,8 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
         self.userNameTxtFld.delegate = self
         self.fstPwEntryTxtLbl.delegate = self
         self.scdPwEntryTxtLbl.delegate = self
+        self.fstPwEntryTxtLbl.isSecureTextEntry = true
+        self.scdPwEntryTxtLbl.isSecureTextEntry = true
     }
 
     override func didReceiveMemoryWarning() {

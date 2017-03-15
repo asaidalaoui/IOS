@@ -43,6 +43,7 @@ class UserRoutineTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "day", for: indexPath) as! UserRoutineTableViewCell
         
         switch(indexPath.row) {
@@ -75,8 +76,10 @@ class UserRoutineTableViewController: UITableViewController {
         let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             cell.bhVal = Int((self.bhTxtFld?.text)!)
             cell.shVal = Int((self.shTxtFld?.text)!)
+            cell.busyHours.text = "Busy: \((self.bhTxtFld?.text)!) hours."
+            cell.sleepHours.text = "Sleep: \((self.shTxtFld?.text)!) hours."
             
-            self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.left)
+            
         })
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) -> Void in
         
