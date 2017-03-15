@@ -54,6 +54,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    //display a popup alert message.
     func showAlert(errorMsg: String) {
         self.alertController = UIAlertController(title: "Error", message: "\(errorMsg)", preferredStyle: UIAlertControllerStyle.alert)
         
