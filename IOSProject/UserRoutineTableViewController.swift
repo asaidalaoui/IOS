@@ -21,7 +21,10 @@ class UserRoutineTableViewController: UITableViewController {
     
     //Save everything entered by the user once the save button is clicked
     @IBAction func clickedSave(_ sender: Any) {
-        //TODO: save user's data
+        //TODO: save user's data. 
+        //In order to access all the user routine data for each use the following
+        //tableView.indexPathsForVisibleRows: returns an array of indexpath objects which will help access the cell object.
+        //tableView.cellForRow(at: <#T##IndexPath#>): returns the cell object given an indexpath reference.
         print("clicked save button")
     }
     override func viewDidLoad() {
