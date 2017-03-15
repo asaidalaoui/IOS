@@ -19,7 +19,9 @@ class UserRoutineTableViewController: UITableViewController {
     var username: String?
     var password: String?
     
+    //Save everything entered by the user once the save button is clicked
     @IBAction func clickedSave(_ sender: Any) {
+        //TODO: save user's data
         print("clicked save button")
     }
     override func viewDidLoad() {
@@ -30,6 +32,7 @@ class UserRoutineTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        //black magic to allign the cells in order for them to fill the entirety of the screen
         self.tableView.rowHeight = (self.tableView.frame.height-2*(toolbar.frame.height+10)) / 7
     }
 
@@ -74,8 +77,11 @@ class UserRoutineTableViewController: UITableViewController {
         return cell
     }
     
+    //prompt the user to input busy and sleep hours through an alert view.
+    //values are saved within the cell's controller instance. Would need to
+    //TODO: Needs logic to check that the total number of hours entered by the user for
+    //each day is below 24h
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let cell = tableView.cellForRow(at: indexPath) as! UserRoutineTableViewCell
         
         self.alertController = UIAlertController(title: "\(cell.weekDayLbl.text!)", message: "Enter the number of hours you are busy and sleep for this day.", preferredStyle: UIAlertControllerStyle.alert)
@@ -85,11 +91,8 @@ class UserRoutineTableViewController: UITableViewController {
             cell.shVal = Int((self.shTxtFld?.text)!)
             cell.busyHours.text = "Busy: \((self.bhTxtFld?.text)!) hours."
             cell.sleepHours.text = "Sleep: \((self.shTxtFld?.text)!) hours."
-            
-            
         })
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) -> Void in
-        
         }
         
         self.alertController!.addAction(ok)
@@ -110,11 +113,6 @@ class UserRoutineTableViewController: UITableViewController {
         present(self.alertController!, animated: true, completion: nil)
         
     }
-    
-    func btnAlertWithTextField(day: String) {
-        
-    }
-    
 
     /*
     // Override to support conditional editing of the table view.
