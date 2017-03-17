@@ -10,92 +10,42 @@ import UIKit
 import CoreData
 
 class DayEntity {
-    private var taskLists: [TaskList]!
     private var appDelegate: AppDelegate!
     private var managedContext: NSManagedObjectContext!
+    private var curUser:User!
     
     init(){
-        taskLists = []
+        curUser = UserEntity().get(name: UserDefaults.standard.object(forKey: "curUser") as! String)
     }
     
     func access() {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TaskList")
-        
-        request.returnsObjectsAsFaults = false
-        var fetchedResults:[TaskList]? = nil
-        do {
-            try fetchedResults = managedContext.fetch(request) as? [TaskList]
-        } catch {
-            //what to do if an error occurs?
-            let nserror = error as NSError
-            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-            abort()
-        }
-        if let results = fetchedResults {
-            taskLists = results
-        } else {
-            taskLists = []
-        }
     }
     
-    func add(name:String){
+    func get(name:String) -> User {
         access()
-        let taskList = TaskList(context: managedContext)
+        let request = NSFetchRequest<User>(entityName: "User")
+        request.predicate = NSPredicate(format: "name == %@", name)
+        request.returnsObjectsAsFaults = false
         
-        // Set the attribute values
-        taskList.name = name
-        taskList.priorityCount = 0
-        
-        // Commit the changes.
-        do {
-            try managedContext.save()
+        var fetchedResult:[User]? = nil
+        do{
+            try fetchedResult = managedContext.fetch(request) as [User]
         } catch {
             // what to do if an error occurs?
             let nserror = error as NSError
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-    }
-    
-    
-    func remove(name:String) {
-        access()
-        if taskLists.count > 0 {
-            for taskList in taskLists {
-                if taskList.name == name {
-                    managedContext.delete(taskList as NSManagedObject)
-                    do {
-                        try managedContext.save()
-                    } catch {
-                        // what to do if an error occurs?
-                        let nserror = error as NSError
-                        NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-                        abort()
-                    }
-                    return
-                }
-            }
+        
+        var user:User?
+        if let results = fetchedResult {
+            user = results[0]
+        } else {
+            user = User()
         }
-    }
-    
-    func get(name:String) -> TaskList {
-        access()
-        if taskLists.count > 0 {
-            for taskList in taskLists {
-                if taskList.name == name {
-                    return taskList
-                }
-            }
-        }
-        return TaskList()
-    }
-    
-    func numOfTaskLists() -> Int {
-        access()
-        return taskLists.count
+        return user!
     }
 }
 

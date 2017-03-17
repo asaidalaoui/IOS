@@ -57,6 +57,7 @@ class UserEntity {
                 }
                 daysOfWeek.append(day)
             }
+            user.addToDays(NSSet(array: daysOfWeek))
             
             // Commit the changes.
             do {
@@ -87,7 +88,7 @@ class UserEntity {
         }
         return false
     }
-
+    
     func get(name:String) -> User {
         access()
         let request = NSFetchRequest<User>(entityName: "User")
@@ -112,4 +113,6 @@ class UserEntity {
         }
         return user!
     }
+    
+    
 }

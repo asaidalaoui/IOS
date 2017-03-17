@@ -14,7 +14,7 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scdPwEntryTxtLbl: UITextField!
     
     var alertController: UIAlertController? = nil
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userNameTxtFld.delegate = self
@@ -23,16 +23,16 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
         self.fstPwEntryTxtLbl.isSecureTextEntry = true
         self.scdPwEntryTxtLbl.isSecureTextEntry = true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     //called after shouldPerformSegue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -91,5 +91,5 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
         
         self.present(self.alertController!, animated: true, completion:nil)
     }
-
+    
 }
