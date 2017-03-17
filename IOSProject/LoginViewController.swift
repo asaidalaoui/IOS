@@ -52,7 +52,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func checkCredentials () -> Bool {
         //TODO: implement the logic for this function.
         //return true to access user's main view
-        return false
+        return true
     }
     
     //display a popup alert message.
