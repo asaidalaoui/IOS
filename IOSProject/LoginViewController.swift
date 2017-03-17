@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if ident == "loginSeg" {
                 if let name = self.userNameTxtFld.text, let pw = self.passwordTxtFld.text {
                     if name == "" || pw == "" {
-                        showAlert(errorMsg: "missing username or password")
+                        showAlert(errorMsg: "Missing username or password")
                         return false
                     } else if !checkCredentials() {
                         showAlert(errorMsg: "Wrong username or password")
@@ -52,7 +52,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func checkCredentials () -> Bool {
         //TODO: implement the logic for this function.
         //return true to access user's main view
-        return true
+        let userEntity = UserEntity();
+        let user = userEntity.get(name: userNameTxtFld.text!)
+        if user.password == passwordTxtFld.text! {
+            UserDefaults.standard.set(user.name, forKey:"curUser")
+            return true
+        }
+        return false
     }
     
     //display a popup alert message.
