@@ -10,35 +10,15 @@ import UIKit
 import CoreData
 
 class UserEntity {
-//    private var users: [User]!
     private var appDelegate: AppDelegate!
     private var managedContext: NSManagedObjectContext!
     
     init(){
-//        users = []
     }
     
     func access() {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
-        
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-//        
-//        request.returnsObjectsAsFaults = false
-//        var fetchedResults:[User]? = nil
-//        do {
-//            try fetchedResults = managedContext.fetch(request) as? [User]
-//        } catch {
-//            //what to do if an error occurs?
-//            let nserror = error as NSError
-//            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-//            abort()
-//        }
-//        if let results = fetchedResults {
-//            users = results
-//        } else {
-//            users = []
-//        }
     }
     
     func add(name:String, password:String){
@@ -90,7 +70,6 @@ class UserEntity {
         }
     }
     
-    
     func remove(name:String) -> Bool{
         access()
         let user = get(name:name)
@@ -108,7 +87,6 @@ class UserEntity {
         }
         return false
     }
-
 
     func get(name:String) -> User {
         access()
