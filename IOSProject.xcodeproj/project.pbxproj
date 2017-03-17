@@ -15,6 +15,8 @@
 		05078C5A1E78B44F001E587B /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05078C521E78B44F001E587B /* User+CoreDataProperties.swift */; };
 		05078C5B1E78B44F001E587B /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05078C531E78B44F001E587B /* Task+CoreDataClass.swift */; };
 		05078C5C1E78B44F001E587B /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05078C541E78B44F001E587B /* Task+CoreDataProperties.swift */; };
+		0569D5C01E7C54CC00EEB9FE /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569D5BF1E7C54CC00EEB9FE /* UserEntity.swift */; };
+		0569D5C31E7C5B0500EEB9FE /* DayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569D5C21E7C5B0500EEB9FE /* DayEntity.swift */; };
 		ADD801821E5DE65D00A0B6AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD801811E5DE65D00A0B6AA /* AppDelegate.swift */; };
 		ADD801841E5DE65D00A0B6AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD801831E5DE65D00A0B6AA /* ViewController.swift */; };
 		ADD801871E5DE65D00A0B6AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD801851E5DE65D00A0B6AA /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 		05078C521E78B44F001E587B /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		05078C531E78B44F001E587B /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		05078C541E78B44F001E587B /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0569D5BF1E7C54CC00EEB9FE /* UserEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserEntity.swift; path = CoreData/UserEntity.swift; sourceTree = "<group>"; };
+		0569D5C21E7C5B0500EEB9FE /* DayEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayEntity.swift; path = CoreData/DayEntity.swift; sourceTree = "<group>"; };
 		ADD8017E1E5DE65D00A0B6AA /* IOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD801811E5DE65D00A0B6AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADD801831E5DE65D00A0B6AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0569D5C11E7C559300EEB9FE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0569D5BF1E7C54CC00EEB9FE /* UserEntity.swift */,
+				0569D5C21E7C5B0500EEB9FE /* DayEntity.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		ADD801751E5DE65D00A0B6AA = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +168,7 @@
 		ADD801801E5DE65D00A0B6AA /* IOSProject */ = {
 			isa = PBXGroup;
 			children = (
+				0569D5C11E7C559300EEB9FE /* CoreData */,
 				ADD801811E5DE65D00A0B6AA /* AppDelegate.swift */,
 				ADD801831E5DE65D00A0B6AA /* ViewController.swift */,
 				ADD801851E5DE65D00A0B6AA /* Main.storyboard */,
@@ -342,12 +356,14 @@
 				ADFB49891E79A8F100453DA7 /* UserRoutineTableViewCell.swift in Sources */,
 				05078C5A1E78B44F001E587B /* User+CoreDataProperties.swift in Sources */,
 				05078C551E78B44F001E587B /* Goal+CoreDataClass.swift in Sources */,
+				0569D5C31E7C5B0500EEB9FE /* DayEntity.swift in Sources */,
 				ADFB494B1E6E13AA00453DA7 /* LoginViewController.swift in Sources */,
 				ADFB49531E6E145C00453DA7 /* PasswordChangeViewController.swift in Sources */,
 				ADFB49591E6E14FE00453DA7 /* PageViewController.swift in Sources */,
 				05078C591E78B44F001E587B /* User+CoreDataClass.swift in Sources */,
 				ADFB49611E6E184200453DA7 /* AddTaskViewController.swift in Sources */,
 				ADFB494F1E6E140600453DA7 /* UserRoutineTableViewController.swift in Sources */,
+				0569D5C01E7C54CC00EEB9FE /* UserEntity.swift in Sources */,
 				05078C5C1E78B44F001E587B /* Task+CoreDataProperties.swift in Sources */,
 				ADFB49511E6E143E00453DA7 /* SettingsViewController.swift in Sources */,
 				ADFB495B1E6E15BC00453DA7 /* WeeklyTasksTableViewController.swift in Sources */,

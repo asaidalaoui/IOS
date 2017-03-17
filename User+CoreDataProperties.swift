@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  IOSProject
 //
-//  Created by Ali Darwiche  on 3/14/17.
+//  Created by Ali Darwiche  on 3/17/17.
 //  Copyright © 2017 Abderrahman Said-Alaoui. All rights reserved.
 //
 
@@ -18,8 +18,6 @@ extension User {
 
     @NSManaged public var name: String?
     @NSManaged public var password: String?
-    @NSManaged public var busyHours: Double
-    @NSManaged public var sleepHours: Double
     @NSManaged public var days: NSSet?
 
 }
