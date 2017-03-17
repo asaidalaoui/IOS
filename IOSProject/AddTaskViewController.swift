@@ -20,6 +20,7 @@ class AddTaskViewController: UIPageViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var btnSave: UIButton!
     
     let day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    let datePicker = UIDatePicker()
     var remainingHours:Int = 0
     var daySelected:String = ""
     var hourDuration:Int = 0
@@ -49,12 +50,22 @@ class AddTaskViewController: UIPageViewController, UIPickerViewDataSource, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //need to grab the remaining hours for that day[row] and set it to remainingHours
+        
         lblHours.text = "\(day[row]) remaining hours: \(remainingHours)"
         daySelected = day[row]
     }
     
     @IBAction func btnSaveAction(_ sender: Any) {
         hourDuration = Int(txtDuration.text!)!
+        
+        //need to combine date and time? and then all these variables are to be saved to core data
+        let name = txtTaskName.text!
+        let details = txtDescription.text!
+        let time = "\(timeDatePicker.date)"
+        let date = daySelected
+        let duration = hourDuration
+        let isChecked = false
     }
 
     /*
