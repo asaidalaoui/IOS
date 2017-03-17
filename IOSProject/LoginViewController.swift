@@ -52,8 +52,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func checkCredentials () -> Bool {
         //TODO: implement the logic for this function.
         //return true to access user's main view
-        let userEntity = UserEntity();
-        let user = userEntity.get(name: userNameTxtFld.text!)
+        let user = UserEntity().get(name: userNameTxtFld.text!)
         if user.password == passwordTxtFld.text! {
             UserDefaults.standard.set(user.name, forKey:"curUser")
             return true

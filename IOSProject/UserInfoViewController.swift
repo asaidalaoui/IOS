@@ -53,6 +53,8 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
                 if errorMsg != "" {
                     showAlert(errorMsg: errorMsg)
                     return false
+                } else {
+                    UserDefaults.standard.set(userNameTxtFld.text!, forKey: "curUser")
                 }
             }
         }
@@ -65,12 +67,12 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
          Check for password: first and second entries match, 8 characters long
          Possible to elaborate more the password logic in the future.
          */
-        if let pw1 = fstPwEntryTxtLbl.text, let pw2 = scdPwEntryTxtLbl.text,
-            let name = userNameTxtFld.text{
-            
+        if let pw1 = fstPwEntryTxtLbl.text, let pw2 = scdPwEntryTxtLbl.text, let name = userNameTxtFld.text {
             if name == "" {
                 //TODO: include check of user name against previously registered values in core data
                 return "Invalid username"
+            } else if name == UserEntity().get(name: name).name {
+                return "Username already taken"
             } else if pw1.characters.count < 8 {
                 return "Please enter at least 8 characters for your password"
             } else if pw1 != pw2 {
