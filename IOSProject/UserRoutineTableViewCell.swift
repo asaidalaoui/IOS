@@ -14,8 +14,8 @@ class UserRoutineTableViewCell: UITableViewCell {
     @IBOutlet weak var busyHours: UILabel!
     @IBOutlet weak var sleepHours: UILabel!
     
-    var bhVal: Int!
-    var shVal: Int!
+    var bhVal: Double!
+    var shVal: Double!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +23,8 @@ class UserRoutineTableViewCell: UITableViewCell {
         bhVal = 0
         shVal = 0
         
-        busyHours.text = "Busy: \(bhVal!) hours."
-        sleepHours.text = "Sleep: \(shVal!) hours."
+        busyHours.text = "Busy: \(bhVal!) hours"
+        sleepHours.text = "Sleep: \(shVal!) hours"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

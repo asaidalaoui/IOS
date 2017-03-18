@@ -15,7 +15,6 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var newPassScd: UITextField!
     
     var alertController: UIAlertController? = nil
-    var error: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,9 +72,9 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
         if let oldpw = self.oldPassword.text, let newPWFst = self.newPassFst.text, let newPWScd = self.newPassScd.text {
             if checkOldPassWord(entry: oldpw) {
-                self.error = checkNewPW(fstpw: newPWFst, scdpw: newPWScd)
-                if  self.error != ""{
-                    showAlert(errorMsg: self.error!)
+                let error = checkNewPW(fstpw: newPWFst, scdpw: newPWScd)
+                if  error != ""{
+                    showAlert(errorMsg: error)
                     return false
                 } else {
                     //New password should be good at this point

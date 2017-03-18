@@ -9,7 +9,6 @@
 import UIKit
 
 class UserRoutineTableViewController: UITableViewController {
-    var alertController:UIAlertController? = nil
     var bhTxtFld: UITextField? = nil
     var shTxtFld: UITextField? = nil
     
@@ -18,18 +17,8 @@ class UserRoutineTableViewController: UITableViewController {
     
     var username: String?
     var password: String?
+    var fromConfig: Bool?
     
-    //Save everything entered by the user once the save button is clicked
-    @IBAction func clickedSave(_ sender: Any) {
-        //TODO: save user's data.
-        //In order to access all the user routine data for each use the following
-        //tableView.indexPathsForVisibleRows: returns an array of indexpath objects which will help access the cell object.
-        //tableView.cellForRow(at: <#T##IndexPath#>): returns the cell object given an indexpath reference.
-        
-        //for some reason this function does not get called when save is clicked.
-        //might have to implement logic in the prepare for segue function
-        print("clicked save button")
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -46,6 +35,22 @@ class UserRoutineTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //return the day's name corresponding to an int index
+    func getDayName(rowNum: Int) -> String {
+        
+        switch(rowNum) {
+        case 0: return "Monday"
+        case 1: return "Tuesday"
+        case 2: return "Wednesday"
+        case 3: return "Thursday"
+        case 4: return "Friday"
+        case 5: return "Saturday"
+        case 6: return "Sunday"
+        default: return ""
+            
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -59,6 +64,7 @@ class UserRoutineTableViewController: UITableViewController {
         return 7
     }
     
+    //setup the table's cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "day", for: indexPath) as! UserRoutineTableViewCell
@@ -80,7 +86,19 @@ class UserRoutineTableViewController: UITableViewController {
             break
         default: break
         }
-        return cell
+        
+        if !(fromConfig!) {
+            return cell
+        } else {
+            let day = DayEntity(day: getDayName(rowNum: indexPath.row))
+            cell.bhVal = day.getBusy()
+            cell.shVal = day.getSleep()
+            cell.busyHours.text = "Busy: \(cell.bhVal!) hours"
+            cell.sleepHours.text = "Sleep: \(cell.shVal!) hours"
+            
+            return cell
+        }
+        
     }
     
     //prompt the user to input busy and sleep hours through an alert view.
@@ -90,34 +108,33 @@ class UserRoutineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! UserRoutineTableViewCell
         
-        self.alertController = UIAlertController(title: "\(cell.weekDayLbl.text!)", message: "Enter the number of hours you are busy and sleep for this day.", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "\(cell.weekDayLbl.text!)", message: "Enter the number of hours you are busy and sleep for this day.", preferredStyle: UIAlertControllerStyle.alert)
         
         let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) -> Void in
-            cell.bhVal = Int((self.bhTxtFld?.text)!)
-            cell.shVal = Int((self.shTxtFld?.text)!)
-            cell.busyHours.text = "Busy: \((self.bhTxtFld?.text)!) hours."
-            cell.sleepHours.text = "Sleep: \((self.shTxtFld?.text)!) hours."
+            cell.bhVal = Double((self.bhTxtFld?.text)!)
+            cell.shVal = Double((self.shTxtFld?.text)!)
+            cell.busyHours.text = "Busy: \((self.bhTxtFld?.text)!) hours"
+            cell.sleepHours.text = "Sleep: \((self.shTxtFld?.text)!) hours"
         })
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) -> Void in
         }
         
-        self.alertController!.addAction(ok)
-        self.alertController!.addAction(cancel)
+        alertController.addAction(ok)
+        alertController.addAction(cancel)
         
-        self.alertController!.addTextField { (textField) -> Void in
+        alertController.addTextField { (textField) -> Void in
             // Enter the textfield customization code here.
             self.bhTxtFld = textField
             self.bhTxtFld?.placeholder = "# busy hours"
         }
         
-        self.alertController!.addTextField { (textField) -> Void in
+        alertController.addTextField { (textField) -> Void in
             // Enter the textfield customization code here.
             self.shTxtFld = textField
             self.shTxtFld?.placeholder = "# sleep hours"
         }
         
-        present(self.alertController!, animated: true, completion: nil)
-        
+        present(alertController, animated: true, completion: nil)
     }
 
     /*
@@ -155,15 +172,6 @@ class UserRoutineTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // MARK: - Navigation
     
@@ -172,7 +180,20 @@ class UserRoutineTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        print("Prepare: save clicked")
+        if !(fromConfig!) {
+            UserDefaults.standard.set(username!, forKey: "curUser")
+            UserEntity().add(name: username!, password: password!)
+        }
+        //tableView.indexPathsForVisibleRows: returns an array of indexpath objects which will help access the cell object.
+        //tableView.cellForRow(at: <#T##IndexPath#>): returns the cell object given an indexpath reference.
+        
+        let indexPaths: [IndexPath] = tableView.indexPathsForVisibleRows!
+        for index in indexPaths {
+            let cell = tableView.cellForRow(at: index) as! UserRoutineTableViewCell
+            print("Row \(index.row) busy \(cell.bhVal) sleep \(cell.shVal)")
+            let day = DayEntity(day: getDayName(rowNum: index.row))
+            _ = day.changeBusy(busyHours: cell.bhVal!)
+            _ = day.changeSleep(sleepHours: cell.shVal!)
+        }
     }
-
 }
