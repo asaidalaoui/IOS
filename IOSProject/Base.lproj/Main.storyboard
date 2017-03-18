@@ -175,7 +175,6 @@
                             <items>
                                 <barButtonItem title="Save" id="MUT-Mt-U3B">
                                     <connections>
-                                        <action selector="clickedSave:" destination="Jhk-ZP-nfY" id="vAP-zy-KkC"/>
                                         <segue destination="PDu-tO-7kf" kind="show" id="BZP-yO-iHV"/>
                                     </connections>
                                 </barButtonItem>
@@ -281,7 +280,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Modify routine"/>
                                 <connections>
-                                    <segue destination="Jhk-ZP-nfY" kind="show" id="Hkw-gY-SAn"/>
+                                    <segue destination="Jhk-ZP-nfY" kind="show" identifier="configToRoutine" id="Hkw-gY-SAn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TsV-00-2WZ">
@@ -1152,7 +1151,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Q3P-6C-AsX"/>
+        <segue reference="BZP-yO-iHV"/>
         <segue reference="Hkw-gY-SAn"/>
         <segue reference="isb-nD-tUW"/>
         <segue reference="joC-zJ-KKh"/>

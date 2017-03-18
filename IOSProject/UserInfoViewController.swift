@@ -39,6 +39,7 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
         let userRoutineTVC = segue.destination as! UserRoutineTableViewController
         userRoutineTVC.username = userNameTxtFld.text
         userRoutineTVC.password = fstPwEntryTxtLbl.text
+        userRoutineTVC.fromConfig = false
     }
     
     //Perform checks prior to prepare for segue.

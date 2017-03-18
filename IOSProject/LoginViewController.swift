@@ -57,6 +57,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             UserDefaults.standard.set(user.name, forKey:"curUser")
             return true
         }
+        
         return false
     }
     
