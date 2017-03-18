@@ -13,12 +13,21 @@ import CoreData
 class TaskEntity {
     private var appDelegate: AppDelegate!
     private var managedContext: NSManagedObjectContext!
-    private var curUser:User!
-    private var days:[Day]!
     private var day:Day!
+    private var task:Task!
 
-    init(task:Task) {
-        
+//    init(task:Task) {
+//        day = task.day
+//        self.task = task
+//    }
+    
+    init() {
+        day = DayEntity(day: day)
+    }
+    
+    func access() {
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        managedContext = appDelegate.persistentContainer.viewContext
     }
     
 }
