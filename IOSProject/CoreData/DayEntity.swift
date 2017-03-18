@@ -35,7 +35,7 @@ class DayEntity {
             break
         case "Saturday": index = 5
             break
-        case "Sunday": index = 7
+        case "Sunday": index = 6
             break
         default: index = -1
             break
@@ -55,6 +55,7 @@ class DayEntity {
     func changeSleep(sleepHours:Double) -> Bool {
         access()
         day.sleepHours = sleepHours
+        day.spentHours = 24 - day.busyHours - sleepHours
         
         //Store change
 //        days[index] = day
@@ -80,6 +81,7 @@ class DayEntity {
 //        let index = getDayIndex(dayOfWeek: dayOfWeek)
 //        let day = days[index]
         day.busyHours = busyHours
+        day.spentHours = 24 - day.sleepHours - busyHours
         
         //Store change
 //        days[index] = day
@@ -95,7 +97,11 @@ class DayEntity {
         }
         return false
     }
-
+    
+//    func getTasks() -> [Task]{
+//        let sortDesc = NSSortDescriptor(key: "date", ascending: true)
+//        days = day.tasks?.sortedArray(using: [sortDesc]) as! [Task]
+//    }
     
     //Helper function that provides the index of a day within the User's days list
     func getDayIndex(dayOfWeek:String) -> Int {
