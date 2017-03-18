@@ -17,6 +17,8 @@ class TaskEntity {
     private var days:[Day]!
     private var day:Day!
 
-    
+    init(task:Task) {
+        
+    }
     
 }
