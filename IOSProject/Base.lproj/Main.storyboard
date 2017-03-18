@@ -175,7 +175,8 @@
                             <items>
                                 <barButtonItem title="Save" id="MUT-Mt-U3B">
                                     <connections>
-                                        <action selector="clickedSave:" destination="Jhk-ZP-nfY" id="K3x-yq-HzF"/>
+                                        <action selector="clickedSave:" destination="Jhk-ZP-nfY" id="vAP-zy-KkC"/>
+                                        <segue destination="PDu-tO-7kf" kind="show" id="BZP-yO-iHV"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -368,6 +369,7 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveClicked:" destination="Vkj-aL-eIi" eventType="touchUpInside" id="W3z-Va-Cim"/>
+                                    <segue destination="PDu-tO-7kf" kind="show" id="Q3P-6C-AsX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XV-hv-Z0M">
@@ -1146,7 +1148,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dz6-Pf-Q8u"/>
+        <segue reference="Q3P-6C-AsX"/>
+        <segue reference="Hkw-gY-SAn"/>
         <segue reference="isb-nD-tUW"/>
         <segue reference="joC-zJ-KKh"/>
     </inferredMetricsTieBreakers>
