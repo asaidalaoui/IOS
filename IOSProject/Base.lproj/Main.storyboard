@@ -368,7 +368,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="saveClicked:" destination="Vkj-aL-eIi" eventType="touchUpInside" id="W3z-Va-Cim"/>
                                     <segue destination="PDu-tO-7kf" kind="show" id="Q3P-6C-AsX"/>
                                 </connections>
                             </button>
