@@ -13,9 +13,12 @@ class DayEntity {
     private var appDelegate: AppDelegate!
     private var managedContext: NSManagedObjectContext!
     private var curUser:User!
+    private var days:[Day]!
     
     init(){
         curUser = UserEntity().get(name: UserDefaults.standard.object(forKey: "curUser") as! String)
+        let sortDesc = NSSortDescriptor(key: "priority", ascending: true)
+        days = curUser.days?.sortedArray(using: [sortDesc]) as! [Day]
     }
     
     func access() {
@@ -23,31 +26,48 @@ class DayEntity {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
-    func changeSleep(dayOfWeek:String, sleepHours:Double) -> User {
+    func changeSleep(dayOfWeek:String, sleepHours:Double) -> Bool {
         access()
-//        day = curUser.days[]
-        let request = NSFetchRequest<User>(entityName: "User")
-        request.predicate = NSPredicate(format: "name == %@", dayOfWeek)
-        request.returnsObjectsAsFaults = false
+        let index = getDayIndex(dayOfWeek: dayOfWeek)
+        let day = days[index]
+        day.sleepHours = sleepHours
         
-        var fetchedResult:[User]? = nil
-        do{
-            try fetchedResult = managedContext.fetch(request) as [User]
+        //Store change
+        days[index] = day
+        curUser.days = NSSet(array: days)
+        do {
+            try managedContext.save()
+            return true
         } catch {
             // what to do if an error occurs?
             let nserror = error as NSError
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-        
-        var user:User?
-        if let results = fetchedResult {
-            user = results[0]
-        } else {
-            user = User()
-        }
-        return user!
+        return false
     }
+    
+    func changeBusy(dayOfWeek:String, busyHours:Double) -> Bool {
+        access()
+        let index = getDayIndex(dayOfWeek: dayOfWeek)
+        let day = days[index]
+        day.busyHours = busyHours
+        
+        //Store change
+        days[index] = day
+        curUser.days = NSSet(array: days)
+        do {
+            try managedContext.save()
+            return true
+        } catch {
+            // what to do if an error occurs?
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        return false
+    }
+
     
     //Helper function that provides the index of a day within the User's days list
     func getDayIndex(dayOfWeek:String) -> Int {
@@ -67,7 +87,8 @@ class DayEntity {
             break
         case "Sunday": index = 7
             break
-        default: break
+        default: index = -1
+            break
         }
         return index
     }

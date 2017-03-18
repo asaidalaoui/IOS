@@ -55,6 +55,7 @@ class UserEntity {
                 day.spentHours = 0
                 day.sleepHours = 0
                 day.busyHours = 0
+                day.priority = Int16(i)
                 
                 switch(i) {
                 case 0: day.name = "Monday"

@@ -2,7 +2,7 @@
 //  Day+CoreDataProperties.swift
 //  IOSProject
 //
-//  Created by Ali Darwiche  on 3/17/17.
+//  Created by Ali Darwiche  on 3/18/17.
 //  Copyright © 2017 Abderrahman Said-Alaoui. All rights reserved.
 //
 
@@ -16,10 +16,11 @@ extension Day {
         return NSFetchRequest<Day>(entityName: "Day");
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var spentHours: Double
-    @NSManaged public var sleepHours: Double
     @NSManaged public var busyHours: Double
+    @NSManaged public var name: String?
+    @NSManaged public var sleepHours: Double
+    @NSManaged public var spentHours: Double
+    @NSManaged public var priority: Int16
     @NSManaged public var goals: NSSet?
     @NSManaged public var tasks: NSSet?
     @NSManaged public var user: User?

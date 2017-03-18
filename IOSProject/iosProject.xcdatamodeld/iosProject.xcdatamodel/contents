@@ -3,6 +3,7 @@
     <entity name="Day" representedClassName=".Day" syncable="YES">
         <attribute name="busyHours" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="sleepHours" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="spentHours" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="goals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Goal" inverseName="day" inverseEntity="Goal" syncable="YES"/>
@@ -31,7 +32,7 @@
         <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day" inverseName="user" inverseEntity="Day" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Day" positionX="-108" positionY="-232" width="128" height="148"/>
+        <element name="Day" positionX="-108" positionY="-232" width="128" height="163"/>
         <element name="Goal" positionX="241" positionY="-432" width="128" height="133"/>
         <element name="Task" positionX="241" positionY="-262" width="128" height="133"/>
         <element name="User" positionX="-117" positionY="-549" width="128" height="88"/>
