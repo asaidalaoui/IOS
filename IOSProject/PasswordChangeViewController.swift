@@ -35,7 +35,12 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
     
     func checkOldPassWord(entry: String) -> Bool {
         //check if value entered by user matches value in coredata.
-        return true
+        let username = UserDefaults.standard.object(forKey: "curUser") as! String
+        let user = UserEntity().get(name: username )
+        if user.password == entry {
+            return true
+        }
+        return false
     }
     
     func checkNewPW(fstpw: String, scdpw: String) -> String {
@@ -79,6 +84,8 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     //New password should be good at this point
                     //Save it instead of old password in core data here
+                    let user = UserDefaults.standard.object(forKey: "curUser") as! String
+                    _ = UserEntity().changePassword(name: user, password: self.newPassScd.text!)
                 }
             } else {
                 showAlert(errorMsg: "Entred password does not match value stored in database")

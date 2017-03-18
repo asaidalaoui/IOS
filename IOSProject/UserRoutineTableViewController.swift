@@ -111,10 +111,17 @@ class UserRoutineTableViewController: UITableViewController {
         let alertController = UIAlertController(title: "\(cell.weekDayLbl.text!)", message: "Enter the number of hours you are busy and sleep for this day.", preferredStyle: UIAlertControllerStyle.alert)
         
         let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) -> Void in
-            cell.bhVal = Double((self.bhTxtFld?.text)!)
-            cell.shVal = Double((self.shTxtFld?.text)!)
-            cell.busyHours.text = "Busy: \((self.bhTxtFld?.text)!) hours"
-            cell.sleepHours.text = "Sleep: \((self.shTxtFld?.text)!) hours"
+            
+            let enteredBH = Double((self.bhTxtFld?.text)!)
+            let enteredSH = Double((self.shTxtFld?.text)!)
+            
+            if enteredBH != nil && enteredSH != nil && enteredBH!+enteredSH! <= 24 {
+                cell.bhVal = enteredBH!
+                cell.shVal = enteredSH!
+                cell.busyHours.text = "Busy: \(enteredBH!) hours"
+                cell.sleepHours.text = "Sleep: \(enteredSH!) hours"
+            }
+            
         })
         let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (action) -> Void in
         }
