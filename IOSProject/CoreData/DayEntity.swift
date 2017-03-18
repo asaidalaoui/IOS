@@ -25,9 +25,9 @@ class DayEntity {
     
     func changeSleep(dayOfWeek:String, sleepHours:Double) -> User {
         access()
-        
+//        day = curUser.days[]
         let request = NSFetchRequest<User>(entityName: "User")
-        request.predicate = NSPredicate(format: "name == %@", name)
+        request.predicate = NSPredicate(format: "name == %@", dayOfWeek)
         request.returnsObjectsAsFaults = false
         
         var fetchedResult:[User]? = nil
@@ -47,6 +47,29 @@ class DayEntity {
             user = User()
         }
         return user!
+    }
+    
+    //Helper function that provides the index of a day within the User's days list
+    func getDayIndex(dayOfWeek:String) -> Int {
+        var index:Int = 0
+        switch(dayOfWeek) {
+        case "Monday": index = 0
+            break
+        case "Tuesday": index = 1
+            break
+        case "Wednesday": index = 2
+            break
+        case "Thursday": index = 3
+            break
+        case "Friday": index = 4
+            break
+        case "Saturday": index = 5
+            break
+        case "Sunday": index = 7
+            break
+        default: break
+        }
+        return index
     }
     
 //    func get(name:String) -> Day {}
