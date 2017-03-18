@@ -41,13 +41,15 @@ class DayEntity {
             break
         }
         self.day = days[index]
-
-        
     }
     
     func access() {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
+    }
+    
+    func getSleep() -> Double {
+        return day.sleepHours
     }
     
     func changeSleep(sleepHours:Double) -> Bool {
@@ -67,6 +69,10 @@ class DayEntity {
             abort()
         }
         return false
+    }
+    
+    func getBusy() -> Double {
+        return day.busyHours
     }
     
     func changeBusy(busyHours:Double) -> Bool {
