@@ -98,10 +98,11 @@ class DayEntity {
         return false
     }
     
-//    func getTasks() -> [Task]{
-//        let sortDesc = NSSortDescriptor(key: "date", ascending: true)
-//        days = day.tasks?.sortedArray(using: [sortDesc]) as! [Task]
-//    }
+    func getTasks() -> [Task]{
+        let sortDesc = NSSortDescriptor(key: "date", ascending: true)
+        let tasks = day.tasks?.sortedArray(using: [sortDesc]) as! [Task]
+        return tasks
+    }
     
     //Helper function that provides the index of a day within the User's days list
     func getDayIndex(dayOfWeek:String) -> Int {
