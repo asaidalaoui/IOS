@@ -10,6 +10,10 @@ import UIKit
 
 class CurrentTaskViewController: UIViewController {
 
+    @IBOutlet weak var detailsLbl: UILabel!
+    @IBOutlet weak var durationLbl: UILabel!
+    @IBOutlet weak var timeLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
