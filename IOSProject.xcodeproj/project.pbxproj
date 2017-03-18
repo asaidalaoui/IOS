@@ -15,6 +15,7 @@
 		05078C5A1E78B44F001E587B /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05078C521E78B44F001E587B /* User+CoreDataProperties.swift */; };
 		05078C5B1E78B44F001E587B /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05078C531E78B44F001E587B /* Task+CoreDataClass.swift */; };
 		05078C5C1E78B44F001E587B /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05078C541E78B44F001E587B /* Task+CoreDataProperties.swift */; };
+		0550D1781E7DE6CB00EB0BF7 /* TaskEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550D1771E7DE6CB00EB0BF7 /* TaskEntity.swift */; };
 		0569D5C01E7C54CC00EEB9FE /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569D5BF1E7C54CC00EEB9FE /* UserEntity.swift */; };
 		0569D5C31E7C5B0500EEB9FE /* DayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569D5C21E7C5B0500EEB9FE /* DayEntity.swift */; };
 		ADD801821E5DE65D00A0B6AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD801811E5DE65D00A0B6AA /* AppDelegate.swift */; };
@@ -69,6 +70,7 @@
 		05078C521E78B44F001E587B /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		05078C531E78B44F001E587B /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		05078C541E78B44F001E587B /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0550D1771E7DE6CB00EB0BF7 /* TaskEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskEntity.swift; path = CoreData/TaskEntity.swift; sourceTree = "<group>"; };
 		0569D5BF1E7C54CC00EEB9FE /* UserEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserEntity.swift; path = CoreData/UserEntity.swift; sourceTree = "<group>"; };
 		0569D5C21E7C5B0500EEB9FE /* DayEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayEntity.swift; path = CoreData/DayEntity.swift; sourceTree = "<group>"; };
 		ADD8017E1E5DE65D00A0B6AA /* IOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,8 +133,9 @@
 		0569D5C11E7C559300EEB9FE /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				0569D5BF1E7C54CC00EEB9FE /* UserEntity.swift */,
 				0569D5C21E7C5B0500EEB9FE /* DayEntity.swift */,
+				0550D1771E7DE6CB00EB0BF7 /* TaskEntity.swift */,
+				0569D5BF1E7C54CC00EEB9FE /* UserEntity.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				0569D5C01E7C54CC00EEB9FE /* UserEntity.swift in Sources */,
 				05078C5C1E78B44F001E587B /* Task+CoreDataProperties.swift in Sources */,
 				ADFB49511E6E143E00453DA7 /* SettingsViewController.swift in Sources */,
+				0550D1781E7DE6CB00EB0BF7 /* TaskEntity.swift in Sources */,
 				ADFB495B1E6E15BC00453DA7 /* WeeklyTasksTableViewController.swift in Sources */,
 				05078C561E78B44F001E587B /* Goal+CoreDataProperties.swift in Sources */,
 				ADFB49551E6E147D00453DA7 /* TaskDetailsViewController.swift in Sources */,
