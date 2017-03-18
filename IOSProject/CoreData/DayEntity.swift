@@ -23,8 +23,9 @@ class DayEntity {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
-    func get(name:String) -> User {
+    func changeSleep(name:String, sleepHours:Double) -> User {
         access()
+        
         let request = NSFetchRequest<User>(entityName: "User")
         request.predicate = NSPredicate(format: "name == %@", name)
         request.returnsObjectsAsFaults = false
@@ -47,5 +48,7 @@ class DayEntity {
         }
         return user!
     }
+    
+    func get(name:String) -> Day
 }
 

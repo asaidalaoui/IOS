@@ -29,8 +29,6 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -55,6 +53,7 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
                     return false
                 } else {
                     UserDefaults.standard.set(userNameTxtFld.text!, forKey: "curUser")
+                    UserEntity().add(name: userNameTxtFld.text!, password: fstPwEntryTxtLbl.text!)
                 }
             }
         }

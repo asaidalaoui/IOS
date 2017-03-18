@@ -21,6 +21,24 @@ class UserEntity {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
+    func changePassword(name:String, password:String) -> Bool {
+        access()
+        let user = get(name:name)
+        if user.name == name {
+            user.password = password
+            do {
+                try managedContext.save()
+            } catch {
+                // what to do if an error occurs?
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+            return true
+        }
+        return false
+    }
+    
     func add(name:String, password:String){
         access()
         if get(name:name).name != name {
@@ -104,15 +122,12 @@ class UserEntity {
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-        
-        var user:User?
+        var user = User(context: managedContext)
         if let results = fetchedResult {
-            user = results[0]
-        } else {
-            user = User()
+            if results.count > 0 {
+                user = results[0]
+            }
         }
-        return user!
+        return user
     }
-    
-    
 }
