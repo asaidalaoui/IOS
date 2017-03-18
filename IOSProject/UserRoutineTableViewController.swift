@@ -21,10 +21,13 @@ class UserRoutineTableViewController: UITableViewController {
     
     //Save everything entered by the user once the save button is clicked
     @IBAction func clickedSave(_ sender: Any) {
-        //TODO: save user's data. 
+        //TODO: save user's data.
         //In order to access all the user routine data for each use the following
         //tableView.indexPathsForVisibleRows: returns an array of indexpath objects which will help access the cell object.
         //tableView.cellForRow(at: <#T##IndexPath#>): returns the cell object given an indexpath reference.
+        
+        //for some reason this function does not get called when save is clicked.
+        //might have to implement logic in the prepare for segue function
         print("clicked save button")
     }
     override func viewDidLoad() {
@@ -161,5 +164,15 @@ class UserRoutineTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //called after shouldPerformSegue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        print("Prepare: save clicked")
+    }
 
 }

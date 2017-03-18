@@ -15,13 +15,17 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var newPassScd: UITextField!
     
     var alertController: UIAlertController? = nil
+    var error: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.oldPassword.delegate = self
+        self.oldPassword.isSecureTextEntry = true
         self.newPassFst.delegate = self
+        self.newPassFst.isSecureTextEntry = true
         self.newPassScd.delegate = self
+        self.newPassScd.isSecureTextEntry = true
         // Do any additional setup after loading the view.
     }
 
@@ -30,25 +34,9 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func saveClicked(_ sender: Any) {
-        if let oldpw = self.oldPassword.text, let newPWFst = self.newPassFst.text, let newPWScd = self.newPassScd.text {
-            if checkPassWord(entry: oldpw) {
-                let error = checkNewPW(fstpw: newPWFst, scdpw: newPWScd)
-                if  error != ""{
-                    showAlert(errorMsg: error)
-                } else {
-                    //New password should be good at this point
-                    //Save it instead of old password in core data here
-                }
-            } else {
-                showAlert(errorMsg: "Entred password does not match value stored in database")
-            }
-        }
-    }
-    
-    func checkPassWord(entry: String) -> Bool {
+    func checkOldPassWord(entry: String) -> Bool {
         //check if value entered by user matches value in coredata.
-        return false
+        return true
     }
     
     func checkNewPW(fstpw: String, scdpw: String) -> String {
@@ -71,14 +59,34 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
         self.present(self.alertController!, animated: true, completion:nil)
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        print("pw change: prepare")
     }
-    */
+ 
+    
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let oldpw = self.oldPassword.text, let newPWFst = self.newPassFst.text, let newPWScd = self.newPassScd.text {
+            if checkOldPassWord(entry: oldpw) {
+                self.error = checkNewPW(fstpw: newPWFst, scdpw: newPWScd)
+                if  self.error != ""{
+                    showAlert(errorMsg: self.error!)
+                    return false
+                } else {
+                    //New password should be good at this point
+                    //Save it instead of old password in core data here
+                }
+            } else {
+                showAlert(errorMsg: "Entred password does not match value stored in database")
+                return false
+            }
+        }
+        return true
+    }
 
 }
