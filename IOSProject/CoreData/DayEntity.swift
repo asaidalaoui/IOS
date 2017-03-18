@@ -23,7 +23,7 @@ class DayEntity {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
-    func changeSleep(name:String, sleepHours:Double) -> User {
+    func changeSleep(dayOfWeek:String, sleepHours:Double) -> User {
         access()
         
         let request = NSFetchRequest<User>(entityName: "User")
@@ -49,6 +49,6 @@ class DayEntity {
         return user!
     }
     
-    func get(name:String) -> Day
+//    func get(name:String) -> Day {}
 }
 

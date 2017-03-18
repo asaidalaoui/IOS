@@ -51,10 +51,11 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
                 if errorMsg != "" {
                     showAlert(errorMsg: errorMsg)
                     return false
-                } else {
-                    UserDefaults.standard.set(userNameTxtFld.text!, forKey: "curUser")
-                    UserEntity().add(name: userNameTxtFld.text!, password: fstPwEntryTxtLbl.text!)
                 }
+//                else {
+//                    UserDefaults.standard.set(userNameTxtFld.text!, forKey: "curUser")
+//                    UserEntity().add(name: userNameTxtFld.text!, password: fstPwEntryTxtLbl.text!)
+//                }
             }
         }
         return true
