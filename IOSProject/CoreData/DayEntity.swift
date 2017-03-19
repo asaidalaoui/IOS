@@ -98,40 +98,64 @@ class DayEntity {
         return false
     }
     
+    //Return array of tasks sorted by date. First task in list should be first task in day
     func getTasks() -> [Task]{
         let sortDesc = NSSortDescriptor(key: "date", ascending: true)
         let tasks = day.tasks?.sortedArray(using: [sortDesc]) as! [Task]
         return tasks
     }
     
-    func addTask(task:Task) {
-        access()
-        day.addToTasks(task)
-        
-        // Commit the changes.
-        do {
-            try managedContext.save()
-        } catch {
-            // what to do if an error occurs?
-            let nserror = error as NSError
-            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-            abort()
+    func getTask(name:String) -> Task{
+        let tasks = getTasks()
+        for task in tasks {
+            if task.name == name {
+                return task
+            }
         }
+        access()
+        return Task(context: managedContext)
     }
     
-    func removeTask(task:Task) {
-        access()
-        day.removeFromTasks(task)
-        
-        // Commit the changes.
-        do {
-            try managedContext.save()
-        } catch {
-            // what to do if an error occurs?
-            let nserror = error as NSError
-            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-            abort()
+    func addTask(name:String, date:NSDate, duration:Double, details:String) -> Bool{
+        let task = getTask(name:name)
+        if task.name != name && name != "" {
+            // Set the attribute values
+            task.name = name
+            task.date = date
+            task.duration = duration
+            task.details = details
+            day.addToTasks(task)
+            
+            // Commit the changes.
+            do {
+                try managedContext.save()
+            } catch {
+                // what to do if an error occurs?
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+            return true
         }
+        return false
+    }
+    
+    func removeTask(task:Task) -> Bool{
+        if task.name == getTask(name: task.name!).name && task.name != "" {
+            day.removeFromTasks(task)
+            
+            // Commit the changes.
+            do {
+                try managedContext.save()
+            } catch {
+                // what to do if an error occurs?
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+            return true
+        }
+        return false
     }
     
     //Helper function that provides the index of a day within the User's days list
