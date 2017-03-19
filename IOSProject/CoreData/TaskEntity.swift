@@ -54,7 +54,23 @@ class TaskEntity {
     func getDate() {}
     
     func setDate(date:NSDate) {
-        
+        access()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayOfWeek = dateFormatter.string(from: date as Date)
+        if day.name == dayOfWeek {
+            task.date = date
+            save()
+        } else {
+            DayEntity(day:day).removeTask(task:task)
+            task.date = date
+            DayEntity(day:dayOfWeek).addTask(task:task)
+            day = task.day  //If this causes an error, it will add the same day to day,
+                            //instead of updating day with the new day. This means that
+                            //doing addTask didn't alter our current instance of day
+                            //and that we have to create a getDay method for DayEntity
+                            //and alter the day ourselves
+        }
     }
     
     func getDuration() {}
@@ -74,6 +90,4 @@ class TaskEntity {
         task.details = details
         save()
     }
-    
-    
 }

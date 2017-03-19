@@ -43,6 +43,11 @@ class DayEntity {
         self.day = days[index]
     }
     
+    init(day:Day) {
+        self.day = day
+        self.curUser = day.user
+    }
+    
     func access() {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         managedContext = appDelegate.persistentContainer.viewContext
@@ -141,6 +146,10 @@ class DayEntity {
             return true
         }
         return false
+    }
+    
+    func addTask(task:Task) -> Bool{
+        return addTask(name: task.name!, date: task.date!, duration: task.duration, details: task.details!)
     }
     
     func removeTask(task:Task) -> Bool{
