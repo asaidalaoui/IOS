@@ -13,7 +13,7 @@ import CoreData
 class TaskEntity {
     private var appDelegate: AppDelegate!
     private var managedContext: NSManagedObjectContext!
-    private var day:Day!
+    private var day:DayEntity!
     private var task:Task!
 
 //    init(task:Task) {
@@ -21,8 +21,14 @@ class TaskEntity {
 //        self.task = task
 //    }
     
-    init() {
-        day = DayEntity(day: day)
+//    init(name:String, date:NSDate, duration:Double, details:String, day:String) {
+//        access()
+//        self.day = DayEntity(day: day)
+//        task = Task(managedContext)
+//    }
+    
+    func add() {
+        
     }
     
     func access() {

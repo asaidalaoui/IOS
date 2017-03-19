@@ -104,6 +104,36 @@ class DayEntity {
         return tasks
     }
     
+    func addTask(task:Task) {
+        access()
+        day.addToTasks(task)
+        
+        // Commit the changes.
+        do {
+            try managedContext.save()
+        } catch {
+            // what to do if an error occurs?
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+    }
+    
+    func removeTask(task:Task) {
+        access()
+        day.removeFromTasks(task)
+        
+        // Commit the changes.
+        do {
+            try managedContext.save()
+        } catch {
+            // what to do if an error occurs?
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+    }
+    
     //Helper function that provides the index of a day within the User's days list
     func getDayIndex(dayOfWeek:String) -> Int {
         var index:Int = 0
