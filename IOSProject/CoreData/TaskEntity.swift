@@ -32,6 +32,38 @@ class TaskEntity {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
-//    func get
+    func getName() {}
+    
+    func setName(name:String) {
+        access()
+        task.name = name
+        do {
+            try managedContext.save()
+        } catch {
+            // what to do if an error occurs?
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+    }
+    
+    func getDate() {}
+    
+    func getDuration(duration:Double) {
+        access()
+        
+        do {
+            try managedContext.save()
+        } catch {
+            // what to do if an error occurs?
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+
+    }
+    
+    func getDetails() {}
+    
     
 }

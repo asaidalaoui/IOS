@@ -52,10 +52,11 @@ class DayEntity {
         return day.sleepHours
     }
     
-    func changeSleep(sleepHours:Double) -> Bool {
+    func setSleep(sleepHours:Double) -> Bool {
         access()
+        day.spentHours -= day.sleepHours
         day.sleepHours = sleepHours
-        day.spentHours = 24 - day.busyHours - sleepHours
+        day.spentHours += sleepHours
         
         //Store change
 //        days[index] = day
@@ -76,12 +77,13 @@ class DayEntity {
         return day.busyHours
     }
     
-    func changeBusy(busyHours:Double) -> Bool {
+    func setBusy(busyHours:Double) -> Bool {
         access()
 //        let index = getDayIndex(dayOfWeek: dayOfWeek)
 //        let day = days[index]
+        day.spentHours -= day.busyHours
         day.busyHours = busyHours
-        day.spentHours = 24 - day.sleepHours - busyHours
+        day.spentHours += busyHours
         
         //Store change
 //        days[index] = day
@@ -124,6 +126,7 @@ class DayEntity {
             task.date = date
             task.duration = duration
             task.details = details
+            day.spentHours += duration      //Adding hours task takes to our spentHours count
             day.addToTasks(task)
             
             // Commit the changes.
@@ -142,6 +145,7 @@ class DayEntity {
     
     func removeTask(task:Task) -> Bool{
         if task.name == getTask(name: task.name!).name && task.name != "" {
+            day.spentHours -= task.duration     //Removing hours task takes from our spentHours count
             day.removeFromTasks(task)
             
             // Commit the changes.

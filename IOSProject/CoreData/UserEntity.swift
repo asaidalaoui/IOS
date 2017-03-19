@@ -21,7 +21,7 @@ class UserEntity {
         managedContext = appDelegate.persistentContainer.viewContext
     }
     
-    func changePassword(name:String, password:String) -> Bool {
+    func setPassword(name:String, password:String) -> Bool {
         access()
         let user = get(name:name)
         if user.name == name {
