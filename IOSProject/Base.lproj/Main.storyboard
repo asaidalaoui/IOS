@@ -588,6 +588,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="509840806.30595702">
                                     <!--2017-02-26 22:26:46 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePicker:" destination="42P-yp-bja" eventType="valueChanged" id="Jw7-Jr-wYw"/>
+                                </connections>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jy8-Un-g4N">
                                 <rect key="frame" x="133" y="86" width="229" height="30"/>

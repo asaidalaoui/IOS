@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTaskViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class AddTaskViewController: UIViewController {
 
     @IBOutlet weak var taskGoalSeg: UISegmentedControl!
     @IBOutlet weak var txtTaskName: UITextField!
@@ -20,7 +20,6 @@ class AddTaskViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var remainingHrsLbl: UILabel!
     
-    let day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     let datePicker = UIDatePicker()
     var remainingHours:Int = 0
     var daySelected:String = ""
@@ -38,23 +37,23 @@ class AddTaskViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return day[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return day.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //need to grab the remaining hours for that day[row] and set it to remainingHours
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayOfWeek = dateFormatter.string(from: date as Date)
         
         lblHours.text = "\(day[row]) remaining hours: \(remainingHours)"
         daySelected = day[row]
+    }*/
+    @IBAction func datePicker(_ sender: Any) {
+        let date = timeDatePicker.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayOfWeek = dateFormatter.string(from: date as Date)
+        
+        lblHours.text = "\(dayOfWeek) has "
     }
     
     @IBAction func btnSaveAction(_ sender: Any) {
@@ -63,8 +62,7 @@ class AddTaskViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         //need to combine date and time? and then all these variables are to be saved to core data
         let name = txtTaskName.text!
         let details = txtDescription.text!
-        let time = "\(timeDatePicker.date)"
-        let date = daySelected
+        let date = "\(timeDatePicker.date)"
         let duration = hourDuration
         let isChecked = false
     }
