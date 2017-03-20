@@ -25,6 +25,7 @@ class AddTaskViewController: UIViewController {
     var daySelected:String = ""
     var hourDuration:Int = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,7 +54,9 @@ class AddTaskViewController: UIViewController {
         dateFormatter.dateFormat = "EEEE"
         let dayOfWeek = dateFormatter.string(from: date as Date)
         
-        lblHours.text = "\(dayOfWeek) has "
+        let hours = DayEntity(day: dayOfWeek).getSpent()
+        
+        lblHours.text = "\(dayOfWeek) remaining hours: \(hours)"
     }
     
     @IBAction func btnSaveAction(_ sender: Any) {
@@ -62,9 +65,14 @@ class AddTaskViewController: UIViewController {
         //need to combine date and time? and then all these variables are to be saved to core data
         let name = txtTaskName.text!
         let details = txtDescription.text!
-        let date = "\(timeDatePicker.date)"
-        let duration = hourDuration
-        let isChecked = false
+        let date = timeDatePicker.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayOfWeek = dateFormatter.string(from: date as Date)
+        let duration = Double(txtDuration.text!)
+        
+        let finalDay = DayEntity(day: dayOfWeek)
+        finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
     }
 
     /*
