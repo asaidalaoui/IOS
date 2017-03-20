@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTaskViewController: UIPageViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class AddTaskViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var taskGoalSeg: UISegmentedControl!
     @IBOutlet weak var txtTaskName: UITextField!
@@ -18,6 +18,7 @@ class AddTaskViewController: UIPageViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var txtDuration: UITextField!
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var remainingHrsLbl: UILabel!
     
     let day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     let datePicker = UIDatePicker()
@@ -29,7 +30,7 @@ class AddTaskViewController: UIPageViewController, UIPickerViewDataSource, UIPic
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        txtDuration.keyboardType = UIKeyboardType.numberPad
+        txtDuration?.keyboardType = UIKeyboardType.numberPad
     }
 
     override func didReceiveMemoryWarning() {

@@ -105,13 +105,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;Other required info by the user&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3P-z6-mjl">
-                                <rect key="frame" x="43" y="551" width="256" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njd-wM-pXL">
                                 <rect key="frame" x="139" y="318" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -650,9 +643,9 @@
                         <outlet property="btnSave" destination="Toq-iW-Fdb" id="ycB-qr-hrg"/>
                         <outlet property="dayPickerView" destination="yWF-2I-EWQ" id="tO8-Jv-HrT"/>
                         <outlet property="lblHours" destination="Ncc-Z7-dxf" id="r0g-sc-3cK"/>
+                        <outlet property="remainingHrsLbl" destination="Ncc-Z7-dxf" id="Vhn-Sr-7SR"/>
                         <outlet property="taskGoalSeg" destination="Jdn-iX-6zP" id="gqa-yG-G2S"/>
                         <outlet property="timeDatePicker" destination="dLh-fU-enw" id="Oo9-y9-l4f"/>
-                        <outlet property="txtDayHours" destination="Ncc-Z7-dxf" id="nDe-Y1-oS0"/>
                         <outlet property="txtDescription" destination="sHj-F8-8rt" id="IR9-Zh-yYM"/>
                         <outlet property="txtDuration" destination="saW-JN-byb" id="GKW-Ac-Ecf"/>
                         <outlet property="txtTaskName" destination="Jy8-Un-g4N" id="fdU-uk-2Ul"/>
@@ -1155,8 +1148,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="BZP-yO-iHV"/>
-        <segue reference="Hkw-gY-SAn"/>
-        <segue reference="ajY-19-VYe"/>
+        <segue reference="dz6-Pf-Q8u"/>
+        <segue reference="pg5-oN-WRt"/>
         <segue reference="joC-zJ-KKh"/>
     </inferredMetricsTieBreakers>
 </document>
