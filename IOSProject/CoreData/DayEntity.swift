@@ -105,6 +105,10 @@ class DayEntity {
         return false
     }
     
+    func getSpent() -> Double{
+        return day.spentHours
+    }
+    
     //Return array of tasks sorted by date. First task in list should be first task in day
     func getTasks() -> [Task]{
         let sortDesc = NSSortDescriptor(key: "date", ascending: true)
