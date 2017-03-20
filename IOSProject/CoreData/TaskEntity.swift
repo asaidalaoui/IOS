@@ -51,6 +51,14 @@ class TaskEntity {
         save()
     }
     
+    func getChecked() {}
+    
+    func setChecked(isChecked:Bool) {
+        access()
+        task.isChecked = isChecked
+        save()
+    }
+    
     func getDate() {}
     
     func setDate(date:NSDate) {
