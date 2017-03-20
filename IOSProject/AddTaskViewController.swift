@@ -25,14 +25,26 @@ class AddTaskViewController: UIViewController {
     var daySelected:String = ""
     var hourDuration:Int = 0
     
+    func getHoursForDay(){
+        let date = timeDatePicker.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayOfWeek = dateFormatter.string(from: date as Date)
+        
+        let hours = DayEntity(day: dayOfWeek).getSpent()
+        
+        lblHours.text = "\(dayOfWeek) remaining hours: \(hours)"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.title = "Add/Edit Task"
-        txtDuration?.keyboardType = UIKeyboardType.numberPad
+        txtDuration?.keyboardType = UIKeyboardType.decimalPad
         txtDescription.text = "Add notes here..."
+        
+        getHoursForDay()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -62,14 +74,7 @@ class AddTaskViewController: UIViewController {
         daySelected = day[row]
     }*/
     @IBAction func datePicker(_ sender: Any) {
-        let date = timeDatePicker.date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let dayOfWeek = dateFormatter.string(from: date as Date)
-        
-        let hours = DayEntity(day: dayOfWeek).getSpent()
-        
-        lblHours.text = "\(dayOfWeek) remaining hours: \(hours)"
+        getHoursForDay()
     }
     
     @IBAction func btnSaveAction(_ sender: Any) {
