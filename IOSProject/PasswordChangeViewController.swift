@@ -94,5 +94,17 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
+    //dismissing the keyboard when pressing anywhere else on the screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.oldPassword.resignFirstResponder()
+        self.newPassFst.resignFirstResponder()
+        self.newPassScd.resignFirstResponder()
+        return true
+    }
 
 }

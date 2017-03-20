@@ -93,4 +93,16 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
         self.present(self.alertController!, animated: true, completion:nil)
     }
     
+    //dismissing the keyboard when pressing anywhere else on the screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.userNameTxtFld.resignFirstResponder()
+        self.fstPwEntryTxtLbl.resignFirstResponder()
+        self.scdPwEntryTxtLbl.resignFirstResponder()
+        return true
+    }
+    
 }

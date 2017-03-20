@@ -50,8 +50,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //check entered password in passwordTxtFld against value registered in coredata for given username
     //return false if password does not match stored value.
     func checkCredentials () -> Bool {
-        //TODO: implement the logic for this function.
-        //return true to access user's main view
         let user = UserEntity().get(name: userNameTxtFld.text!)
         if user.password == passwordTxtFld.text! {
             UserDefaults.standard.set(user.name, forKey:"curUser")
