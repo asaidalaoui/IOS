@@ -85,7 +85,7 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
                     //New password should be good at this point
                     //Save it instead of old password in core data here
                     let user = UserDefaults.standard.object(forKey: "curUser") as! String
-                    _ = UserEntity().changePassword(name: user, password: self.newPassScd.text!)
+                    _ = UserEntity().setPassword(name: user, password: self.newPassScd.text!)
                 }
             } else {
                 showAlert(errorMsg: "Entred password does not match value stored in database")

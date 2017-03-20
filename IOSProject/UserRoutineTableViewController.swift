@@ -199,8 +199,8 @@ class UserRoutineTableViewController: UITableViewController {
             let cell = tableView.cellForRow(at: index) as! UserRoutineTableViewCell
             print("Row \(index.row) busy \(cell.bhVal) sleep \(cell.shVal)")
             let day = DayEntity(day: getDayName(rowNum: index.row))
-            _ = day.changeBusy(busyHours: cell.bhVal!)
-            _ = day.changeSleep(sleepHours: cell.shVal!)
+            _ = day.setBusy(busyHours: cell.bhVal!)
+            _ = day.setSleep(sleepHours: cell.shVal!)
         }
     }
 }
