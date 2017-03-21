@@ -14,8 +14,11 @@ class CurrentTaskViewController: UIViewController {
     @IBOutlet weak var durationLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     
+    @IBOutlet weak var pvController: UIPageControl!
     override func viewDidLoad() {
         super.viewDidLoad()
+        pvController.numberOfPages = 2
+        pvController.currentPage = 0
 
         // Do any additional setup after loading the view.
     }

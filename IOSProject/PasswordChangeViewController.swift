@@ -75,21 +75,23 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
  
     
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
-        if let oldpw = self.oldPassword.text, let newPWFst = self.newPassFst.text, let newPWScd = self.newPassScd.text {
-            if checkOldPassWord(entry: oldpw) {
-                let error = checkNewPW(fstpw: newPWFst, scdpw: newPWScd)
-                if  error != ""{
-                    showAlert(errorMsg: error)
-                    return false
+        if identifier == "pwSavedSeg" {
+            if let oldpw = self.oldPassword.text, let newPWFst = self.newPassFst.text, let newPWScd = self.newPassScd.text {
+                if checkOldPassWord(entry: oldpw) {
+                    let error = checkNewPW(fstpw: newPWFst, scdpw: newPWScd)
+                    if  error != ""{
+                        showAlert(errorMsg: error)
+                        return false
+                    } else {
+                        //New password should be good at this point
+                        //Save it instead of old password in core data here
+                        let user = UserDefaults.standard.object(forKey: "curUser") as! String
+                        _ = UserEntity().setPassword(name: user, password: self.newPassScd.text!)
+                    }
                 } else {
-                    //New password should be good at this point
-                    //Save it instead of old password in core data here
-                    let user = UserDefaults.standard.object(forKey: "curUser") as! String
-                    _ = UserEntity().setPassword(name: user, password: self.newPassScd.text!)
+                    showAlert(errorMsg: "Entred password does not match value stored in database")
+                    return false
                 }
-            } else {
-                showAlert(errorMsg: "Entred password does not match value stored in database")
-                return false
             }
         }
         return true

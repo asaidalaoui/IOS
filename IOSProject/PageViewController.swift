@@ -42,9 +42,9 @@ class PageViewController: UIPageViewController {
         // Set colors for the page control.
         // We're setting the global page control appearance object.
         let pageControl = UIPageControl.appearance()
-        pageControl.pageIndicatorTintColor = UIColor.white
-        pageControl.currentPageIndicatorTintColor = UIColor.green
-        pageControl.backgroundColor = UIColor.lightGray
+        pageControl.pageIndicatorTintColor = UIColor.lightGray
+        pageControl.currentPageIndicatorTintColor = UIColor.darkGray
+        pageControl.backgroundColor = UIColor.white
     }
     
     override func didReceiveMemoryWarning() {

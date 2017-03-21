@@ -10,9 +10,12 @@ import UIKit
 
 class CurrentGoalViewController: UIViewController {
 
+    @IBOutlet weak var pvController: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        pvController.numberOfPages = 2
+        pvController.currentPage = 1
         // Do any additional setup after loading the view.
     }
 
