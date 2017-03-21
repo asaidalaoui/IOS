@@ -9,6 +9,8 @@
 import UIKit
 
 class TodaysTaskTableViewController: UITableViewController {
+    
+    var dayArray = [Task]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,12 @@ class TodaysTaskTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let date = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayOfWeek = dateFormatter.string(from: date as Date)
+        let dayEntity = DayEntity(day: dayOfWeek)
+        dayArray = dayEntity.getTasks()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,12 +37,12 @@ class TodaysTaskTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return dayArray.count
     }
 
     /*

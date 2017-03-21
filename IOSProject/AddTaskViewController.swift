@@ -43,6 +43,7 @@ class AddTaskViewController: UIViewController {
         self.title = "Add/Edit Task"
         txtDuration?.keyboardType = UIKeyboardType.decimalPad
         txtDescription.text = "Add notes here..."
+        timeDatePicker.maximumDate = Calendar.current.date(byAdding: .day, value: +7, to: Date())
         
         getHoursForDay()
     }
