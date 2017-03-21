@@ -91,9 +91,9 @@ class AddTaskViewController: UIViewController {
         let duration = Double(txtDuration.text!)
         
         let finalDay = DayEntity(day: dayOfWeek)
-        finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
+        _ = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
     }
-
+    
     /*
     // MARK: - Navigation
 
