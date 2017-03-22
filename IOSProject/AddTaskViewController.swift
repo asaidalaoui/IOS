@@ -46,7 +46,19 @@ class AddTaskViewController: UIViewController {
         self.title = "Add/Edit Task"
         txtDuration?.keyboardType = UIKeyboardType.decimalPad
         txtDescription.text = "Add notes here..."
-        timeDatePicker.maximumDate = Calendar.current.date(byAdding: .day, value: +7, to: Date())
+//        timeDatePicker.maximumDate = Calendar.current.date(byAdding: .day, value: +7, to: Date())
+        
+        //set the minimum and maximum date for the date picker.
+        let gregorian: NSCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+        let currentDate: NSDate = NSDate()
+        let components: NSDateComponents = NSDateComponents()
+        
+        components.day = +7
+        
+        let maxDate: NSDate = gregorian.date(byAdding: components as DateComponents, to: currentDate as Date, options: NSCalendar.Options(rawValue: 0))! as NSDate
+        
+        self.timeDatePicker.minimumDate = currentDate as Date
+        self.timeDatePicker.maximumDate = maxDate as Date
         
         _ = getHoursForDay()
     }
