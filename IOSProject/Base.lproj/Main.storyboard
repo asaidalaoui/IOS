@@ -717,7 +717,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" rowHeight="73" id="te2-Fm-8Ys">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" rowHeight="73" id="te2-Fm-8Ys" customClass="TodaysTaskTableViewCell" customModule="IOSProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="375" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="te2-Fm-8Ys" id="pqk-V5-urv">
@@ -746,6 +746,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="taskNameLbl" destination="xal-Ru-qGH" id="EmR-fe-6Ui"/>
+                                    <outlet property="taskSwitch" destination="zBp-w5-Ye1" id="4vV-1R-MEe"/>
+                                    <outlet property="taskTimeLbl" destination="G7P-IO-p7n" id="7kd-fh-DAC"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalCell" rowHeight="66" id="dJT-KR-W7q">
                                 <rect key="frame" x="0.0" y="161" width="375" height="66"/>
@@ -1245,7 +1250,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="isb-nD-tUW"/>
+        <segue reference="EKW-Q0-RW9"/>
         <segue reference="6k2-rW-RPM"/>
         <segue reference="Hkw-gY-SAn"/>
         <segue reference="0P6-Ri-1Tw"/>

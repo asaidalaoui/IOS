@@ -42,18 +42,29 @@ class TodaysTaskTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("\(dayArray.count)")
         return dayArray.count + 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        //generate the cell with the add task button
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath)
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
+        
+        //generate the cell with the task's details button
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TodaysTaskTableViewCell
+        
+        let idx = indexPath.row - 1
+        cell.taskNameLbl.text = self.dayArray[idx].name!
+        let time = self.dayArray[idx].date!
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let convertedDate = dateFormatter.string(from: time as Date)
+        cell.taskTimeLbl.text = "Due "+convertedDate
+        
         return cell
     }
  
