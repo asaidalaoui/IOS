@@ -15,6 +15,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var alertController: UIAlertController? = nil
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.backBarButtonItem = nil
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
