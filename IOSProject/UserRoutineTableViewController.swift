@@ -28,9 +28,6 @@ class UserRoutineTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         //black magic to allign the cells in order for them to fill the entirety of the screen
-        print(self.tableview.frame.height)
-        print(self.toolbar.frame.height)
-        print(self.navigationController?.navigationBar.frame.height ?? 0)
         self.tableView.rowHeight = (self.tableView.frame.height - self.toolbar.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0)) / 7
     }
 
