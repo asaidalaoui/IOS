@@ -116,7 +116,7 @@ class AddTaskViewController: UIViewController {
             self.performedSave = false
             
         } else {
-            hourDuration = Int(txtDuration.text!)!
+            hourDuration = Double(txtDuration.text!)!
             
             //need to combine date and time? and then all these variables are to be saved to core data
             let name = txtTaskName.text!
