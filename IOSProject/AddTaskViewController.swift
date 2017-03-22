@@ -24,16 +24,19 @@ class AddTaskViewController: UIViewController {
     var remainingHours:Int = 0
     var daySelected:String = ""
     var hourDuration:Int = 0
+    var performedSave: Bool = true
     
-    func getHoursForDay(){
+    func getHoursForDay() -> Double{
         let date = timeDatePicker.date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         let dayOfWeek = dateFormatter.string(from: date as Date)
         
-        let hours = DayEntity(day: dayOfWeek).getSpent()
+        let hours = 24 - DayEntity(day: dayOfWeek).getSpent()
         
         lblHours.text = "\(dayOfWeek) remaining hours: \(hours)"
+        
+        return hours
     }
     
     override func viewDidLoad() {
@@ -45,7 +48,7 @@ class AddTaskViewController: UIViewController {
         txtDescription.text = "Add notes here..."
         timeDatePicker.maximumDate = Calendar.current.date(byAdding: .day, value: +7, to: Date())
         
-        getHoursForDay()
+        _ = getHoursForDay()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -75,23 +78,47 @@ class AddTaskViewController: UIViewController {
         daySelected = day[row]
     }*/
     @IBAction func datePicker(_ sender: Any) {
-        getHoursForDay()
+        _ = getHoursForDay()
     }
     
     @IBAction func btnSaveAction(_ sender: Any) {
-        hourDuration = Int(txtDuration.text!)!
+        let freeTime = getHoursForDay()
+        let duration = self.txtDuration.text
+        let taskDuration = Double(duration!)
+        let name = self.txtTaskName.text
         
-        //need to combine date and time? and then all these variables are to be saved to core data
-        let name = txtTaskName.text!
-        let details = txtDescription.text!
-        let date = timeDatePicker.date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let dayOfWeek = dateFormatter.string(from: date as Date)
-        let duration = Double(txtDuration.text!)
-        
-        let finalDay = DayEntity(day: dayOfWeek)
-        _ = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
+        if name == "" {
+            showAlert(errorMsg: "Missing task name")
+            self.performedSave = false
+            
+        } else if duration == "" {
+            showAlert(errorMsg: "Missing duration value")
+            self.performedSave = false
+            
+        } else if taskDuration == nil {
+            showAlert(errorMsg: "Use only numbers for duration")
+            self.performedSave = false
+            
+        } else if  taskDuration! > freeTime {
+            showAlert(errorMsg: "Task's duration much higher than time left for that day")
+            self.performedSave = false
+            
+        } else {
+            hourDuration = Int(txtDuration.text!)!
+            
+            //need to combine date and time? and then all these variables are to be saved to core data
+            let name = txtTaskName.text!
+            let details = txtDescription.text!
+            let date = timeDatePicker.date
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE"
+            let dayOfWeek = dateFormatter.string(from: date as Date)
+            let duration = Double(txtDuration.text!)
+            
+            let finalDay = DayEntity(day: dayOfWeek)
+            _ = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
+            self.performedSave = true
+        }
     }
     
     /*
@@ -103,5 +130,25 @@ class AddTaskViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //performs checks prior to segue to the next view.
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier {
+            if ident == "saveSeg" {
+                return self.performedSave
+            }
+        }
+                return true
+    }
+    
+    //display a popup alert message.
+    func showAlert(errorMsg: String) {
+        let alertController = UIAlertController(title: "Error", message: "\(errorMsg)", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        alertController.addAction(OKAction)
+        
+        self.present(alertController, animated: true, completion:nil)
+    }
 
 }
