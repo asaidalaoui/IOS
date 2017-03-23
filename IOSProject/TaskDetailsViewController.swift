@@ -18,7 +18,7 @@ class TaskDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lblTaskName.text = task.name!
-        lblTaskDue.text = "Duration: \(task.duration)"
+        lblTaskDue.text = "Duration: \(task.duration) hours"
         lblTaskNotes.text = "Notes: \(task.details!)"
         // Do any additional setup after loading the view.
     }
@@ -41,6 +41,7 @@ class TaskDetailsViewController: UIViewController {
         //}
         if segue.identifier == "segueEditTask"{
             let destinationView = segue.destination as! AddTaskViewController
+            destinationView.isEdit = true
             destinationView.task = self.task
         }
     }

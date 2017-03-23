@@ -56,7 +56,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
         if(isEdit){
             self.title = "Edit Task"
             txtTaskName.text = task.name!
-            txtDuration.text = "/(task.duration)"
+            txtDuration.text = "\(task.duration)"
             txtDescription.text = task.details!
             currentDate = task.date!
             timeDatePicker.date = task.date! as Date
@@ -152,6 +152,14 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             let duration = Double(txtDuration.text!)
             
             let finalDay = DayEntity(day: dayOfWeek)
+            let removeDate = timeDatePicker.date
+            let removeDateFormatter = DateFormatter()
+            removeDateFormatter.dateFormat = "EEEE"
+            let removeDayOfWeek = dateFormatter.string(from: removeDate as Date)
+            let removeDay = DayEntity(day: removeDayOfWeek)
+            if(isEdit){
+                removeDay.removeTask(task: self.task)
+            }
             _ = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
             self.performedSave = true
             isEdit = false
