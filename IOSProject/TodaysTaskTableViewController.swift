@@ -116,7 +116,7 @@ class TodaysTaskTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueDailyToDetail"{
             if let destinationView = segue.destination as? TaskDetailsViewController, let taskIndex = tableView.indexPathForSelectedRow?.row{
-                destinationView.task = dayArray[taskIndex]
+                destinationView.task = dayArray[taskIndex-1]
             }
         }
     }
