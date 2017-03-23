@@ -1,9 +1,9 @@
 //
 //  Day+CoreDataProperties.swift
-//  IOSProject
+//  
 //
-//  Created by Ali Darwiche  on 3/18/17.
-//  Copyright © 2017 Abderrahman Said-Alaoui. All rights reserved.
+//  Created by Ali Darwiche  on 3/23/17.
+//
 //
 
 import Foundation
@@ -18,9 +18,9 @@ extension Day {
 
     @NSManaged public var busyHours: Double
     @NSManaged public var name: String?
+    @NSManaged public var priority: Int16
     @NSManaged public var sleepHours: Double
     @NSManaged public var spentHours: Double
-    @NSManaged public var priority: Int16
     @NSManaged public var goals: NSSet?
     @NSManaged public var tasks: NSSet?
     @NSManaged public var user: User?

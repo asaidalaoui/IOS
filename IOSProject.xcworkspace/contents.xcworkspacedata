@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Task+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Goal+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Day+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:User+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:IOSProject.xcodeproj">
    </FileRef>
    <FileRef
