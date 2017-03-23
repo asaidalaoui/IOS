@@ -43,6 +43,13 @@ class TaskEntity {
         }
     }
     
+    func setCheck(isChecked:Bool) {
+        access()
+        task.isChecked = isChecked
+        save()
+    }
+    
+    
     func getName() {}
     
     func setName(name:String) {

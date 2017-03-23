@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTaskViewController: UIViewController {
+class AddTaskViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var taskGoalSeg: UISegmentedControl!
     @IBOutlet weak var txtTaskName: UITextField!
@@ -23,7 +23,7 @@ class AddTaskViewController: UIViewController {
     let datePicker = UIDatePicker()
     var remainingHours:Int = 0
     var daySelected:String = ""
-    var hourDuration:Int = 0
+    var hourDuration:Double = 0
     var performedSave: Bool = true
     
     func getHoursForDay() -> Double{
@@ -45,7 +45,8 @@ class AddTaskViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "Add/Edit Task"
         txtDuration?.keyboardType = UIKeyboardType.decimalPad
-        txtDescription.text = "Add notes here..."
+        txtDescription.delegate = self
+        txtDescription.shouldHidePlaceholderText = true
 //        timeDatePicker.maximumDate = Calendar.current.date(byAdding: .day, value: +7, to: Date())
         
         //set the minimum and maximum date for the date picker.
@@ -61,6 +62,16 @@ class AddTaskViewController: UIViewController {
         self.timeDatePicker.maximumDate = maxDate as Date
         
         _ = getHoursForDay()
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        txtDescription.text = nil
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if txtDescription.text.isEmpty {
+            txtDescription.text = "No notes entered for this task"
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -116,7 +127,7 @@ class AddTaskViewController: UIViewController {
             self.performedSave = false
             
         } else {
-            hourDuration = Int(txtDuration.text!)!
+            hourDuration = Double(txtDuration.text!)!
             
             //need to combine date and time? and then all these variables are to be saved to core data
             let name = txtTaskName.text!
