@@ -17,7 +17,9 @@ class TaskDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        lblTaskName.text = task.name!
+        lblTaskDue.text = "Duration: \(task.duration)"
+        lblTaskNotes.text = "Notes: \(task.details!)"
         // Do any additional setup after loading the view.
     }
 
@@ -25,26 +27,21 @@ class TaskDetailsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        lblTaskName.text = task.name!
-        lblTaskDue.text = "Duration: \(task.duration)"
-        lblTaskNotes.text = "Notes: \(task.details!)"
-    }
-    
 
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // In a storyboard-based applivarion, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        //if segue.identifier == "segueEditTask"{
+        //    var destinationView = segue.destination as? AddTaskViewController
+        //    destinationView?.task = self.task
+        //}
         if segue.identifier == "segueEditTask"{
-            var destinationView = segue.destination as? AddTaskViewController
-                destinationView?.task = self.task
+            let destinationView = segue.destination as! AddTaskViewController
+            destinationView.task = self.task
         }
     }
  

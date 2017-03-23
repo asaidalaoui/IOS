@@ -27,7 +27,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     var performedSave: Bool = true
     
     var isEdit = false
-    let task = Task()
+    var task = Task()
     
     func getHoursForDay() -> Double{
         let date = timeDatePicker.date
