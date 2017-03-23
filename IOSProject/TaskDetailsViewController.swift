@@ -8,7 +8,12 @@
 
 import UIKit
 
-class TaskDetailsViewController: UIPageViewController {
+class TaskDetailsViewController: UIViewController {
+    
+    @IBOutlet weak var lblTaskName: UILabel!
+    @IBOutlet weak var lblTaskDue: UILabel!
+    @IBOutlet weak var lblTaskNotes: UILabel!
+    var task = Task()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +24,13 @@ class TaskDetailsViewController: UIPageViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        lblTaskName.text = task.name
+        lblTaskDue.text = ""
     }
     
 
