@@ -26,6 +26,9 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     var hourDuration:Double = 0
     var performedSave: Bool = true
     
+    var isEdit = false
+    let task = Task()
+    
     func getHoursForDay() -> Double{
         let date = timeDatePicker.date
         let dateFormatter = DateFormatter()
@@ -43,15 +46,25 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "Add/Edit Task"
+        self.title = "Add Task"
         txtDuration?.keyboardType = UIKeyboardType.decimalPad
         txtDescription.delegate = self
         txtDescription.shouldHidePlaceholderText = true
 //        timeDatePicker.maximumDate = Calendar.current.date(byAdding: .day, value: +7, to: Date())
+        var currentDate: NSDate = NSDate()
+        
+        if(isEdit){
+            self.title = "Edit Task"
+            txtTaskName.text = task.name!
+            txtDuration.text = "/(task.duration)"
+            txtDescription.text = task.details!
+            currentDate = task.date!
+            timeDatePicker.date = task.date! as Date
+        }
         
         //set the minimum and maximum date for the date picker.
         let gregorian: NSCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
-        let currentDate: NSDate = NSDate()
+        
         let components: NSDateComponents = NSDateComponents()
         
         components.day = +7
@@ -141,6 +154,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             let finalDay = DayEntity(day: dayOfWeek)
             _ = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
             self.performedSave = true
+            isEdit = false
         }
     }
     
