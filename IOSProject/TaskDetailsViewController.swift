@@ -29,8 +29,9 @@ class TaskDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        lblTaskName.text = task.name
-        lblTaskDue.text = ""
+        lblTaskName.text = task.name!
+        lblTaskDue.text = "Duration: \(task.duration)"
+        lblTaskNotes.text = "Notes: \(task.details!)"
     }
     
 

@@ -973,6 +973,7 @@
                     <connections>
                         <outlet property="detailsLbl" destination="RL4-TT-njI" id="V8c-dI-kh5"/>
                         <outlet property="durationLbl" destination="xg2-ie-l2g" id="qWz-gV-cPm"/>
+                        <outlet property="lblCurrent" destination="80B-lK-MRE" id="0A4-ct-YmS"/>
                         <outlet property="pvController" destination="jwt-Nj-9JJ" id="Svb-cM-E1f"/>
                         <outlet property="timeLbl" destination="HUZ-mN-Lyy" id="LLl-zR-aBx"/>
                     </connections>
@@ -1257,8 +1258,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="Hkw-gY-SAn"/>
         <segue reference="0P6-Ri-1Tw"/>
+        <segue reference="isb-nD-tUW"/>
         <segue reference="6k2-rW-RPM"/>
-        <segue reference="pg5-oN-WRt"/>
         <segue reference="nNo-hQ-PYR"/>
         <segue reference="mDg-Hp-Per"/>
     </inferredMetricsTieBreakers>
