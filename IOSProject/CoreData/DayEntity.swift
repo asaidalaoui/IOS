@@ -201,7 +201,5 @@ class DayEntity {
         }
         return index
     }
-    
-//    func get(name:String) -> Day {}
 }
 

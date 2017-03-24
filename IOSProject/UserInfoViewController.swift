@@ -55,10 +55,6 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
                     showAlert(errorMsg: errorMsg)
                     return false
                 }
-//                else {
-//                    UserDefaults.standard.set(userNameTxtFld.text!, forKey: "curUser")
-//                    UserEntity().add(name: userNameTxtFld.text!, password: fstPwEntryTxtLbl.text!)
-//                }
             }
         }
         return true
@@ -88,10 +84,8 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
     //display a popup alert message.
     func showAlert(errorMsg: String) {
         self.alertController = UIAlertController(title: "Error", message: "\(errorMsg)", preferredStyle: UIAlertControllerStyle.alert)
-        
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
         self.alertController!.addAction(OKAction)
-        
         self.present(self.alertController!, animated: true, completion:nil)
     }
     

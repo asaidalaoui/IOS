@@ -12,9 +12,6 @@ class CurrentGoalViewController: UIViewController {
 
     @IBOutlet weak var pvController: UIPageControl!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         pvController.numberOfPages = 2

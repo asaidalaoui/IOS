@@ -50,7 +50,6 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
         txtDuration?.keyboardType = UIKeyboardType.decimalPad
         txtDescription.delegate = self
         txtDescription.shouldHidePlaceholderText = true
-//        timeDatePicker.maximumDate = Calendar.current.date(byAdding: .day, value: +7, to: Date())
         var currentDate: NSDate = NSDate()
         
         if(isEdit){

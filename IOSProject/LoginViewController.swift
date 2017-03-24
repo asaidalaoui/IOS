@@ -26,12 +26,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.userNameTxtFld.delegate = self
         self.passwordTxtFld.delegate = self
         self.passwordTxtFld.isSecureTextEntry = true
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //performs checks prior to segue to the next view.
@@ -60,17 +58,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             UserDefaults.standard.set(user.name, forKey:"curUser")
             return true
         }
-        
         return false
     }
     
     //display a popup alert message.
     func showAlert(errorMsg: String) {
         self.alertController = UIAlertController(title: "Error", message: "\(errorMsg)", preferredStyle: UIAlertControllerStyle.alert)
-        
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
         self.alertController!.addAction(OKAction)
-        
         self.present(self.alertController!, animated: true, completion:nil)
     }
     

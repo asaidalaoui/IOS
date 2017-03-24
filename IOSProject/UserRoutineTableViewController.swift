@@ -27,7 +27,7 @@ class UserRoutineTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        //black magic to allign the cells in order for them to fill the entirety of the screen
+        //black magic to allign the cells in order for them to fill the entirety of the screen. Or at least tries to.
         self.tableView.rowHeight = (self.tableView.frame.height - self.toolbar.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0)) / 7
     }
 
@@ -38,7 +38,6 @@ class UserRoutineTableViewController: UITableViewController {
     
     //return the day's name corresponding to an int index
     func getDayName(rowNum: Int) -> String {
-        
         switch(rowNum) {
         case 0: return "Monday"
         case 1: return "Tuesday"
