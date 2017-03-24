@@ -53,9 +53,35 @@ class TaskDetailsViewController: UIViewController {
             destinationView.isEdit = true
             destinationView.task = self.task
         } else if segue.identifier == "deleteSeg" {
-            
-            _ = day.removeTask(task: task)
         }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "deleteSeg" {
+            return showAlert()
+        }
+        
+        return true
+    }
+    
+    func showAlert() -> Bool {
+        let alertController = UIAlertController(title: "Error", message: "Are you sure you would like to delete this taks?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) -> Void in
+            _ = self.day.removeTask(task: self.task)
+            self.performSegue(withIdentifier: "deleteSeg", sender: nil)
+            
+        })
+        
+        let no = UIAlertAction(title: "No", style: UIAlertActionStyle.cancel) { (action) -> Void in
+        }
+        
+        alertController.addAction(yes)
+        alertController.addAction(no)
+        
+        self.present(alertController, animated: true, completion:nil)
+        
+        return false
     }
  
 
