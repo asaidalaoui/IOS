@@ -58,10 +58,14 @@ class TodaysTaskTableViewController: UITableViewController {
             return cell
         }
         
+
+        
         //generate the cell with the task's details button
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TodaysTaskTableViewCell
         
         let idx = indexPath.row - 1
+        cell.task = self.dayArray[idx]
+        
         cell.taskNameLbl.text = self.dayArray[idx].name!
         let time = self.dayArray[idx].date!
         
@@ -69,6 +73,13 @@ class TodaysTaskTableViewController: UITableViewController {
         dateFormatter.dateFormat = "HH:mm"
         let convertedDate = dateFormatter.string(from: time as Date)
         cell.taskTimeLbl.text = "Due "+convertedDate
+        
+        if(dayArray[idx].isChecked){
+            cell.taskSwitch.setOn(true, animated: true)
+        }
+        else{
+            cell.taskSwitch.setOn(false, animated: true)
+        }
         
         return cell
     }

@@ -41,14 +41,7 @@ class TaskEntity {
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-    }
-    
-    func setCheck(isChecked:Bool) {
-        access()
-        task.isChecked = isChecked
-        save()
-    }
-    
+    }    
     
     func getName() {}
     

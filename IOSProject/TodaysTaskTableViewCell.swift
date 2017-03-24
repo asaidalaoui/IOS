@@ -14,6 +14,9 @@ class TodaysTaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskTimeLbl: UILabel!
     @IBOutlet weak var taskNameLbl: UILabel!
     
+    var task = Task()
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,8 +24,15 @@ class TodaysTaskTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func isCheckedSwitch(_ sender: Any) {
+        if(taskSwitch.isOn){
+            task.isChecked = true
+        }
+        else{
+            task.isChecked = false
+        }
+    }
 }
