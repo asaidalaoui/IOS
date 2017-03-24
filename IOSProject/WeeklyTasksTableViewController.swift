@@ -18,6 +18,11 @@ class WeeklyTasksTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //show the exact number of rows created
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.tableView.backgroundColor = UIColor.lightGray
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +34,26 @@ class WeeklyTasksTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "temp", for: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,5 +99,14 @@ class WeeklyTasksTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func showAlert(errorMsg: String) {
+        let alertController = UIAlertController(title: "Wait!", message: "\(errorMsg)", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        alertController.addAction(OKAction)
+        
+        self.present(alertController, animated: true, completion:nil)
+    }
 
 }
