@@ -193,7 +193,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     
     //display a popup alert message.
     func showAlert(errorMsg: String) {
-        let alertController = UIAlertController(title: "Error", message: "\(errorMsg)", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Wait!", message: "\(errorMsg)", preferredStyle: UIAlertControllerStyle.alert)
         
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
         alertController.addAction(OKAction)

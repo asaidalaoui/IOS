@@ -29,6 +29,9 @@ class UserRoutineTableViewController: UITableViewController {
         
         //black magic to allign the cells in order for them to fill the entirety of the screen. Or at least tries to.
         self.tableView.rowHeight = (self.tableView.frame.height - self.toolbar.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0)) / 7
+        
+        self.bhTxtFld?.keyboardType = UIKeyboardType.decimalPad
+        self.shTxtFld?.keyboardType = UIKeyboardType.decimalPad
     }
 
     override func didReceiveMemoryWarning() {
