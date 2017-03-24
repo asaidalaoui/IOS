@@ -72,7 +72,7 @@ class TodaysTaskTableViewController: UITableViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         let convertedDate = dateFormatter.string(from: time as Date)
-        cell.taskTimeLbl.text = "Due "+convertedDate
+        cell.taskTimeLbl.text = "Duration "+convertedDate
         
         if(dayArray[idx].isChecked){
             cell.taskSwitch.setOn(true, animated: true)

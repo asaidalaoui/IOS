@@ -16,7 +16,6 @@ class TodaysTaskTableViewCell: UITableViewCell {
     
     var task = Task()
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,12 +26,13 @@ class TodaysTaskTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func isCheckedSwitch(_ sender: Any) {
+    @IBAction func switchIsChecked(_ sender: Any) {
+        let taskEnt = TaskEntity(task: task)
         if(taskSwitch.isOn){
-            task.isChecked = true
+            taskEnt.setChecked(isChecked: true)
         }
         else{
-            task.isChecked = false
+            taskEnt.setChecked(isChecked: false)
         }
     }
 }
