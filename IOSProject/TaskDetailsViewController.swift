@@ -53,6 +53,7 @@ class TaskDetailsViewController: UIViewController {
             destinationView.isEdit = true
             destinationView.task = self.task
         } else if segue.identifier == "deleteSeg" {
+            
             _ = day.removeTask(task: task)
         }
     }
