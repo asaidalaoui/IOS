@@ -15,12 +15,20 @@ class TaskDetailsViewController: UIViewController {
     @IBOutlet weak var txtvwTaskNotes: UITextView!
     
     var task = Task()
+    var day: DayEntity!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         lblTaskName.text = task.name!
         lblTaskDue.text = "Duration: \(task.duration) hours"
         txtvwTaskNotes.text = "Notes: \(task.details!)"
+        
+        let date = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayOfWeek = dateFormatter.string(from: date as Date)
+        day = DayEntity(day: dayOfWeek)
+
         // Do any additional setup after loading the view.
     }
 
@@ -40,10 +48,12 @@ class TaskDetailsViewController: UIViewController {
         //    var destinationView = segue.destination as? AddTaskViewController
         //    destinationView?.task = self.task
         //}
-        if segue.identifier == "segueEditTask"{
-            let destinationView = segue.destination as! AddTaskViewController
+        let destinationView = segue.destination as! AddTaskViewController
+        if segue.identifier == "segueEditTask" {
             destinationView.isEdit = true
             destinationView.task = self.task
+        } else if segue.identifier == "deleteSeg" {
+            _ = day.removeTask(task: task)
         }
     }
  
