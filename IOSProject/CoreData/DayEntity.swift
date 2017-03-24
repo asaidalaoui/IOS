@@ -160,10 +160,12 @@ class DayEntity {
     func removeTask(task:Task) -> Bool{
         if task.name == getTask(name: task.name!).name && task.name != "" {
             day.spentHours -= task.duration     //Removing hours task takes from our spentHours count
+            print(day)
             day.removeFromTasks(task)
-            
+            print(day)
             // Commit the changes.
             do {
+                access()
                 try managedContext.save()
             } catch {
                 // what to do if an error occurs?

@@ -48,8 +48,8 @@ class TaskDetailsViewController: UIViewController {
         //    var destinationView = segue.destination as? AddTaskViewController
         //    destinationView?.task = self.task
         //}
-        let destinationView = segue.destination as! AddTaskViewController
         if segue.identifier == "segueEditTask" {
+            let destinationView = segue.destination as! AddTaskViewController
             destinationView.isEdit = true
             destinationView.task = self.task
         } else if segue.identifier == "deleteSeg" {
