@@ -67,7 +67,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
         
         let components: NSDateComponents = NSDateComponents()
         
-        components.day = +7
+        components.day = +6
         
         let maxDate: NSDate = gregorian.date(byAdding: components as DateComponents, to: currentDate as Date, options: NSCalendar.Options(rawValue: 0))! as NSDate
         

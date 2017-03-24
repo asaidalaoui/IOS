@@ -135,7 +135,7 @@ class DayEntity {
             task.date = date
             task.duration = duration
             task.details = details
-            task.isChecked = false
+            task.isChecked = true
             day.spentHours += duration      //Adding hours task takes to our spentHours count
             day.addToTasks(task)
             
