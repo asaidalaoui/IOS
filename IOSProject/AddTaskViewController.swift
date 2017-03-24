@@ -78,7 +78,9 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        txtDescription.text = nil
+        if !isEdit {
+            txtDescription.text = nil
+        }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {

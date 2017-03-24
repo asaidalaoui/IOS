@@ -18,6 +18,7 @@ class CurrentTaskViewController: UIViewController {
     
     var task = Task()
     var dayArray = [Task]()
+    var gotTask = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,11 @@ class CurrentTaskViewController: UIViewController {
         let dayEntity = DayEntity(day: dayOfWeek)
         dayArray = dayEntity.getTasks()
         
-        task = dayArray[0]
+        if dayArray.isEmpty {
+            self.gotTask = false
+        } else {
+            task = dayArray[0]
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,15 +48,24 @@ class CurrentTaskViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let time = task.date!
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        let convertedDate = dateFormatter.string(from: time as Date)
+        if gotTask {
+            let time = task.date!
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let convertedDate = dateFormatter.string(from: time as Date)
+            
+            lblCurrent.text = "Current Task: \(task.name!)"
+            timeLbl.text = "\(convertedDate)"
+            durationLbl.text = "\(task.duration)"
+            detailsLbl.text = "\(task.details!)"
+        } else {
+            self.lblCurrent.text = "No task scheduled for today"
+            
+            self.timeLbl.isHidden = true
+            self.durationLbl.isHidden = true
+            self.detailsLbl.isHidden = true
+        }
         
-        lblCurrent.text = "Current Task: \(task.name)"
-        timeLbl.text = "Start Time: \(convertedDate)"
-        durationLbl.text = "Duration: \(task.duration)"
-        detailsLbl.text = "Notes: \(task.details)"
     }
     
 
