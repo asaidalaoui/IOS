@@ -31,6 +31,10 @@ class TodaysTaskTableViewController: UITableViewController {
         let dayOfWeek = dateFormatter.string(from: date as Date)
         let dayEntity = DayEntity(day: dayOfWeek)
         dayArray = dayEntity.getTasks()
+        
+        //show the exact number of rows created
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.tableView.backgroundColor = UIColor.lightGray
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,8 +62,6 @@ class TodaysTaskTableViewController: UITableViewController {
             return cell
         }
         
-
-        
         //generate the cell with the task's details button
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TodaysTaskTableViewCell
         
@@ -72,7 +74,7 @@ class TodaysTaskTableViewController: UITableViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         let convertedDate = dateFormatter.string(from: time as Date)
-        cell.taskTimeLbl.text = "Duration "+convertedDate
+        cell.taskTimeLbl.text = "Start @ "+convertedDate
         
         if(dayArray[idx].isChecked){
             cell.taskSwitch.setOn(true, animated: true)

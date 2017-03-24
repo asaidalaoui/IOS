@@ -841,7 +841,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Daily Tasks" id="FdO-CW-FBx"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xzq-MI-XpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1314,10 +1314,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="EKW-Q0-RW9"/>
-        <segue reference="13L-0q-Hkp"/>
-        <segue reference="nNo-hQ-PYR"/>
-        <segue reference="mDg-Hp-Per"/>
+        <segue reference="BZP-yO-iHV"/>
         <segue reference="Hkw-gY-SAn"/>
         <segue reference="0P6-Ri-1Tw"/>
+        <segue reference="nNo-hQ-PYR"/>
+        <segue reference="mDg-Hp-Per"/>
     </inferredMetricsTieBreakers>
 </document>
