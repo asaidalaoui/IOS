@@ -153,18 +153,18 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             let dayOfWeek = dateFormatter.string(from: date as Date)
             let duration = Double(txtDuration.text!)
             
-            let finalDay = DayEntity(day: dayOfWeek)
-            
-            let removeDate = timeDatePicker.date
-            let removeDateFormatter = DateFormatter()
-            removeDateFormatter.dateFormat = "EEEE"
-            let removeDayOfWeek = dateFormatter.string(from: removeDate as Date)
-            let removeDay = DayEntity(day: removeDayOfWeek)
             if(isEdit){
-                removeDay.removeTask(task: self.task)
+                let taskEnt = TaskEntity(task: task)
+                taskEnt.setName(name: name)
+                taskEnt.setDate(date: date as NSDate)
+                taskEnt.setDetails(details: details)
+                taskEnt.setDuration(duration: duration!)
+            }
+            else{
+                let finalDay = DayEntity(day: dayOfWeek)
+                _ = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
             }
             
-            _ = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
             self.performedSave = true
             isEdit = false
         }
