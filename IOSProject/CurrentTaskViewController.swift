@@ -18,7 +18,7 @@ class CurrentTaskViewController: UIViewController {
     
     var task = Task()
     var dayArray = [Task]()
-    var gotTask = true
+    var gotTask = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +33,14 @@ class CurrentTaskViewController: UIViewController {
         let dayEntity = DayEntity(day: dayOfWeek)
         dayArray = dayEntity.getTasks()
         
-        if dayArray.isEmpty {
-            self.gotTask = false
-        } else {
-            task = dayArray[0]
+        if !dayArray.isEmpty {
+            for dayTask in dayArray {
+                if dayTask.isChecked {
+                    task = dayTask
+                    self.gotTask = true
+                    break
+                }
+            }
         }
     }
 
