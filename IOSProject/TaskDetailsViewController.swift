@@ -44,10 +44,6 @@ class TaskDetailsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        //if segue.identifier == "segueEditTask"{
-        //    var destinationView = segue.destination as? AddTaskViewController
-        //    destinationView?.task = self.task
-        //}
         if segue.identifier == "segueEditTask" {
             let destinationView = segue.destination as! AddTaskViewController
             destinationView.isEdit = true

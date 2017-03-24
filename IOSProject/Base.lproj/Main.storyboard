@@ -454,7 +454,7 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XMq-Hi-o5t">
                                 <rect key="frame" x="16" y="155" width="343" height="305"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1330,11 +1330,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EKW-Q0-RW9"/>
-        <segue reference="BZP-yO-iHV"/>
-        <segue reference="Hkw-gY-SAn"/>
-        <segue reference="0P6-Ri-1Tw"/>
+        <segue reference="FoP-qX-cQ2"/>
         <segue reference="nNo-hQ-PYR"/>
+        <segue reference="pg5-oN-WRt"/>
         <segue reference="mDg-Hp-Per"/>
+        <segue reference="0P6-Ri-1Tw"/>
+        <segue reference="Hkw-gY-SAn"/>
     </inferredMetricsTieBreakers>
 </document>
