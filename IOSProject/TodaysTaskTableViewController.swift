@@ -12,6 +12,11 @@ class TodaysTaskTableViewController: UITableViewController {
     
     var dayArray = [Task]()
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.backBarButtonItem = nil
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

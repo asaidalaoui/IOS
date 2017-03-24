@@ -12,14 +12,15 @@ class TaskDetailsViewController: UIViewController {
     
     @IBOutlet weak var lblTaskName: UILabel!
     @IBOutlet weak var lblTaskDue: UILabel!
-    @IBOutlet weak var lblTaskNotes: UILabel!
+    @IBOutlet weak var txtvwTaskNotes: UITextView!
+    
     var task = Task()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         lblTaskName.text = task.name!
         lblTaskDue.text = "Duration: \(task.duration) hours"
-        lblTaskNotes.text = "Notes: \(task.details!)"
+        txtvwTaskNotes.text = "Notes: \(task.details!)"
         // Do any additional setup after loading the view.
     }
 
