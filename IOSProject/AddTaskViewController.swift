@@ -160,6 +160,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
                 taskEnt.setDate(date: date as NSDate)
                 taskEnt.setDetails(details: details)
                 taskEnt.setDuration(duration: duration!)
+                taskEnt.setChecked(isChecked: true)
             }
             else{
                 let finalDay = DayEntity(day: dayOfWeek)
