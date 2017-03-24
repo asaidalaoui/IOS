@@ -142,6 +142,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             self.performedSave = false
             
         } else {
+            
             hourDuration = Double(txtDuration.text!)!
             
             //need to combine date and time? and then all these variables are to be saved to core data

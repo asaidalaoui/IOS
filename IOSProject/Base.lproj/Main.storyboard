@@ -473,6 +473,9 @@
                                 <rect key="frame" x="120" y="462" width="134" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Delete Task"/>
+                                <connections>
+                                    <segue destination="sNt-Dg-kjS" kind="show" identifier="deleteSeg" id="i3V-fC-6Hf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -765,7 +768,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zBp-w5-Ye1">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zBp-w5-Ye1">
                                             <rect key="frame" x="27" y="19" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1299,6 +1302,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
+=======
+        <segue reference="nNo-hQ-PYR"/>
+        <segue reference="i3V-fC-6Hf"/>
+        <segue reference="EKW-Q0-RW9"/>
+>>>>>>> 81c2106c0cf79c8c1fa938f97a1e06d1661130f0
         <segue reference="6k2-rW-RPM"/>
         <segue reference="EKW-Q0-RW9"/>
         <segue reference="8rk-a2-MxO"/>
