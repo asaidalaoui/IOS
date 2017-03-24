@@ -473,6 +473,9 @@
                                 <rect key="frame" x="120" y="462" width="134" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Delete Task"/>
+                                <connections>
+                                    <segue destination="sNt-Dg-kjS" kind="show" identifier="deleteSeg" id="i3V-fC-6Hf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1297,7 +1300,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="nNo-hQ-PYR"/>
-        <segue reference="8rk-a2-MxO"/>
+        <segue reference="i3V-fC-6Hf"/>
         <segue reference="pg5-oN-WRt"/>
         <segue reference="6k2-rW-RPM"/>
         <segue reference="mDg-Hp-Per"/>
