@@ -9,7 +9,9 @@
 import UIKit
 
 class WeeklyTasksTableViewController: UITableViewController {
-
+    
+    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+                "Saturday", "Sunday"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -90,16 +92,6 @@ class WeeklyTasksTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     func showAlert(errorMsg: String) {
         let alertController = UIAlertController(title: "Wait!", message: "\(errorMsg)", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -108,5 +100,25 @@ class WeeklyTasksTableViewController: UITableViewController {
         
         self.present(alertController, animated: true, completion:nil)
     }
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showSelectedDaySeg"{
+            if let destVC = segue.destination as? TodaysTaskTableViewController, let taskIndex = tableView.indexPathForSelectedRow?.row{
+                
+                destVC.dayOfWeek = days[taskIndex]
+                destVC.showtoday = false
+            }
+        }
+        
+    }
+    
+    
+    
 
 }

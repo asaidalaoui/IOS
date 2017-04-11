@@ -11,6 +11,8 @@ import UIKit
 class TodaysTaskTableViewController: UITableViewController {
     
     var dayArray = [Task]()
+    var showtoday = true
+    var dayOfWeek = ""
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.backBarButtonItem = nil
@@ -28,7 +30,16 @@ class TodaysTaskTableViewController: UITableViewController {
         let date = NSDate()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
-        let dayOfWeek = dateFormatter.string(from: date as Date)
+        
+        //Two possible cases. Either we are checking today's tasks list, or the day
+        //corresponding to the selected day on the weekly view
+        //Logic might need to be improved.
+        if showtoday {
+            dayOfWeek = dateFormatter.string(from: date as Date)
+        } else {
+            showtoday = true
+        }
+        
         let dayEntity = DayEntity(day: dayOfWeek)
         dayArray = dayEntity.getTasks()
         
