@@ -41,26 +41,22 @@ class WeeklyTasksTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return days.count + 1
+        return days.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == days.count+1{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "temp", for: indexPath)
-            return cell
-        }
-        else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "weekCell", for: indexPath) as! WeeklyTasksTableViewCell
-            let day = days[indexPath.row]
-            let dayEntity = DayEntity(day: day)
-            cell.lblDayOfWeek.text = day
-            let hrsFree = 24 - dayEntity.getBusy()
-            let percentBusy = dayEntity.getBusy()/100.0
-            cell.lblHrsFree.text = "\(hrsFree)"
-            cell.progressView.setProgress(Float(percentBusy), animated: true)
-            return cell
-        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "weekCell", for: indexPath) as! WeeklyTasksTableViewCell
+        let day = days[indexPath.row]
+        let dayEntity = DayEntity(day: day)
+        cell.lblDayOfWeek.text = day
+        let hrsFree = 24 - dayEntity.getBusy()
+        let percentBusy = dayEntity.getBusy()/100.0
+        cell.lblHrsFree.text = "\(hrsFree)"
+        cell.progressView.setProgress(Float(percentBusy), animated: true)
+        return cell
+        
         // Configure the cell...
     }
     
