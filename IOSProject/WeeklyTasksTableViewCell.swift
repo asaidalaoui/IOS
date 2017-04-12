@@ -10,6 +10,9 @@ import UIKit
 
 class WeeklyTasksTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblDayOfWeek: UILabel!
+    @IBOutlet weak var lblHrsFree: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

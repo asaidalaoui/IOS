@@ -210,13 +210,13 @@
 				ADFB49561E6E14D600453DA7 /* TodaysTaskTableViewController.swift */,
 				ADFB49581E6E14FE00453DA7 /* PageViewController.swift */,
 				ADFB495A1E6E15BC00453DA7 /* WeeklyTasksTableViewController.swift */,
+				6D1762ED1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift */,
 				ADFB495C1E6E15E400453DA7 /* SelectedDayTableViewController.swift */,
 				ADFB495E1E6E162200453DA7 /* GoalDetailsViewController.swift */,
 				ADFB49601E6E184200453DA7 /* AddTaskViewController.swift */,
 				ADFB49621E6E185400453DA7 /* AddGoalViewController.swift */,
 				ADFB49641E6E186600453DA7 /* CurrentGoalViewController.swift */,
 				ADFB49661E6E188C00453DA7 /* CurrentTaskViewController.swift */,
-				6D1762ED1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift */,
 			);
 			path = IOSProject;
 			sourceTree = "<group>";
