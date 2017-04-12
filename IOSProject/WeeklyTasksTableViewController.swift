@@ -51,8 +51,8 @@ class WeeklyTasksTableViewController: UITableViewController {
         let day = days[indexPath.row]
         let dayEntity = DayEntity(day: day)
         cell.lblDayOfWeek.text = day
-        let hrsFree = 24 - dayEntity.getBusy()
-        let percentBusy = dayEntity.getBusy()/100.0
+        let hrsFree = 24 - dayEntity.getBusy() - dayEntity.getSleep()
+        let percentBusy = (dayEntity.getBusy() + dayEntity.getSleep())/100.0
         cell.lblHrsFree.text = "\(hrsFree)"
         cell.progressView.setProgress(Float(percentBusy), animated: true)
         return cell
