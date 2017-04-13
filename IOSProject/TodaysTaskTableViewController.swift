@@ -157,9 +157,9 @@ class TodaysTaskTableViewController: UITableViewController {
             }
         }
         
-        else if segue.identifier == "resetWeeklyViewSeg"{
+        else if segue.identifier == "backToWeekView"{
             if let destinationVC = segue.destination as? TabBarViewController {
-                    destinationVC.recoverWeeklyView = true
+                    destinationVC.index = 2
             }
         }
     }

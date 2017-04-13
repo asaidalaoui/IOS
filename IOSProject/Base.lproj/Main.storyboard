@@ -1237,7 +1237,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Back"/>
                                             <connections>
-                                                <segue destination="PDu-tO-7kf" kind="show" identifier="resetWeeklyViewSeg" id="LpK-f2-cDY"/>
+                                                <segue destination="PDu-tO-7kf" kind="show" identifier="backToWeekView" id="pxP-vW-uux"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1332,8 +1332,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="Hkw-gY-SAn"/>
         <segue reference="7nU-M2-YFJ"/>
-        <segue reference="QTX-kk-eeM"/>
-        <segue reference="mDg-Hp-Per"/>
+        <segue reference="pxP-vW-uux"/>
         <segue reference="EKW-Q0-RW9"/>
+        <segue reference="mDg-Hp-Per"/>
     </inferredMetricsTieBreakers>
 </document>

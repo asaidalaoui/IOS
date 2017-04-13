@@ -10,13 +10,15 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
+    var index = 0
+    
     var recoverWeeklyView = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if recoverWeeklyView {
-            self.tabBarController?.selectedIndex = 2
-            recoverWeeklyView = false
+        if index != 0 {
+            self.selectedIndex = 2
+            index = 0
         }
         // Do any additional setup after loading the view.
     }
