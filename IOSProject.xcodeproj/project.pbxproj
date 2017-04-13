@@ -21,6 +21,7 @@
 		5B299BFD8CC1673769EEF967 /* Pods_IOSProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E30848889F64EF8C77D965E2 /* Pods_IOSProject.framework */; };
 		6D1762EE1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1762ED1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift */; };
 		AD3E83871E831E9B00D94683 /* TodaysTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E83861E831E9B00D94683 /* TodaysTaskTableViewCell.swift */; };
+		ADADC2151E9FE1BC00C98CFF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADC2141E9FE1BC00C98CFF /* TabBarViewController.swift */; };
 		ADD801821E5DE65D00A0B6AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD801811E5DE65D00A0B6AA /* AppDelegate.swift */; };
 		ADD801841E5DE65D00A0B6AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD801831E5DE65D00A0B6AA /* ViewController.swift */; };
 		ADD801871E5DE65D00A0B6AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD801851E5DE65D00A0B6AA /* Main.storyboard */; };
@@ -79,6 +80,7 @@
 		5CDF6BD1A449AAF33FD163DC /* Pods-IOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSProject/Pods-IOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		6D1762ED1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTasksTableViewCell.swift; sourceTree = "<group>"; };
 		AD3E83861E831E9B00D94683 /* TodaysTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysTaskTableViewCell.swift; sourceTree = "<group>"; };
+		ADADC2141E9FE1BC00C98CFF /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		ADD8017E1E5DE65D00A0B6AA /* IOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD801811E5DE65D00A0B6AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADD801831E5DE65D00A0B6AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				ADD8018A1E5DE65D00A0B6AA /* LaunchScreen.storyboard */,
 				ADD8018D1E5DE65D00A0B6AA /* Info.plist */,
 				ADFB49471E6E118500453DA7 /* iosProject.xcdatamodeld */,
+				ADADC2141E9FE1BC00C98CFF /* TabBarViewController.swift */,
 				ADFB494A1E6E13AA00453DA7 /* LoginViewController.swift */,
 				ADFB494C1E6E13DB00453DA7 /* UserInfoViewController.swift */,
 				ADFB49881E79A8F100453DA7 /* UserRoutineTableViewCell.swift */,
@@ -448,6 +451,7 @@
 				ADFB49611E6E184200453DA7 /* AddTaskViewController.swift in Sources */,
 				ADFB494F1E6E140600453DA7 /* UserRoutineTableViewController.swift in Sources */,
 				0569D5C01E7C54CC00EEB9FE /* UserEntity.swift in Sources */,
+				ADADC2151E9FE1BC00C98CFF /* TabBarViewController.swift in Sources */,
 				05078C5C1E78B44F001E587B /* Task+CoreDataProperties.swift in Sources */,
 				ADFB49511E6E143E00453DA7 /* SettingsViewController.swift in Sources */,
 				0550D1781E7DE6CB00EB0BF7 /* TaskEntity.swift in Sources */,

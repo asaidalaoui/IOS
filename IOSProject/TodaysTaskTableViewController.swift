@@ -17,10 +17,13 @@ class TodaysTaskTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.backBarButtonItem = nil
         self.navigationController?.isNavigationBarHidden = true
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -151,6 +154,12 @@ class TodaysTaskTableViewController: UITableViewController {
         if segue.identifier == "segueDailyToDetail"{
             if let destinationView = segue.destination as? TaskDetailsViewController, let taskIndex = tableView.indexPathForSelectedRow?.row{
                 destinationView.task = dayArray[taskIndex-1]
+            }
+        }
+        
+        else if segue.identifier == "resetWeeklyViewSeg"{
+            if let destinationVC = segue.destination as? TabBarViewController {
+                    destinationVC.recoverWeeklyView = true
             }
         }
     }
