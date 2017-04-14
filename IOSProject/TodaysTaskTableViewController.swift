@@ -13,7 +13,10 @@ class TodaysTaskTableViewController: UITableViewController {
     var dayArray = [Task]()
     var showtoday = true
     var dayOfWeek = ""
+    var fromWeekly = false
 
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.backBarButtonItem = nil
         self.navigationController?.isNavigationBarHidden = true
@@ -68,12 +71,20 @@ class TodaysTaskTableViewController: UITableViewController {
         return dayArray.count + 1
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //generate the cell with the add task button
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath)
-            return cell
+            if fromWeekly {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath) as! SelectedDAyTableViewCell
+                cell.headerLbl.text = "\(dayOfWeek)"
+                fromWeekly = false
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath)
+                return cell
+            }
+            
+            
         }
         
         //generate the cell with the task's details button

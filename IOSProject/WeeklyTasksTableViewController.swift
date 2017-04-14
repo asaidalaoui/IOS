@@ -116,10 +116,10 @@ class WeeklyTasksTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "showSelectedDaySeg"{
-            if let destVC = segue.destination as? TodaysTaskTableViewController, let taskIndex = tableView.indexPathForSelectedRow?.row{
-                
-                destVC.dayOfWeek = days[taskIndex]
+            if let destVC = segue.destination as? TodaysTaskTableViewController, let dayIndex = tableView.indexPathForSelectedRow?.row{
+                destVC.dayOfWeek = days[dayIndex]
                 destVC.showtoday = false
+                destVC.fromWeekly = true
             }
         }
         
