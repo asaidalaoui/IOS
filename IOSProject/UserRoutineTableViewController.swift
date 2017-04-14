@@ -146,6 +146,29 @@ class UserRoutineTableViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
 
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "finishSetup" && !self.fromConfig! {
+            return showAlert()
+        }
+        
+        return true
+    }
+    
+    func showAlert() -> Bool {
+        let alertController = UIAlertController(title: "Congrats!", message:
+            "You finished setting up your account. You can update your routine at anytime through the Settings tab", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let yes = UIAlertAction(title: "Start PROcrastinating", style: UIAlertActionStyle.default, handler: { (action) -> Void in
+            self.performSegue(withIdentifier: "finishSetup", sender: nil)
+            
+        })
+        
+        alertController.addAction(yes)
+        
+        self.present(alertController, animated: true, completion:nil)
+        
+        return true
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

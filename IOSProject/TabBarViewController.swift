@@ -14,6 +14,12 @@ class TabBarViewController: UITabBarController {
     
     var recoverWeeklyView = false
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.backBarButtonItem = nil
+        self.navigationController?.isNavigationBarHidden = true
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if index != 0 {

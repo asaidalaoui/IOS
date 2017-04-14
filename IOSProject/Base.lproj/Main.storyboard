@@ -177,7 +177,8 @@
                             <items>
                                 <barButtonItem title="Save" id="MUT-Mt-U3B">
                                     <connections>
-                                        <segue destination="PDu-tO-7kf" kind="show" id="BZP-yO-iHV"/>
+                                        <action selector="save:" destination="Jhk-ZP-nfY" id="6Gg-Pl-TL4"/>
+                                        <segue destination="PDu-tO-7kf" kind="show" identifier="finishSetup" id="BZP-yO-iHV"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -1231,6 +1232,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                             <state key="normal" title="+"/>
+                                            <connections>
+                                                <segue destination="42P-yp-bja" kind="show" id="9ld-hv-aE9"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP3-0c-f0m">
                                             <rect key="frame" x="40" y="21" width="34" height="30"/>
@@ -1330,10 +1334,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hkw-gY-SAn"/>
-        <segue reference="7nU-M2-YFJ"/>
-        <segue reference="pxP-vW-uux"/>
-        <segue reference="EKW-Q0-RW9"/>
+        <segue reference="dz6-Pf-Q8u"/>
         <segue reference="mDg-Hp-Per"/>
+        <segue reference="BZP-yO-iHV"/>
+        <segue reference="7nU-M2-YFJ"/>
+        <segue reference="EKW-Q0-RW9"/>
     </inferredMetricsTieBreakers>
 </document>
