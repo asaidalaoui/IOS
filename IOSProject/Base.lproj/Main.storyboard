@@ -1313,6 +1313,7 @@
                                     <outlet property="taskNameLbl" destination="KZA-b1-nz8" id="uzL-bo-qoi"/>
                                     <outlet property="taskSwitch" destination="BIY-xl-Ket" id="pal-qf-rrH"/>
                                     <outlet property="taskTimeLbl" destination="uEV-cS-Gp2" id="upT-is-dKZ"/>
+                                    <segue destination="U5W-Ki-6ow" kind="show" identifier="segueWeeklyToDetail" id="RCH-ts-bry"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalCell" rowHeight="66" id="QVS-fZ-5AN">
@@ -1357,6 +1358,7 @@
         <segue reference="mDg-Hp-Per"/>
         <segue reference="7nU-M2-YFJ"/>
         <segue reference="pxP-vW-uux"/>
-        <segue reference="9ld-hv-aE9"/>
+        <segue reference="RCH-ts-bry"/>
+        <segue reference="EKW-Q0-RW9"/>
     </inferredMetricsTieBreakers>
 </document>
