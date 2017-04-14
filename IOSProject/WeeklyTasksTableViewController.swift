@@ -25,6 +25,7 @@ class WeeklyTasksTableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         self.tableView.backgroundColor = UIColor.lightGray
         
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,26 +42,34 @@ class WeeklyTasksTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return days.count
+        return days.count+1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "weekCell", for: indexPath) as! WeeklyTasksTableViewCell
-        let day = days[indexPath.row]
-        let dayEntity = DayEntity(day: day)
-        cell.lblDayOfWeek.text = day
-        let hrsFree = 24 - dayEntity.getBusy() - dayEntity.getSleep()
-        let percentBusy = (dayEntity.getBusy() + dayEntity.getSleep())/24.0
-        cell.lblHrsFree.text = "\(hrsFree) hours"
-        cell.progressView.setProgress(Float(percentBusy), animated: true)
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "paddingCell", for: indexPath)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "weekCell", for: indexPath) as! WeeklyTasksTableViewCell
+            let day = days[indexPath.row-1]
+            let dayEntity = DayEntity(day: day)
+            cell.lblDayOfWeek.text = day
+            let hrsFree = 24 - dayEntity.getBusy() - dayEntity.getSleep()
+            let percentBusy = (dayEntity.getBusy() + dayEntity.getSleep())/24.0
+            cell.lblHrsFree.text = "\(hrsFree) hours"
+            cell.progressView.setProgress(Float(percentBusy), animated: true)
+            return cell
+        }
         
         // Configure the cell...
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 60
+        }
         return 80
     }
 
@@ -117,7 +126,7 @@ class WeeklyTasksTableViewController: UITableViewController {
         
         if segue.identifier == "showSelectedDaySeg"{
             if let destVC = segue.destination as? TodaysTaskTableViewController, let dayIndex = tableView.indexPathForSelectedRow?.row{
-                destVC.dayOfWeek = days[dayIndex]
+                destVC.dayOfWeek = days[dayIndex+1]
                 destVC.showtoday = false
                 destVC.fromWeekly = true
             }

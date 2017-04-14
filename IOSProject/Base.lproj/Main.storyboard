@@ -894,6 +894,14 @@
                                     <segue destination="veE-iZ-VSW" kind="show" identifier="showSelectedDaySeg" id="G4I-fC-cft"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="paddingCell" rowHeight="50" id="qD9-lv-iFq">
+                                <rect key="frame" x="0.0" y="96" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qD9-lv-iFq" id="Qou-Ga-ILA">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="bD8-uk-oXG" id="5sR-7O-h27"/>
@@ -1359,6 +1367,6 @@
         <segue reference="7nU-M2-YFJ"/>
         <segue reference="pxP-vW-uux"/>
         <segue reference="RCH-ts-bry"/>
-        <segue reference="EKW-Q0-RW9"/>
+        <segue reference="9ld-hv-aE9"/>
     </inferredMetricsTieBreakers>
 </document>
