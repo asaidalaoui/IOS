@@ -44,6 +44,7 @@ class TaskEntity {
     }
     
     func getName() -> String {
+        access()
         return task.name!
     }
     
@@ -54,6 +55,7 @@ class TaskEntity {
     }
     
     func getChecked() -> Bool {
+        access()
         return task.isChecked
     }
     
@@ -64,6 +66,7 @@ class TaskEntity {
     }
     
     func getDate() -> Date{
+        access()
         return task.date as! Date
     }
     
@@ -76,7 +79,7 @@ class TaskEntity {
             task.date = date
             save()
         } else {
-            DayEntity(day:day).removeTask(task:task)
+            _ = DayEntity(day:day).removeTask(task:task)
             task.date = date
             DayEntity(day:dayOfWeek).addTask(task:task)
             
@@ -89,18 +92,23 @@ class TaskEntity {
     }
     
     func getDuration() -> Double {
+        access()
         return task.duration
     }
     
     func setDuration(duration:Double) {
         access()
-        day.spentHours -= task.duration
+        let day = DayEntity(day:task.day!)
+        day.updateSpent(duration: -task.duration)
+//        day.spentHours -= task.duration
         task.duration = duration
-        day.spentHours += duration
+        day.updateSpent(duration: duration)
+//        day.spentHours += duration
         save()
     }
     
     func getDetails() -> String{
+        access()
         return task.details!
     }
     

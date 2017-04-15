@@ -22,6 +22,7 @@ class DayEntity {
     private var day:Day!
     
     init(day:String){
+        access()
         let curUser = UserEntity().get(name: UserDefaults.standard.object(forKey: "curUser") as! String)
         let sortDesc = NSSortDescriptor(key: "priority", ascending: true)
         let days = curUser.days?.sortedArray(using: [sortDesc]) as! [Day]
@@ -36,7 +37,6 @@ class DayEntity {
             dayOfWeek = formatter.string(from: days[index].date as! Date)
 //            print("\(dayOfWeek) \(index)")
         } while day != dayOfWeek
-        
         
         self.day = days[index]
         
@@ -83,8 +83,7 @@ class DayEntity {
         } while  dayOfWeek != tempDayOfWeek
         day.priority = Int16(index)
         day.date = saveDate as NSDate?
-        access()
-        save()
+        _ = save()
     }
     
     func access() {
@@ -107,6 +106,7 @@ class DayEntity {
     }
     
     func getSleep() -> Double {
+        access()
         return day.sleepHours
     }
     
@@ -123,6 +123,7 @@ class DayEntity {
     }
     
     func getBusy() -> Double {
+        access()
         return day.busyHours
     }
     
@@ -141,28 +142,37 @@ class DayEntity {
     }
     
     func getSpent() -> Double{
+        access()
         return day.spentHours
+    }
+    
+    func updateSpent(duration:Double) {
+        access()
+        day.spentHours += duration
+        _ = save()
     }
     
     //Return array of tasks sorted by date. First task in list should be first task in day
     func getTasks() -> [Task]{
+        access()
         let sortDesc = NSSortDescriptor(key: "date", ascending: true)
         let tasks = day.tasks?.sortedArray(using: [sortDesc]) as! [Task]
         return tasks
     }
     
     func getTask(name:String) -> Task{
+        access()
         let tasks = getTasks()
         for task in tasks {
             if task.name == name {
                 return task
             }
         }
-        access()
         return Task(context: managedContext)
     }
     
     func addTask(name:String, date:NSDate, duration:Double, details:String) -> Bool{
+        access()
         let task = getTask(name:name)
         if task.name != name && name != "" {
             // Set the attribute values
@@ -179,17 +189,20 @@ class DayEntity {
     }
     
     func addTask(task:Task) {
+        access()
+        day.spentHours += task.duration
         day.addToTasks(task)
+        _ = save()
 //        return addTask(name: task.name!, date: task.date!, duration: task.duration, details: task.details!)
     }
     
     func removeTask(task:Task) -> Bool{
+        access()
         if task.name == getTask(name: task.name!).name && task.name != "" {
             day.spentHours -= task.duration     //Removing hours task takes from our spentHours count
 //            print(day)
             day.removeFromTasks(task)
 //            print(day)
-            access()
             return save()
         }
         return false
