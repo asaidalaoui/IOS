@@ -43,7 +43,9 @@ class TaskEntity {
         }
     }
     
-    func getName() {}
+    func getName() -> String {
+        return task.name!
+    }
     
     func setName(name:String) {
         access()
@@ -51,7 +53,9 @@ class TaskEntity {
         save()
     }
     
-    func getChecked() {}
+    func getChecked() -> Bool {
+        return task.isChecked
+    }
     
     func setChecked(isChecked:Bool) {
         access()
@@ -59,7 +63,9 @@ class TaskEntity {
         save()
     }
     
-    func getDate() {}
+    func getDate() -> Date{
+        return task.date as! Date
+    }
     
     func setDate(date:NSDate) {
         access()
