@@ -94,7 +94,7 @@ class TaskEntity {
     }
     
     func getDetails() -> String{
-        return task.details
+        return task.details!
     }
     
     func setDetails(details:String) {
