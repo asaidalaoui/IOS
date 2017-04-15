@@ -50,31 +50,44 @@ class UserEntity {
             
             // Initialize/add days of the week
             var daysOfWeek:[Day] = []
+            var date = Date()
+            //            let formatter = DateFormatter().dateFormat = "EEEE"
+            //            formatter.dateFormat = "EEEE"
+            //            let calendar = Calendar.current
+            //            var dateComponent = DateComponents()
+            //            dateComponent.day = 1
             for i in 0...6 {
                 let day = Day(context: managedContext)
                 day.spentHours = 0
                 day.sleepHours = 0
                 day.busyHours = 0
                 day.priority = Int16(i)
+                day.date = date as NSDate?
                 
-                switch(i) {
-                case 0: day.name = "Monday"
-                    break
-                case 1: day.name = "Tuesday"
-                    break
-                case 2: day.name = "Wednesday"
-                    break
-                case 3: day.name = "Thursday"
-                    break
-                case 4: day.name = "Friday"
-                    break
-                case 5: day.name = "Saturday"
-                    break
-                case 6: day.name = "Sunday"
-                    break
-                default: break
-                }
+                //                let dayOfWeek = formatter.string(from: date)
+                //                var index:Int = 0
+                //                switch(dayOfWeek) {
+                //                case "Monday": index = 0
+                //                    break
+                //                case "Tuesday": index = 1
+                //                    break
+                //                case "Wednesday": index = 2
+                //                    break
+                //                case "Thursday": index = 3
+                //                    break
+                //                case "Friday": index = 4
+                //                    break
+                //                case "Saturday": index = 5
+                //                    break
+                //                case "Sunday": index = 6
+                //                    break
+                //                default: index = -1
+                //                    break
+                //                }
+                //day.date = findDate(day.name)
                 daysOfWeek.append(day)
+                
+                date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
             }
             user.addToDays(NSSet(array: daysOfWeek))
             
@@ -89,6 +102,12 @@ class UserEntity {
             }
         }
     }
+    
+    //    func findDate(dayOfWeek:String) -> Date {
+    //        let date = Date()
+    //        let format = DateFormatter()
+    //        //http://www.appcoda.com/nsdate/
+    //    }
     
     func remove(name:String) -> Bool{
         access()
