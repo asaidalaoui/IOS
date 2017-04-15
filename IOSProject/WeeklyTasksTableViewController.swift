@@ -126,7 +126,7 @@ class WeeklyTasksTableViewController: UITableViewController {
         
         if segue.identifier == "showSelectedDaySeg"{
             if let destVC = segue.destination as? TodaysTaskTableViewController, let dayIndex = tableView.indexPathForSelectedRow?.row{
-                destVC.dayOfWeek = days[dayIndex+1]
+                destVC.dayOfWeek = days[dayIndex-1]
                 destVC.showtoday = false
                 destVC.fromWeekly = true
             }
