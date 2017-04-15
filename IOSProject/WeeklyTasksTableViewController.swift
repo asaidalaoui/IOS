@@ -60,6 +60,12 @@ class WeeklyTasksTableViewController: UITableViewController {
             let percentBusy = dayEntity.getSpent()/24.0
             cell.lblHrsFree.text = "\(hrsFree) hours"
             cell.progressView.setProgress(Float(percentBusy), animated: true)
+            
+            print("IN TABLE VIEW CELL GENERATION: \(getDayOfWeek())")
+            if day == getDayOfWeek() {
+                cell.backgroundColor = UIColor(red: 222/255.0, green: 207/255.0, blue: 226/255.0, alpha: 1)
+            }
+            
             return cell
         }
         
@@ -71,6 +77,12 @@ class WeeklyTasksTableViewController: UITableViewController {
             return 60
         }
         return 80
+    }
+    
+    func getDayOfWeek() -> String {
+        let formatter  = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: NSDate() as Date)
     }
 
     /*

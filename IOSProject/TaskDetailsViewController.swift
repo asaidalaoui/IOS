@@ -61,7 +61,7 @@ class TaskDetailsViewController: UIViewController {
     }
     
     func showAlert() -> Bool {
-        let alertController = UIAlertController(title: "Error", message: "Are you sure you would like to delete this taks?", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Delete", message: "Are you sure you would like to delete this taks?", preferredStyle: UIAlertControllerStyle.alert)
         
         let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             _ = self.day.removeTask(task: self.task)
