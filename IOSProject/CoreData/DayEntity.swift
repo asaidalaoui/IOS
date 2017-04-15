@@ -34,7 +34,7 @@ class DayEntity {
         repeat {
             index += 1
             dayOfWeek = formatter.string(from: days[index].date as! Date)
-            print("\(dayOfWeek) \(index)")
+//            print("\(dayOfWeek) \(index)")
         } while day != dayOfWeek
         
         
@@ -178,16 +178,17 @@ class DayEntity {
         return false
     }
     
-    func addTask(task:Task) -> Bool{
-        return addTask(name: task.name!, date: task.date!, duration: task.duration, details: task.details!)
+    func addTask(task:Task) {
+        day.addToTasks(task)
+//        return addTask(name: task.name!, date: task.date!, duration: task.duration, details: task.details!)
     }
     
     func removeTask(task:Task) -> Bool{
         if task.name == getTask(name: task.name!).name && task.name != "" {
             day.spentHours -= task.duration     //Removing hours task takes from our spentHours count
-            print(day)
+//            print(day)
             day.removeFromTasks(task)
-            print(day)
+//            print(day)
             access()
             return save()
         }

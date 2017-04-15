@@ -21,11 +21,11 @@ class TaskEntity {
         self.task = task
     }
     
-    //    init(name:String, date:NSDate, duration:Double, details:String, day:String) {
-    //        access()
-    //        self.day = DayEntity(day: day)
-    //        task = Task(managedContext)
-    //    }
+//    init(name:String, date:NSDate, duration:Double, details:String, day:String) {
+//        access()
+//        self.day = DayEntity(day: day)
+//        task = Task(managedContext)
+//    }
     
     func access() {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -79,6 +79,7 @@ class TaskEntity {
             DayEntity(day:day).removeTask(task:task)
             task.date = date
             DayEntity(day:dayOfWeek).addTask(task:task)
+            
             day = task.day  //If this causes an error, it will add the same day to day,
             //instead of updating day with the new day. This means that
             //doing addTask didn't alter our current instance of day
