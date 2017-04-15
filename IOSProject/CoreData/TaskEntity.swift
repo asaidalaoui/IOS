@@ -81,7 +81,9 @@ class TaskEntity {
         }
     }
     
-    func getDuration() {}
+    func getDuration() -> Double {
+        return task.duration
+    }
     
     func setDuration(duration:Double) {
         access()
@@ -91,7 +93,9 @@ class TaskEntity {
         save()
     }
     
-    func getDetails() {}
+    func getDetails() -> String{
+        return task.details
+    }
     
     func setDetails(details:String) {
         access()
