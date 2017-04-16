@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -224,6 +225,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.52581518890000001" green="0.16142325003081076" blue="0.043372709126360744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="obU-IU-44p">
                             <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -241,39 +243,47 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zk9-wu-DHs" id="XVA-5g-lsW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;week day&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52g-8o-0bM">
-                                            <rect key="frame" x="49" y="11" width="94" height="32"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;week day&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52g-8o-0bM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
+                                            <color key="backgroundColor" red="0.3719653785" green="0.0018840361149999999" blue="0.52581518890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.98979591840000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;# busy hours&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSR-8f-sKa">
-                                            <rect key="frame" x="234" y="0.0" width="121" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;# sleep hours&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdv-Jc-ayo">
-                                            <rect key="frame" x="234" y="29" width="125" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;# busy hours&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSR-8f-sKa">
+                                            <rect key="frame" x="8" y="36" width="171" height="35"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="AwI-Um-eHd"/>
+                                                <constraint firstAttribute="width" constant="171" id="mJA-bI-PTM"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.98979591840000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;# sleep hours&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdv-Jc-ayo">
+                                            <rect key="frame" x="187" y="36" width="180" height="28"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="28" id="9H3-Ed-qTt"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.98979591840000003" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.38901156598133468" green="0.00079648294495244609" blue="0.56622534514999989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="52g-8o-0bM" firstAttribute="top" secondItem="XVA-5g-lsW" secondAttribute="topMargin" constant="3" id="2Zu-Cb-6Zd"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="vSR-8f-sKa" secondAttribute="trailing" constant="12" id="2zc-zY-DGF"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Kdv-Jc-ayo" secondAttribute="bottom" constant="12" id="9KY-W5-wnb"/>
-                                        <constraint firstItem="vSR-8f-sKa" firstAttribute="leading" secondItem="Kdv-Jc-ayo" secondAttribute="leading" id="DXY-lo-0eb"/>
-                                        <constraint firstItem="Kdv-Jc-ayo" firstAttribute="leading" secondItem="52g-8o-0bM" secondAttribute="trailing" constant="91" id="lQq-g3-Ptl"/>
-                                        <constraint firstItem="Kdv-Jc-ayo" firstAttribute="top" secondItem="vSR-8f-sKa" secondAttribute="bottom" constant="8" symbolic="YES" id="u6J-Yi-6x6"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="52g-8o-0bM" secondAttribute="bottom" constant="19" id="xqq-5N-SHf"/>
+                                        <constraint firstItem="vSR-8f-sKa" firstAttribute="firstBaseline" secondItem="Kdv-Jc-ayo" secondAttribute="firstBaseline" id="981-Ei-fbA"/>
+                                        <constraint firstItem="Kdv-Jc-ayo" firstAttribute="trailing" secondItem="XVA-5g-lsW" secondAttribute="trailingMargin" id="FGh-H0-djQ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Kdv-Jc-ayo" secondAttribute="bottom" constant="-2" id="LXf-cO-dfd"/>
+                                        <constraint firstItem="52g-8o-0bM" firstAttribute="top" secondItem="XVA-5g-lsW" secondAttribute="top" id="Rw7-am-nDM"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vSR-8f-sKa" secondAttribute="bottom" constant="-9" id="Vnd-qV-LRl"/>
+                                        <constraint firstItem="vSR-8f-sKa" firstAttribute="leading" secondItem="XVA-5g-lsW" secondAttribute="leadingMargin" id="Z0H-p0-uVZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="52g-8o-0bM" secondAttribute="trailing" id="kfz-wP-CWd"/>
+                                        <constraint firstItem="vSR-8f-sKa" firstAttribute="top" secondItem="52g-8o-0bM" secondAttribute="bottom" constant="3" id="qWF-Mn-8qG"/>
+                                        <constraint firstItem="Kdv-Jc-ayo" firstAttribute="leading" secondItem="vSR-8f-sKa" secondAttribute="trailing" constant="8" symbolic="YES" id="wUW-4h-fsN"/>
+                                        <constraint firstItem="52g-8o-0bM" firstAttribute="leading" secondItem="XVA-5g-lsW" secondAttribute="leading" id="xdm-jP-IkW"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -676,7 +686,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Toq-iW-Fdb">
-                                <rect key="frame" x="53" y="615" width="88" height="44"/>
+                                <rect key="frame" x="53" y="571" width="88" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -718,13 +728,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="No notes entered for this task" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sHj-F8-8rt">
-                                <rect key="frame" x="16" y="420" width="343" height="187"/>
+                                <rect key="frame" x="16" y="420" width="343" height="143"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3a-aU-QM1">
-                                <rect key="frame" x="210" y="615" width="88" height="44"/>
+                                <rect key="frame" x="210" y="571" width="88" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
@@ -1181,7 +1191,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Ly-0x-qS7">
-                                <rect key="frame" x="15" y="622" width="344" height="37"/>
+                                <rect key="frame" x="15" y="578" width="344" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </pageControl>
@@ -1481,11 +1491,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mDg-Hp-Per"/>
-        <segue reference="QTX-kk-eeM"/>
-        <segue reference="7nU-M2-YFJ"/>
-        <segue reference="RCH-ts-bry"/>
-        <segue reference="9ld-hv-aE9"/>
+        <segue reference="pg5-oN-WRt"/>
+        <segue reference="nNo-hQ-PYR"/>
+        <segue reference="BZP-yO-iHV"/>
         <segue reference="dz6-Pf-Q8u"/>
+        <segue reference="mDg-Hp-Per"/>
+        <segue reference="7nU-M2-YFJ"/>
     </inferredMetricsTieBreakers>
 </document>

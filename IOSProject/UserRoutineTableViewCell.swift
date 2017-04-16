@@ -13,6 +13,7 @@ class UserRoutineTableViewCell: UITableViewCell {
     @IBOutlet weak var weekDayLbl: UILabel!
     @IBOutlet weak var busyHours: UILabel!
     @IBOutlet weak var sleepHours: UILabel!
+
     
     var bhVal: Double!
     var shVal: Double!
