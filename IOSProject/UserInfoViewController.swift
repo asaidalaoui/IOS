@@ -12,11 +12,14 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userNameTxtFld: UITextField!
     @IBOutlet weak var fstPwEntryTxtLbl: UITextField!
     @IBOutlet weak var scdPwEntryTxtLbl: UITextField!
+    @IBOutlet weak var design1: UIButton!
     
     var alertController: UIAlertController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        design1.layer.cornerRadius = 10
+        
         self.userNameTxtFld.delegate = self
         self.fstPwEntryTxtLbl.delegate = self
         self.scdPwEntryTxtLbl.delegate = self
