@@ -21,6 +21,7 @@
 		5B299BFD8CC1673769EEF967 /* Pods_IOSProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E30848889F64EF8C77D965E2 /* Pods_IOSProject.framework */; };
 		6D1762EE1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1762ED1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift */; };
 		AD3E83871E831E9B00D94683 /* TodaysTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E83861E831E9B00D94683 /* TodaysTaskTableViewCell.swift */; };
+		AD59F5431EA3F32C00E56394 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59F5421EA3F32C00E56394 /* EmptyTableViewCell.swift */; };
 		ADADC2151E9FE1BC00C98CFF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADC2141E9FE1BC00C98CFF /* TabBarViewController.swift */; };
 		ADADC2171EA1384E00C98CFF /* SelectedDAyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADC2161EA1384E00C98CFF /* SelectedDAyTableViewCell.swift */; };
 		ADD801821E5DE65D00A0B6AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD801811E5DE65D00A0B6AA /* AppDelegate.swift */; };
@@ -81,6 +82,7 @@
 		5CDF6BD1A449AAF33FD163DC /* Pods-IOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSProject/Pods-IOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		6D1762ED1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTasksTableViewCell.swift; sourceTree = "<group>"; };
 		AD3E83861E831E9B00D94683 /* TodaysTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysTaskTableViewCell.swift; sourceTree = "<group>"; };
+		AD59F5421EA3F32C00E56394 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		ADADC2141E9FE1BC00C98CFF /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		ADADC2161EA1384E00C98CFF /* SelectedDAyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedDAyTableViewCell.swift; sourceTree = "<group>"; };
 		ADD8017E1E5DE65D00A0B6AA /* IOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +225,7 @@
 				ADFB49641E6E186600453DA7 /* CurrentGoalViewController.swift */,
 				ADFB49661E6E188C00453DA7 /* CurrentTaskViewController.swift */,
 				ADADC2161EA1384E00C98CFF /* SelectedDAyTableViewCell.swift */,
+				AD59F5421EA3F32C00E56394 /* EmptyTableViewCell.swift */,
 			);
 			path = IOSProject;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				ADFB49491E6E118500453DA7 /* iosProject.xcdatamodeld in Sources */,
 				ADFB49571E6E14D600453DA7 /* TodaysTaskTableViewController.swift in Sources */,
 				ADFB49651E6E186600453DA7 /* CurrentGoalViewController.swift in Sources */,
+				AD59F5431EA3F32C00E56394 /* EmptyTableViewCell.swift in Sources */,
 				ADD801821E5DE65D00A0B6AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

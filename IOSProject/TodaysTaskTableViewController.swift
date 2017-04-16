@@ -26,8 +26,6 @@ class TodaysTaskTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -68,6 +66,9 @@ class TodaysTaskTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if dayArray.count == 0 {
+            return 2
+        }
         return dayArray.count + 1
     }
 
@@ -87,31 +88,40 @@ class TodaysTaskTableViewController: UITableViewController {
             
         }
         
-        //generate the cell with the task's details button
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TodaysTaskTableViewCell
-        
-        let idx = indexPath.row - 1
-        cell.task = self.dayArray[idx]
-        
-        cell.taskNameLbl.text = self.dayArray[idx].name!
-        let time = self.dayArray[idx].date!
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        let convertedDate = dateFormatter.string(from: time as Date)
-        cell.taskTimeLbl.text = "Start @ "+convertedDate
-        
-        if(dayArray[idx].isChecked){
-            cell.taskSwitch.setOn(true, animated: true)
+        if dayArray.count == 0 && !fromWeekly {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emptySchedule", for: indexPath)
+            return cell
+        } else {
+            //generate the cell with the task's details button
+            let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TodaysTaskTableViewCell
+            
+            let idx = indexPath.row - 1
+            cell.task = self.dayArray[idx]
+            
+            cell.taskNameLbl.text = self.dayArray[idx].name!
+            let time = self.dayArray[idx].date!
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let convertedDate = dateFormatter.string(from: time as Date)
+            cell.taskTimeLbl.text = "Start @ "+convertedDate
+            
+            if(dayArray[idx].isChecked){
+                cell.taskSwitch.setOn(true, animated: true)
+            }
+            else{
+                cell.taskSwitch.setOn(false, animated: true)
+            }
+            
+            return cell
         }
-        else{
-            cell.taskSwitch.setOn(false, animated: true)
-        }
-        
-        return cell
     }
  
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if dayArray.count == 0 && indexPath.row == 1 {
+            return 131
+        }
         
         if indexPath.row != 0 {
             return 80
