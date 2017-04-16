@@ -12,7 +12,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userNameTxtFld: UITextField!
     @IBOutlet weak var passwordTxtFld: UITextField!
-    
+    @IBOutlet weak var design1: UIButton!
+
     var alertController: UIAlertController? = nil
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,6 +23,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        design1.layer.cornerRadius = 10.0
         
         self.userNameTxtFld.delegate = self
         self.passwordTxtFld.delegate = self
