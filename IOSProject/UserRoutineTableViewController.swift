@@ -117,7 +117,7 @@ class UserRoutineTableViewController: UITableViewController {
             let enteredBH = Double((self.bhTxtFld?.text)!)
             let enteredSH = Double((self.shTxtFld?.text)!)
             
-            if enteredBH != nil && enteredSH != nil && enteredBH!+enteredSH! <= 24 {
+            if enteredBH != nil && enteredSH != nil && self.validEntry(index: indexPath.row, bh: enteredBH!, sh: enteredSH!) {
                 cell.bhVal = enteredBH!
                 cell.shVal = enteredSH!
                 cell.busyHours.text = "Busy: \(enteredBH!) hours"
@@ -144,6 +144,25 @@ class UserRoutineTableViewController: UITableViewController {
         }
         
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func validEntry(index: Int, bh: Double, sh: Double) -> Bool {
+        
+        let day = DayEntity(day: getDayName(rowNum: index))
+        let newSpentHours = day.getSpent() - day.getBusy() - day.getSleep() + bh + sh
+        if newSpentHours < 0 || newSpentHours > 24 {
+            let alertController = UIAlertController(title: "Sorry...", message: "Something is wrong with the values you entered. Try to modify your schedule for this day and try again.", preferredStyle: UIAlertControllerStyle.alert)
+            let cancel = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (action) -> Void in
+            }
+            
+            alertController.addAction(cancel)
+            
+            present(alertController, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        return true
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
