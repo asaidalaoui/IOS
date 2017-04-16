@@ -136,10 +136,12 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             showAlert(errorMsg: "Use only numbers for duration")
             self.performedSave = false
             
-        } else if  taskDuration! > freeTime {
+        } else if isEdit && (taskDuration! > freeTime + task.duration){
             showAlert(errorMsg: "Task's duration much higher than time left for that day")
             self.performedSave = false
-            
+        } else if !isEdit && (taskDuration! > freeTime){
+            showAlert(errorMsg: "Task's duration much higher than time left for that day")
+            self.performedSave = false
         } else {
             
             hourDuration = Double(txtDuration.text!)!
@@ -153,6 +155,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             let dayOfWeek = dateFormatter.string(from: date as Date)
             let duration = Double(txtDuration.text!)
             
+            var taskSaved = false
             if(isEdit){
                 let taskEnt = TaskEntity(task: task)
                 taskEnt.setName(name: name)
@@ -160,14 +163,21 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
                 taskEnt.setDetails(details: details)
                 taskEnt.setDuration(duration: duration!)
                 taskEnt.setChecked(isChecked: true)
+                taskSaved = true
             }
             else{
                 let finalDay = DayEntity(day: dayOfWeek)
-                _ = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
+                taskSaved = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
             }
             
-            self.performedSave = true
-            isEdit = false
+            //Make sure we alert user when they try to add a task with the same name
+            if taskSaved {
+                self.performedSave = true
+                isEdit = false
+            } else {
+                showAlert(errorMsg: "Task's name is already taken")
+                self.performedSave = false
+            }
         }
     }
     
