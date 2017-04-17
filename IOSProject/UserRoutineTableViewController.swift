@@ -149,9 +149,12 @@ class UserRoutineTableViewController: UITableViewController {
     }
     
     func validEntry(index: Int, bh: Double, sh: Double) -> Bool {
+        var newSpentHours = bh + sh
+        if (fromConfig)! {
+            let day = DayEntity(day: getDayName(rowNum: index))
+            newSpentHours = day.getSpent() - day.getBusy() - day.getSleep() + bh + sh
+        }
         
-        let day = DayEntity(day: getDayName(rowNum: index))
-        let newSpentHours = day.getSpent() - day.getBusy() - day.getSleep() + bh + sh
         if newSpentHours < 0 || newSpentHours > 24 {
             let alertController = UIAlertController(title: "Sorry...", message: "Something is wrong with the values you entered. Try to modify your schedule for this day and try again.", preferredStyle: UIAlertControllerStyle.alert)
             let cancel = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (action) -> Void in
