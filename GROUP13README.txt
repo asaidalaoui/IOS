@@ -1,18 +1,15 @@
 1. Implementation Contributions: 
 Ali Darwiche - 33%
-+Set up core data entities
-+Implemented core data access classes
++Updated core data with auto-update functionality
++Front-end design for login/create account screens
 
 Abderrahman Said-Alaoui - 33%
-+Login feature
-+Configuration feature
-+Navigation and segues
-+Task List feature
-+Remove task
++Available time left view feature (aka progress bar in weekly view)
++WeeklyTaskTableViewControl
 
 Keith Wong - 33%
-+Add/edit task
-+Task List feature
++Update available time feature
++WeeklyTaskTableViewControl
 
 Coffee - 1%
 +Stay Awake feature
@@ -20,8 +17,8 @@ Coffee - 1%
 2. Grading Level:
 Ali Darwiche- 100%
 Abderrahman Said-Alaoui - 100%
-Keith Wong - 100%
-Coffee - 110%
+Keith Wong - 80%
+Coffee - 120%
 
 3. Differences:
 
