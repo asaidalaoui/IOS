@@ -46,7 +46,7 @@ class GoalDetailsViewController: UIViewController {
     }
     
     func showAlert() -> Bool {
-        let alertController = UIAlertController(title: "Delete", message: "Are you sure you would like to delete this taks?", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Delete", message: "Are you sure you would like to delete this goal?", preferredStyle: UIAlertControllerStyle.alert)
         
         let yes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) -> Void in
             _ = self.day.removeGoal(goal: self.goal)
@@ -73,8 +73,8 @@ class GoalDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "editGoal" {
             let destinationView = segue.destination as! AddTaskViewController
-            destinationView.isEdit = false
-//            destinationView.task = self.task
+            destinationView.isGoalEdit = true
+            destinationView.goal = self.goal
             destinationView.segControlIndex = 1
             destinationView.enableSegControl = false
         }

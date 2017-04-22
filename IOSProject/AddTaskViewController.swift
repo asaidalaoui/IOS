@@ -30,7 +30,8 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     var segControlIndex = 0
     var enableSegControl = true
     
-    var isEdit = false
+    var isTaskEdit = false
+    var isGoalEdit = false
     var task = Task()
     var goal = Goal()
     
@@ -60,13 +61,20 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
         txtDescription.shouldHidePlaceholderText = true
         var currentDate: NSDate = NSDate()
         
-        if(isEdit){
+        if(isTaskEdit){
             self.title = "Edit Task"
             txtTaskName.text = task.name!
             txtDuration.text = "\(task.duration)"
             txtDescription.text = task.details!
             currentDate = task.date!
             timeDatePicker.date = task.date! as Date
+        } else if (isGoalEdit) {
+            self.title = "Edit Goal"
+            txtTaskName.text = goal.name!
+            txtDuration.text = "\(goal.duration)"
+            txtDescription.text = goal.details!
+            currentDate = goal.date!
+            timeDatePicker.date = goal.date! as Date
         }
         
         //set the minimum and maximum date for the date picker.
@@ -85,7 +93,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if !isEdit {
+        if !isTaskEdit && !isGoalEdit {
             txtDescription.text = nil
         }
     }
@@ -144,10 +152,10 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             showAlert(errorMsg: "Use only numbers for duration")
             self.performedSave = false
             
-        } else if isEdit && (taskDuration! > freeTime + task.duration){
+        } else if (isTaskEdit && (taskDuration! > freeTime + task.duration)) || (isGoalEdit && (taskDuration! > freeTime + goal.duration)) {
             showAlert(errorMsg: "Value entered for duration much higher than time left for that day")
             self.performedSave = false
-        } else if !isEdit && (taskDuration! > freeTime){
+        } else if (!isTaskEdit || !isGoalEdit) && (taskDuration! > freeTime){
             showAlert(errorMsg: "Value entered for duration much higher than time left for that day")
             self.performedSave = false
         } else {
@@ -164,7 +172,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             let duration = Double(txtDuration.text!)
             
             var taskSaved = false
-            if(isEdit && taskGoalSeg.selectedSegmentIndex == 0){
+            if(isTaskEdit && taskGoalSeg.selectedSegmentIndex == 0){
                 let taskEnt = TaskEntity(task: task)
                 taskEnt.setName(name: name)
                 taskEnt.setDate(date: date as NSDate)
@@ -172,7 +180,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
                 taskEnt.setDuration(duration: duration!)
                 taskEnt.setChecked(isChecked: true)
                 taskSaved = true
-            } else if (isEdit && taskGoalSeg.selectedSegmentIndex == 1) {
+            } else if (isGoalEdit && taskGoalSeg.selectedSegmentIndex == 1) {
                 print("EDITNG A GOAL")
                 let goalEnt = GoalEntity(goal: goal)
                 goalEnt.setName(name: name)
@@ -196,7 +204,8 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             //Make sure we alert user when they try to add a task with the same name
             if taskSaved {
                 self.performedSave = true
-                isEdit = false
+                self.isTaskEdit = false
+                self.isGoalEdit = false
             } else {
                 showAlert(errorMsg: "Task's name is already taken")
                 self.performedSave = false

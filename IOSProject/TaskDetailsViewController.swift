@@ -46,7 +46,7 @@ class TaskDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueEditTask" {
             let destinationView = segue.destination as! AddTaskViewController
-            destinationView.isEdit = true
+            destinationView.isTaskEdit = true
             destinationView.task = self.task
             destinationView.segControlIndex = 0
             destinationView.enableSegControl = false

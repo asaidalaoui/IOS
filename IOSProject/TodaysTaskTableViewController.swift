@@ -121,12 +121,6 @@ class TodaysTaskTableViewController: UITableViewController {
             
             let idx = indexPath.row - 1 - taskArray.count
             let goal = self.goalArray[idx]
-            print("\(goal.name!) \(goal.duration) \(goal.details!)")
-            print("\(goal.name!)")
-            print("\(goal.name!)")
-            print("\(goal.name!)")
-            print("\(goal.name!)")
-            print("\(goal.name!)")
             
             cell.goal = goal
             cell.goalName.text = goal.name!
@@ -200,11 +194,14 @@ class TodaysTaskTableViewController: UITableViewController {
             if let destinationView = segue.destination as? TaskDetailsViewController, let taskIndex = tableView.indexPathForSelectedRow?.row{
                 destinationView.task = taskArray[taskIndex-1]
             }
-        }
-        
-        else if segue.identifier == "backToWeekView"{
+        } else if segue.identifier == "backToWeekView"{
             if let destinationVC = segue.destination as? TabBarViewController {
                     destinationVC.index = 2
+            }
+        } else if segue.identifier == "goalDetailsSeg" {
+            
+            if let destinationView = segue.destination as? GoalDetailsViewController, let goalIndex = tableView.indexPathForSelectedRow?.row{
+                destinationView.goal = goalArray[goalIndex-1-taskArray.count]
             }
         }
     }
