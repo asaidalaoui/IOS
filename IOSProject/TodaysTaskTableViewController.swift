@@ -10,7 +10,8 @@ import UIKit
 
 class TodaysTaskTableViewController: UITableViewController {
     
-    var dayArray = [Task]()
+    var taskArray = [Task]()
+    var goalArray = [Goal]()
     var showtoday = true
     var dayOfWeek = ""
     var fromWeekly = false
@@ -45,7 +46,8 @@ class TodaysTaskTableViewController: UITableViewController {
         }
         
         let dayEntity = DayEntity(day: dayOfWeek)
-        dayArray = dayEntity.getTasks()
+        taskArray = dayEntity.getTasks()
+        goalArray = dayEntity.getGoals()
         
         //show the exact number of rows created
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -66,10 +68,10 @@ class TodaysTaskTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if dayArray.count == 0 {
+        if taskArray.count == 0 && goalArray.count == 0 {
             return 2
         }
-        return dayArray.count + 1
+        return goalArray.count + taskArray.count + 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,33 +86,45 @@ class TodaysTaskTableViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath)
                 return cell
             }
-            
-            
         }
         
-        if dayArray.count == 0 && !fromWeekly {
+        if taskArray.count == 0 && goalArray.count == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "emptySchedule", for: indexPath)
             return cell
-        } else {
+        } else if taskArray.count != 0 && indexPath.row < taskArray.count + 1 {
             //generate the cell with the task's details button
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TodaysTaskTableViewCell
             
             let idx = indexPath.row - 1
-            cell.task = self.dayArray[idx]
+            cell.task = self.taskArray[idx]
             
-            cell.taskNameLbl.text = self.dayArray[idx].name!
-            let time = self.dayArray[idx].date!
+            cell.taskNameLbl.text = self.taskArray[idx].name!
+            let time = self.taskArray[idx].date!
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm"
             let convertedDate = dateFormatter.string(from: time as Date)
             cell.taskTimeLbl.text = "Start @ "+convertedDate
             
-            if(dayArray[idx].isChecked){
+            if(taskArray[idx].isChecked){
                 cell.taskSwitch.setOn(true, animated: true)
             }
             else{
                 cell.taskSwitch.setOn(false, animated: true)
+            }
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as!TodaysGoalTableViewCell
+            
+            let idx = indexPath.row - 1 - taskArray.count
+            cell.goal = self.goalArray[idx]
+            cell.goalName.text = self.goalArray[idx].name!
+            
+            if (goalArray[idx].isChecked) {
+                cell.goalSwitch.setOn(true, animated: true)
+            } else {
+                cell.goalSwitch.setOn(false, animated: true)
             }
             
             return cell
@@ -119,7 +133,7 @@ class TodaysTaskTableViewController: UITableViewController {
  
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if dayArray.count == 0 && indexPath.row == 1 {
+        if taskArray.count == 0 && goalArray.count == 0 && indexPath.row == 1 {
             return 131
         }
         
@@ -174,7 +188,7 @@ class TodaysTaskTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueDailyToDetail" || segue.identifier == "segueWeeklyToDetail" {
             if let destinationView = segue.destination as? TaskDetailsViewController, let taskIndex = tableView.indexPathForSelectedRow?.row{
-                destinationView.task = dayArray[taskIndex-1]
+                destinationView.task = taskArray[taskIndex-1]
             }
         }
         

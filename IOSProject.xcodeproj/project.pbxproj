@@ -23,6 +23,7 @@
 		6D1762EE1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1762ED1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift */; };
 		AD3E83871E831E9B00D94683 /* TodaysTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E83861E831E9B00D94683 /* TodaysTaskTableViewCell.swift */; };
 		AD59F5431EA3F32C00E56394 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59F5421EA3F32C00E56394 /* EmptyTableViewCell.swift */; };
+		AD96AC471EAAF918005FFA5B /* TodaysGoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96AC461EAAF918005FFA5B /* TodaysGoalTableViewCell.swift */; };
 		ADADC2151E9FE1BC00C98CFF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADC2141E9FE1BC00C98CFF /* TabBarViewController.swift */; };
 		ADADC2171EA1384E00C98CFF /* SelectedDAyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADADC2161EA1384E00C98CFF /* SelectedDAyTableViewCell.swift */; };
 		ADD801821E5DE65D00A0B6AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD801811E5DE65D00A0B6AA /* AppDelegate.swift */; };
@@ -85,6 +86,7 @@
 		6D1762ED1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTasksTableViewCell.swift; sourceTree = "<group>"; };
 		AD3E83861E831E9B00D94683 /* TodaysTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysTaskTableViewCell.swift; sourceTree = "<group>"; };
 		AD59F5421EA3F32C00E56394 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		AD96AC461EAAF918005FFA5B /* TodaysGoalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysGoalTableViewCell.swift; sourceTree = "<group>"; };
 		ADADC2141E9FE1BC00C98CFF /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		ADADC2161EA1384E00C98CFF /* SelectedDAyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedDAyTableViewCell.swift; sourceTree = "<group>"; };
 		ADD8017E1E5DE65D00A0B6AA /* IOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +219,7 @@
 				ADFB49521E6E145C00453DA7 /* PasswordChangeViewController.swift */,
 				ADFB49541E6E147D00453DA7 /* TaskDetailsViewController.swift */,
 				AD3E83861E831E9B00D94683 /* TodaysTaskTableViewCell.swift */,
+				AD96AC461EAAF918005FFA5B /* TodaysGoalTableViewCell.swift */,
 				ADFB49561E6E14D600453DA7 /* TodaysTaskTableViewController.swift */,
 				ADFB49581E6E14FE00453DA7 /* PageViewController.swift */,
 				ADFB495A1E6E15BC00453DA7 /* WeeklyTasksTableViewController.swift */,
@@ -468,6 +471,7 @@
 				05078C561E78B44F001E587B /* Goal+CoreDataProperties.swift in Sources */,
 				ADADC2171EA1384E00C98CFF /* SelectedDAyTableViewCell.swift in Sources */,
 				ADFB49551E6E147D00453DA7 /* TaskDetailsViewController.swift in Sources */,
+				AD96AC471EAAF918005FFA5B /* TodaysGoalTableViewCell.swift in Sources */,
 				6D1762EE1E9E0A0E0028F266 /* WeeklyTasksTableViewCell.swift in Sources */,
 				05078C571E78B44F001E587B /* Day+CoreDataClass.swift in Sources */,
 				AD3E83871E831E9B00D94683 /* TodaysTaskTableViewCell.swift in Sources */,

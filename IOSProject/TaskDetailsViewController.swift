@@ -48,6 +48,8 @@ class TaskDetailsViewController: UIViewController {
             let destinationView = segue.destination as! AddTaskViewController
             destinationView.isEdit = true
             destinationView.task = self.task
+            destinationView.segControlIndex = 0
+            destinationView.enableSegControl = false
         } else if segue.identifier == "deleteSeg" {
         }
     }

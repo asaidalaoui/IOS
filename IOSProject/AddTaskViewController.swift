@@ -10,6 +10,8 @@ import UIKit
 
 class AddTaskViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var lblDuration: UILabel!
+    @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var taskGoalSeg: UISegmentedControl!
     @IBOutlet weak var txtTaskName: UITextField!
     @IBOutlet weak var dayPickerView: UIPickerView!
@@ -25,9 +27,12 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     var daySelected:String = ""
     var hourDuration:Double = 0
     var performedSave: Bool = true
+    var segControlIndex = 0
+    var enableSegControl = true
     
     var isEdit = false
     var task = Task()
+    var goal = Goal()
     
     func getHoursForDay() -> Double{
         let date = timeDatePicker.date
@@ -44,6 +49,9 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.taskGoalSeg.selectedSegmentIndex = segControlIndex
+        self.taskGoalSeg.isEnabled = enableSegControl
 
         // Do any additional setup after loading the view.
         self.title = "Add Task"
@@ -125,7 +133,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
         let name = self.txtTaskName.text
         
         if name == "" {
-            showAlert(errorMsg: "Missing task name")
+            showAlert(errorMsg: "Missing name")
             self.performedSave = false
             
         } else if duration == "" {
@@ -137,10 +145,10 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             self.performedSave = false
             
         } else if isEdit && (taskDuration! > freeTime + task.duration){
-            showAlert(errorMsg: "Task's duration much higher than time left for that day")
+            showAlert(errorMsg: "Value entered for duration much higher than time left for that day")
             self.performedSave = false
         } else if !isEdit && (taskDuration! > freeTime){
-            showAlert(errorMsg: "Task's duration much higher than time left for that day")
+            showAlert(errorMsg: "Value entered for duration much higher than time left for that day")
             self.performedSave = false
         } else {
             
@@ -156,7 +164,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             let duration = Double(txtDuration.text!)
             
             var taskSaved = false
-            if(isEdit){
+            if(isEdit && taskGoalSeg.selectedSegmentIndex == 0){
                 let taskEnt = TaskEntity(task: task)
                 taskEnt.setName(name: name)
                 taskEnt.setDate(date: date as NSDate)
@@ -164,10 +172,23 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
                 taskEnt.setDuration(duration: duration!)
                 taskEnt.setChecked(isChecked: true)
                 taskSaved = true
-            }
-            else{
+            } else if (isEdit && taskGoalSeg.selectedSegmentIndex == 1) {
+                print("EDITNG A GOAL")
+                let goalEnt = GoalEntity(goal: goal)
+                goalEnt.setName(name: name)
+                goalEnt.setDate(date: date as NSDate)
+                goalEnt.setDetails(details: details)
+                goalEnt.setDuration(duration: duration!)
+                goalEnt.setChecked(isChecked: true)
+                taskSaved = true
+            } else{
                 let finalDay = DayEntity(day: dayOfWeek)
-                taskSaved = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
+                if (taskGoalSeg.selectedSegmentIndex == 0) {
+                    taskSaved = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
+                } else {
+                    print("ADDING NEW GOAL")
+                    taskSaved = finalDay.addGoal(name: name, date: date as NSDate, duration: duration!, details: details)
+                }
             }
             
             //Make sure we alert user when they try to add a task with the same name
@@ -180,6 +201,18 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             }
         }
     }
+    
+    @IBAction func segContSelctd(_ sender: Any) {
+    
+        if (self.taskGoalSeg.selectedSegmentIndex == 0) {
+            self.lblName.text = "Task Name:"
+            self.lblDuration.text = "Task Duration:"
+        } else {
+            self.lblName.text = "Goal Name:"
+            self.lblDuration.text = "Goal Duration:"
+        }
+    }
+    
     
     /*
     // MARK: - Navigation
