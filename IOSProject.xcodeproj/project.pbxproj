@@ -15,6 +15,7 @@
 		05078C5A1E78B44F001E587B /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05078C521E78B44F001E587B /* User+CoreDataProperties.swift */; };
 		05078C5B1E78B44F001E587B /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05078C531E78B44F001E587B /* Task+CoreDataClass.swift */; };
 		05078C5C1E78B44F001E587B /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05078C541E78B44F001E587B /* Task+CoreDataProperties.swift */; };
+		050C61021EAAD9A90049521D /* GoalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050C61011EAAD9A90049521D /* GoalEntity.swift */; };
 		0550D1781E7DE6CB00EB0BF7 /* TaskEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550D1771E7DE6CB00EB0BF7 /* TaskEntity.swift */; };
 		0569D5C01E7C54CC00EEB9FE /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569D5BF1E7C54CC00EEB9FE /* UserEntity.swift */; };
 		0569D5C31E7C5B0500EEB9FE /* DayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0569D5C21E7C5B0500EEB9FE /* DayEntity.swift */; };
@@ -76,6 +77,7 @@
 		05078C521E78B44F001E587B /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		05078C531E78B44F001E587B /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		05078C541E78B44F001E587B /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		050C61011EAAD9A90049521D /* GoalEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalEntity.swift; path = CoreData/GoalEntity.swift; sourceTree = "<group>"; };
 		0550D1771E7DE6CB00EB0BF7 /* TaskEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskEntity.swift; path = CoreData/TaskEntity.swift; sourceTree = "<group>"; };
 		0569D5BF1E7C54CC00EEB9FE /* UserEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserEntity.swift; path = CoreData/UserEntity.swift; sourceTree = "<group>"; };
 		0569D5C21E7C5B0500EEB9FE /* DayEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayEntity.swift; path = CoreData/DayEntity.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				0569D5C21E7C5B0500EEB9FE /* DayEntity.swift */,
 				0550D1771E7DE6CB00EB0BF7 /* TaskEntity.swift */,
 				0569D5BF1E7C54CC00EEB9FE /* UserEntity.swift */,
+				050C61011EAAD9A90049521D /* GoalEntity.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				ADFB495D1E6E15E400453DA7 /* SelectedDayTableViewController.swift in Sources */,
 				05078C5B1E78B44F001E587B /* Task+CoreDataClass.swift in Sources */,
 				05078C581E78B44F001E587B /* Day+CoreDataProperties.swift in Sources */,
+				050C61021EAAD9A90049521D /* GoalEntity.swift in Sources */,
 				ADFB49671E6E188C00453DA7 /* CurrentTaskViewController.swift in Sources */,
 				ADD801841E5DE65D00A0B6AA /* ViewController.swift in Sources */,
 				ADFB494D1E6E13DB00453DA7 /* UserInfoViewController.swift in Sources */,

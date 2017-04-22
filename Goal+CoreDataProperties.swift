@@ -1,9 +1,9 @@
 //
 //  Goal+CoreDataProperties.swift
-//  
+//  IOSProject
 //
-//  Created by Ali Darwiche  on 3/23/17.
-//
+//  Created by Ali Darwiche  on 4/21/17.
+//  Copyright © 2017 Abderrahman Said-Alaoui. All rights reserved.
 //
 
 import Foundation
