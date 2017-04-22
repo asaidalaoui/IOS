@@ -184,9 +184,11 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             } else{
                 let finalDay = DayEntity(day: dayOfWeek)
                 if (taskGoalSeg.selectedSegmentIndex == 0) {
+//                    print("\(name) \(duration) \(details)")
                     taskSaved = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
                 } else {
                     print("ADDING NEW GOAL")
+//                    print("\(name) \(duration) \(details)")
                     taskSaved = finalDay.addGoal(name: name, date: date as NSDate, duration: duration!, details: details)
                 }
             }

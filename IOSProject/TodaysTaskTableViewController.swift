@@ -96,17 +96,19 @@ class TodaysTaskTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TodaysTaskTableViewCell
             
             let idx = indexPath.row - 1
-            cell.task = self.taskArray[idx]
-            
-            cell.taskNameLbl.text = self.taskArray[idx].name!
-            let time = self.taskArray[idx].date!
+            let task = self.taskArray[idx]
+            cell.task = task
+            print("\(task.name!) \(task.duration) \(task.details!)")
+
+            cell.taskNameLbl.text = task.name!
+            let time = task.date!
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm"
             let convertedDate = dateFormatter.string(from: time as Date)
             cell.taskTimeLbl.text = "Start @ "+convertedDate
             
-            if(taskArray[idx].isChecked){
+            if(task.isChecked){
                 cell.taskSwitch.setOn(true, animated: true)
             }
             else{
@@ -118,10 +120,18 @@ class TodaysTaskTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as! TodaysGoalTableViewCell
             
             let idx = indexPath.row - 1 - taskArray.count
-            cell.goal = self.goalArray[idx]
-            cell.goalName.text = self.goalArray[idx].name!
+            let goal = self.goalArray[idx]
+            print("\(goal.name!) \(goal.duration) \(goal.details!)")
+            print("\(goal.name!)")
+            print("\(goal.name!)")
+            print("\(goal.name!)")
+            print("\(goal.name!)")
+            print("\(goal.name!)")
             
-            if (goalArray[idx].isChecked) {
+            cell.goal = goal
+            cell.goalName.text = goal.name!
+            
+            if (goal.isChecked) {
                 cell.goalSwitch.setOn(true, animated: true)
             } else {
                 cell.goalSwitch.setOn(false, animated: true)

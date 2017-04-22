@@ -169,6 +169,7 @@ class DayEntity {
     
     func addTask(name:String, date:NSDate, duration:Double, details:String) -> Bool{
         access()
+//        print("\(name) \(duration) \(details)")
         let task = getTask(name:name)
         if task.name != name && name != "" {
             // Set the attribute values
@@ -235,6 +236,7 @@ class DayEntity {
             goal.isChecked = true
             day.spentHours += duration      //Adding hours goal takes to our spentHours count
             day.addToGoals(goal)
+//            print("\(goal.name) \(goal.duration) \(goal.details)")
             return save()
         }
         return false
