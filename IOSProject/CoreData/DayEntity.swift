@@ -9,10 +9,6 @@
 import UIKit
 import CoreData
 
-//Changed init methods and that cause call errors for keith and Said
-//
-//
-//
 
 class DayEntity {
     private var appDelegate: AppDelegate!
@@ -203,6 +199,61 @@ class DayEntity {
 //            print(day)
             day.removeFromTasks(task)
 //            print(day)
+            return save()
+        }
+        return false
+    }
+    
+    //Return array of goals sorted by date. First goal in list should be first goal in day
+    func getGoals() -> [Goal]{
+        access()
+        let sortDesc = NSSortDescriptor(key: "date", ascending: true)
+        let goals = day.goals?.sortedArray(using: [sortDesc]) as! [Goal]
+        return goals
+    }
+    
+    func getGoal(name:String) -> Goal{
+        access()
+        let goals = getGoals()
+        for goal in goals {
+            if goal.name == goal {
+                return goal
+            }
+        }
+        return Goal(context: managedContext)
+    }
+    
+    func addGoal(name:String, date:NSDate, duration:Double, details:String) -> Bool{
+        access()
+        let goal = getGoal(name:name)
+        if goal.name != name && name != "" {
+            // Set the attribute values
+            goal.name = name
+            goal.date = date
+            goal.duration = duration
+            goal.details = details
+            goal.isChecked = true
+            day.spentHours += duration      //Adding hours goal takes to our spentHours count
+            day.addToGoals(goal)
+            return save()
+        }
+        return false
+    }
+    
+    func addGoal(goal:Goal) {
+        access()
+        day.spentHours += goal.duration
+        day.addToGoals(goal)
+        _ = save()
+    }
+    
+    func removeGoal(goal:Goal) {
+        access()
+        if goal.name == getGoal(name: goal.name!).name && goal.name != "" {
+            day.spentHours -= goal.duration     //Removing hours goal takes from our spentHours count
+            //            print(day)
+            day.removeFromGoals(goal)
+            //            print(day)
             return save()
         }
         return false
