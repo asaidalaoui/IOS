@@ -787,7 +787,7 @@
                                     <segue destination="U5W-Ki-6ow" kind="show" identifier="segueDailyToDetail" id="nNo-hQ-PYR"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalCell" rowHeight="66" id="dJT-KR-W7q">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalCell" rowHeight="66" id="dJT-KR-W7q" customClass="TodaysGoalTableViewCell" customModule="IOSProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="168" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dJT-KR-W7q" id="kJ4-bS-Zd2">
@@ -1470,12 +1470,12 @@
         <image name="rsz_weekicon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="45s-8D-bLF"/>
-        <segue reference="oq0-Ld-8sc"/>
-        <segue reference="nNo-hQ-PYR"/>
+        <segue reference="pxP-vW-uux"/>
         <segue reference="7nU-M2-YFJ"/>
+        <segue reference="nNo-hQ-PYR"/>
+        <segue reference="oq0-Ld-8sc"/>
+        <segue reference="EKW-Q0-RW9"/>
         <segue reference="Hkw-gY-SAn"/>
         <segue reference="Ugz-5Z-muE"/>
-        <segue reference="Bry-iD-bh1"/>
     </inferredMetricsTieBreakers>
 </document>
