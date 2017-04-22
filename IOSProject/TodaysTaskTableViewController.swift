@@ -115,7 +115,7 @@ class TodaysTaskTableViewController: UITableViewController {
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as!TodaysGoalTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as! TodaysGoalTableViewCell
             
             let idx = indexPath.row - 1 - taskArray.count
             cell.goal = self.goalArray[idx]
