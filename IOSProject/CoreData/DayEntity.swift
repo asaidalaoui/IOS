@@ -216,7 +216,7 @@ class DayEntity {
         access()
         let goals = getGoals()
         for goal in goals {
-            if goal.name == goal {
+            if goal.name == name {
                 return goal
             }
         }
@@ -247,7 +247,7 @@ class DayEntity {
         _ = save()
     }
     
-    func removeGoal(goal:Goal) {
+    func removeGoal(goal:Goal) -> Bool{
         access()
         if goal.name == getGoal(name: goal.name!).name && goal.name != "" {
             day.spentHours -= goal.duration     //Removing hours goal takes from our spentHours count
