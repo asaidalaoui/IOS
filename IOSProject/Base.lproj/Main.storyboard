@@ -787,7 +787,7 @@
                                     <segue destination="U5W-Ki-6ow" kind="show" identifier="segueDailyToDetail" id="nNo-hQ-PYR"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalCell" rowHeight="66" id="dJT-KR-W7q" customClass="TodaysGoalTableViewCell" customModule="IOSProject" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalCell" rowHeight="66" id="dJT-KR-W7q">
                                 <rect key="frame" x="0.0" y="168" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dJT-KR-W7q" id="kJ4-bS-Zd2">
@@ -1113,7 +1113,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;goal details&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wE-0t-6QL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;goal details&gt;" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wE-0t-6QL">
                                 <rect key="frame" x="128" y="255" width="231" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1141,6 +1141,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentLbl" destination="5Z5-4H-TIH" id="0xH-J3-1bE"/>
+                        <outlet property="detailsLbl" destination="2wE-0t-6QL" id="DH1-JO-MAY"/>
+                        <outlet property="durationLbl" destination="LxW-bp-leL" id="xT1-ID-kCP"/>
                         <outlet property="pvController" destination="7Ly-0x-qS7" id="4mb-sl-mkv"/>
                     </connections>
                 </viewController>
@@ -1172,12 +1175,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt; goal notes&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="av3-mP-cxp">
-                                <rect key="frame" x="32" y="173" width="106" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yu4-MX-Nij">
                                 <rect key="frame" x="329" y="28" width="30" height="19"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -1202,7 +1199,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <segue destination="PDu-tO-7kf" kind="show" id="8eK-Kc-Thn"/>
+                                    <segue destination="PDu-tO-7kf" kind="show" identifier="cancelSeg" id="8eK-Kc-Thn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgQ-bM-0l4">
@@ -1210,9 +1207,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Delete Task"/>
                                 <connections>
-                                    <segue destination="PDu-tO-7kf" kind="show" id="45s-8D-bLF"/>
+                                    <segue destination="PDu-tO-7kf" kind="show" identifier="deleteSeg" id="45s-8D-bLF"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9ud-eI-smG">
+                                <rect key="frame" x="16" y="155" width="343" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1220,11 +1224,9 @@
                             <constraint firstItem="wsD-DH-jUh" firstAttribute="top" secondItem="mbc-yn-xVw" secondAttribute="bottom" constant="56" id="4BY-N9-uJB"/>
                             <constraint firstItem="c5m-Tt-mx3" firstAttribute="top" secondItem="ewF-tg-TUB" secondAttribute="bottom" constant="22" id="8xo-MI-z6W"/>
                             <constraint firstItem="c5m-Tt-mx3" firstAttribute="leading" secondItem="mks-Jc-JYe" secondAttribute="leadingMargin" constant="16" id="Epm-nD-aY0"/>
-                            <constraint firstItem="c5m-Tt-mx3" firstAttribute="leading" secondItem="av3-mP-cxp" secondAttribute="leading" id="I5X-B5-D09"/>
                             <constraint firstItem="dKI-sD-4VL" firstAttribute="top" secondItem="ZgQ-bM-0l4" secondAttribute="bottom" constant="8" symbolic="YES" id="JVB-56-SUj"/>
                             <constraint firstItem="mbc-yn-xVw" firstAttribute="centerX" secondItem="dKI-sD-4VL" secondAttribute="centerX" id="K1j-Rp-8MO"/>
                             <constraint firstItem="mbc-yn-xVw" firstAttribute="top" secondItem="dKI-sD-4VL" secondAttribute="bottom" constant="8" symbolic="YES" id="Kjz-Y4-EYc"/>
-                            <constraint firstItem="av3-mP-cxp" firstAttribute="top" secondItem="c5m-Tt-mx3" secondAttribute="bottom" constant="26" id="TDK-qO-rjw"/>
                             <constraint firstItem="ewF-tg-TUB" firstAttribute="top" secondItem="yu4-MX-Nij" secondAttribute="bottom" constant="36" id="VVi-Ai-jCm"/>
                             <constraint firstItem="yu4-MX-Nij" firstAttribute="top" secondItem="P4L-uS-rTZ" secondAttribute="bottom" constant="8" symbolic="YES" id="bT7-qX-WnQ"/>
                             <constraint firstItem="dKI-sD-4VL" firstAttribute="centerX" secondItem="ZgQ-bM-0l4" secondAttribute="centerX" id="bh8-7M-TRI"/>
@@ -1234,6 +1236,11 @@
                             <constraint firstItem="ewF-tg-TUB" firstAttribute="leading" secondItem="mks-Jc-JYe" secondAttribute="leadingMargin" id="uzc-c0-aX5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="durationLbl" destination="c5m-Tt-mx3" id="YM0-Zd-pRv"/>
+                        <outlet property="goalNotesTxtVw" destination="9ud-eI-smG" id="Ml7-xu-9TE"/>
+                        <outlet property="goalTitleLbl" destination="ewF-tg-TUB" id="ces-kM-k0R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1E-53-Wsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1463,12 +1470,12 @@
         <image name="rsz_weekicon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pxP-vW-uux"/>
-        <segue reference="7nU-M2-YFJ"/>
-        <segue reference="nNo-hQ-PYR"/>
+        <segue reference="45s-8D-bLF"/>
         <segue reference="oq0-Ld-8sc"/>
-        <segue reference="EKW-Q0-RW9"/>
+        <segue reference="nNo-hQ-PYR"/>
+        <segue reference="7nU-M2-YFJ"/>
         <segue reference="Hkw-gY-SAn"/>
         <segue reference="Ugz-5Z-muE"/>
+        <segue reference="Bry-iD-bh1"/>
     </inferredMetricsTieBreakers>
 </document>
