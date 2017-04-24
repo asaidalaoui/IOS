@@ -10,9 +10,11 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var slothImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        slothImage.image = #imageLiteral(resourceName: "SlothGenie")
     }
 
     override func didReceiveMemoryWarning() {

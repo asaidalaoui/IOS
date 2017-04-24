@@ -372,10 +372,17 @@
                                     <segue destination="eke-25-VR4" kind="show" id="Ugz-5Z-muE"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hU-qY-Fjm">
+                                <rect key="frame" x="67" y="290" width="240" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="rsz_settingsicon" selectedImage="rsz_settingsicon" id="MWF-hM-uyA"/>
+                    <connections>
+                        <outlet property="slothImage" destination="9hU-qY-Fjm" id="b5w-gC-LxY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gs2-xI-oAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1472,12 +1479,12 @@
         <image name="rsz_weekicon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pxP-vW-uux"/>
-        <segue reference="k7c-uG-a76"/>
-        <segue reference="9ld-hv-aE9"/>
-        <segue reference="RCH-ts-bry"/>
         <segue reference="7nU-M2-YFJ"/>
-        <segue reference="Ugz-5Z-muE"/>
+        <segue reference="Aki-es-vhq"/>
+        <segue reference="EKW-Q0-RW9"/>
+        <segue reference="nNo-hQ-PYR"/>
+        <segue reference="oq0-Ld-8sc"/>
         <segue reference="Hkw-gY-SAn"/>
+        <segue reference="Ugz-5Z-muE"/>
     </inferredMetricsTieBreakers>
 </document>
