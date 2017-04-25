@@ -31,7 +31,6 @@ class UserRoutineTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         //black magic to allign the cells in order for them to fill the entirety of the screen. Or at least tries to.
-        self.tableView.rowHeight = (self.tableView.frame.height - self.toolbar.frame.height - (self.navigationController?.navigationBar.frame.height ?? 0)) / 7
         
         self.bhTxtFld?.keyboardType = UIKeyboardType.decimalPad
         self.shTxtFld?.keyboardType = UIKeyboardType.decimalPad
@@ -69,6 +68,16 @@ class UserRoutineTableViewController: UITableViewController {
         return 7
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        
+        if (fromConfig)! {
+            return 60
+        } else {
+            return 80
+        }
+    }
+    
     //setup the table's cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -94,7 +103,15 @@ class UserRoutineTableViewController: UITableViewController {
         
         cell.contentView.backgroundColor = UIColor.clear
         
-        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 20, height: 68))
+        var whiteRoundedView : UIView = UIView()
+        
+        if fromConfig! {
+            whiteRoundedView = UIView(frame: CGRect(x: 0, y: 13, width: self.view.frame.size.width - 20, height: 60))
+        } else {
+            whiteRoundedView = UIView(frame: CGRect(x: 10, y: 13, width: self.view.frame.size.width - 20, height: 60))
+        }
+        
+        
         
         whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
         whiteRoundedView.layer.masksToBounds = false
