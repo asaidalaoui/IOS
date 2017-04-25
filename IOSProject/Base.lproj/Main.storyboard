@@ -390,9 +390,9 @@
                                     <segue destination="eke-25-VR4" kind="show" id="Ugz-5Z-muE"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="edZ-YX-wKX">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="edZ-YX-wKX">
                                 <rect key="frame" x="86" y="136" width="203" height="2"/>
-                                <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="trackTintColor" red="0.3719653785" green="0.0018840361149999999" blue="0.52581518890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9hU-qY-Fjm">
                                 <rect key="frame" x="43" y="346" width="290" height="278"/>
@@ -1567,7 +1567,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="BZP-yO-iHV"/>
         <segue reference="Hkw-gY-SAn"/>
-        <segue reference="0P6-Ri-1Tw"/>
+        <segue reference="7nU-M2-YFJ"/>
         <segue reference="Ugz-5Z-muE"/>
         <segue reference="9ld-hv-aE9"/>
         <segue reference="RCH-ts-bry"/>
