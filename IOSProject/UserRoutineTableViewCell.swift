@@ -20,7 +20,7 @@ class UserRoutineTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.cornerRadius = 10
+//        self.layer.cornerRadius = 10
         
         bhVal = 0
         shVal = 0
@@ -33,6 +33,12 @@ class UserRoutineTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(10, 10, 10, 10))
     }
 
 }

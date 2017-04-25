@@ -216,11 +216,11 @@
             </objects>
             <point key="canvasLocation" x="2663.1999999999998" y="-600.44977511244383"/>
         </scene>
-        <!--Select each cell to insert routine-->
+        <!--Select each day to insert routine-->
         <scene sceneID="24P-wn-z9j">
             <objects>
-                <tableViewController title="Select each cell to insert routine" id="Jhk-ZP-nfY" customClass="UserRoutineTableViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="e5i-17-HlX">
+                <tableViewController title="Select each day to insert routine" id="Jhk-ZP-nfY" customClass="UserRoutineTableViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="e5i-17-HlX">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
