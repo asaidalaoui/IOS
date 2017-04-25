@@ -13,13 +13,14 @@ class UserRoutineTableViewCell: UITableViewCell {
     @IBOutlet weak var weekDayLbl: UILabel!
     @IBOutlet weak var busyHours: UILabel!
     @IBOutlet weak var sleepHours: UILabel!
-
+    @IBOutlet weak var design1: UIButton!
     
     var bhVal: Double!
     var shVal: Double!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        design1.layer.cornerRadius = 10
         
         bhVal = 0
         shVal = 0
