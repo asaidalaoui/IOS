@@ -14,7 +14,9 @@ class WeeklyTasksTableViewController: UITableViewController {
                 "Saturday", "Sunday"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.backBarButtonItem = nil
+        self.navigationController?.isNavigationBarHidden = true
+    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,6 +27,8 @@ class WeeklyTasksTableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         self.tableView.backgroundColor = UIColor.lightGray
         
+        self.automaticallyAdjustsScrollViewInsets = false
+        tableView.contentInset = UIEdgeInsets.zero
         
     }
 
@@ -112,9 +116,9 @@ class WeeklyTasksTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 60
+            return 57
         }
-        return 80
+        return 77
     }
     
     func getDayOfWeek() -> String {

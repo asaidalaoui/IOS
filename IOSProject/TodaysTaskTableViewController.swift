@@ -52,6 +52,8 @@ class TodaysTaskTableViewController: UITableViewController {
         //show the exact number of rows created
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         self.tableView.backgroundColor = UIColor.lightGray
+        self.automaticallyAdjustsScrollViewInsets = false
+        tableView.contentInset = UIEdgeInsets.zero
     }
 
     override func didReceiveMemoryWarning() {

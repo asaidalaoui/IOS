@@ -23,6 +23,10 @@ class UserRoutineTableViewController: UITableViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         self.tableview.backgroundColor = UIColor.lightGray
+        if fromConfig! {
+            self.navigationItem.backBarButtonItem = nil
+            self.navigationController?.isNavigationBarHidden = true
+        }        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -69,8 +73,6 @@ class UserRoutineTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        
         if (fromConfig)! {
             return 89
         } else {
@@ -283,7 +285,6 @@ class UserRoutineTableViewController: UITableViewController {
         let indexPaths: [IndexPath] = tableView.indexPathsForVisibleRows!
         for index in indexPaths {
             let cell = tableView.cellForRow(at: index) as! UserRoutineTableViewCell
-            print("Row \(index.row) busy \(cell.bhVal) sleep \(cell.shVal)")
             let day = DayEntity(day: getDayName(rowNum: index.row))
             _ = day.setBusy(busyHours: cell.bhVal!)
             _ = day.setSleep(sleepHours: cell.shVal!)
