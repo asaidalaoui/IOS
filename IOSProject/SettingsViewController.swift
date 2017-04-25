@@ -9,14 +9,14 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-//    @IBOutlet weak var design1: UIButton!
+    @IBOutlet weak var design1: UIButton!
 
     @IBOutlet weak var slothImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         slothImage.image = #imageLiteral(resourceName: "SlothGenie")
-//        design1.layer.cornerRadius = 10.0
+        design1.layer.cornerRadius = 10.0
     }
 
     override func didReceiveMemoryWarning() {

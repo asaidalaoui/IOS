@@ -429,6 +429,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="rsz_settingsicon" selectedImage="rsz_settingsicon" id="MWF-hM-uyA"/>
                     <connections>
+                        <outlet property="design1" destination="B2K-9I-i0a" id="STe-uK-onl"/>
                         <outlet property="slothImage" destination="9hU-qY-Fjm" id="b5w-gC-LxY"/>
                     </connections>
                 </viewController>
