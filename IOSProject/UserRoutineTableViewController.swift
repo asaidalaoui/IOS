@@ -72,7 +72,7 @@ class UserRoutineTableViewController: UITableViewController {
         
         
         if (fromConfig)! {
-            return 60
+            return 89
         } else {
             return 80
         }
@@ -106,7 +106,7 @@ class UserRoutineTableViewController: UITableViewController {
         var whiteRoundedView : UIView = UIView()
         
         if fromConfig! {
-            whiteRoundedView = UIView(frame: CGRect(x: 0, y: 13, width: self.view.frame.size.width - 20, height: 60))
+            whiteRoundedView = UIView(frame: CGRect(x: 10, y: 22, width: self.view.frame.size.width - 20, height: 60))
         } else {
             whiteRoundedView = UIView(frame: CGRect(x: 10, y: 13, width: self.view.frame.size.width - 20, height: 60))
         }
