@@ -21,8 +21,8 @@ class UserRoutineTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.tableview.backgroundColor = UIColor.lightGray
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

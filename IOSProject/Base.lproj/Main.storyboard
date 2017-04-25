@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -246,10 +245,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYw-fX-CHr">
-                                            <rect key="frame" x="8" y="8" width="359" height="58"/>
-                                            <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;# busy hours&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSR-8f-sKa">
                                             <rect key="frame" x="8" y="31" width="171" height="35"/>
                                             <constraints>
@@ -260,7 +255,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;# sleep hours&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdv-Jc-ayo">
-                                            <rect key="frame" x="187" y="33" width="180" height="30"/>
+                                            <rect key="frame" x="187" y="33" width="125" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -272,29 +267,22 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.80383342499999999" green="0.80397236350000001" blue="0.80382460359999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="aYw-fX-CHr" firstAttribute="top" secondItem="XVA-5g-lsW" secondAttribute="topMargin" id="2sX-bV-Ygz"/>
                                         <constraint firstItem="vSR-8f-sKa" firstAttribute="top" secondItem="XVA-5g-lsW" secondAttribute="topMargin" constant="23" id="4yV-ne-xLg"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="aYw-fX-CHr" secondAttribute="bottom" constant="-3" id="BU3-EZ-VEr"/>
                                         <constraint firstItem="vSR-8f-sKa" firstAttribute="centerY" secondItem="Kdv-Jc-ayo" secondAttribute="centerY" id="F5S-TR-0kt"/>
-                                        <constraint firstItem="52g-8o-0bM" firstAttribute="centerX" secondItem="aYw-fX-CHr" secondAttribute="centerX" id="HXL-dU-wXV"/>
                                         <constraint firstAttribute="trailing" secondItem="52g-8o-0bM" secondAttribute="trailing" id="QQf-oQ-j8r"/>
                                         <constraint firstItem="52g-8o-0bM" firstAttribute="leading" secondItem="XVA-5g-lsW" secondAttribute="leading" id="T1q-jK-B6F"/>
-                                        <constraint firstItem="52g-8o-0bM" firstAttribute="firstBaseline" secondItem="aYw-fX-CHr" secondAttribute="firstBaseline" id="TMN-Pz-Wx7"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="52g-8o-0bM" secondAttribute="bottom" constant="24" id="UqK-1w-8QW"/>
                                         <constraint firstItem="vSR-8f-sKa" firstAttribute="leading" secondItem="XVA-5g-lsW" secondAttribute="leadingMargin" id="b3P-U5-w8Q"/>
                                         <constraint firstItem="52g-8o-0bM" firstAttribute="top" secondItem="XVA-5g-lsW" secondAttribute="topMargin" constant="-2" id="g4N-5S-ANs"/>
                                         <constraint firstItem="Kdv-Jc-ayo" firstAttribute="top" secondItem="XVA-5g-lsW" secondAttribute="topMargin" constant="25" id="hqX-Fg-bWa"/>
-                                        <constraint firstItem="aYw-fX-CHr" firstAttribute="leading" secondItem="vSR-8f-sKa" secondAttribute="leading" id="kcF-JR-IeF"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Kdv-Jc-ayo" secondAttribute="bottom" id="lWi-xV-SvJ"/>
-                                        <constraint firstItem="aYw-fX-CHr" firstAttribute="trailing" secondItem="Kdv-Jc-ayo" secondAttribute="trailing" id="nxP-9V-ogD"/>
                                         <constraint firstItem="Kdv-Jc-ayo" firstAttribute="leading" secondItem="vSR-8f-sKa" secondAttribute="trailing" constant="8" symbolic="YES" id="qQ8-74-aJ1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="busyHours" destination="vSR-8f-sKa" id="Dqc-pi-xpj"/>
-                                    <outlet property="design1" destination="aYw-fX-CHr" id="9Mo-DI-DUL"/>
                                     <outlet property="sleepHours" destination="Kdv-Jc-ayo" id="9Dr-hU-cws"/>
                                     <outlet property="weekDayLbl" destination="52g-8o-0bM" id="smN-Ir-Isn"/>
                                 </connections>

@@ -20,7 +20,7 @@ class UserRoutineTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        design1.layer.cornerRadius = 10
+        self.layer.cornerRadius = 10
         
         bhVal = 0
         shVal = 0
