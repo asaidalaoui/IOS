@@ -50,6 +50,18 @@ class WeeklyTasksTableViewController: UITableViewController {
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "paddingCell", for: indexPath)
+            let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 25, width: self.view.frame.size.width - 20, height: 30))
+            whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
+            
+            whiteRoundedView.layer.masksToBounds = false
+            whiteRoundedView.layer.cornerRadius = 10.0
+            whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
+            whiteRoundedView.layer.shadowOpacity = 0.75
+            
+            cell.contentView.addSubview(whiteRoundedView)
+            cell.contentView.sendSubview(toBack: whiteRoundedView)
+            
+            cell.backgroundColor = UIColor.clear
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "weekCell", for: indexPath) as! WeeklyTasksTableViewCell
@@ -61,9 +73,36 @@ class WeeklyTasksTableViewController: UITableViewController {
             cell.lblHrsFree.text = "\(hrsFree) hours"
             cell.progressView.setProgress(Float(percentBusy), animated: true)
             
-            if day == getDayOfWeek() {
-                cell.backgroundColor = UIColor(red: 222/255.0, green: 207/255.0, blue: 226/255.0, alpha: 1)
+            cell.contentView.backgroundColor = UIColor.clear
+            
+            let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 5, width: self.view.frame.size.width - 20, height: 68))
+            
+            if (percentBusy <= 0.5) {
+                whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(140.0/255.0), CGFloat(217.0/255.0), CGFloat(140.0/255.0), 0.9])
+            } else if (percentBusy <= 0.8) {
+                whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(247.0/255.0), CGFloat(192.0/255.0), CGFloat(110.0/255.0), 0.9])
+            } else {
+                whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [CGFloat(217.0/255.0), CGFloat(140.0/255.0), CGFloat(140.0/255.0), 0.9])
             }
+            
+            
+            whiteRoundedView.layer.masksToBounds = false
+            whiteRoundedView.layer.cornerRadius = 10.0
+            whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
+            whiteRoundedView.layer.shadowOpacity = 0.75
+            
+            cell.contentView.addSubview(whiteRoundedView)
+            cell.contentView.sendSubview(toBack: whiteRoundedView)
+            
+            cell.backgroundColor = UIColor.clear
+            
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = UIColor.lightGray
+            cell.selectedBackgroundView = backgroundView
+            
+//            if day == getDayOfWeek() {
+//                cell.backgroundColor = UIColor(red: 222/255.0, green: 207/255.0, blue: 226/255.0, alpha: 1)
+//            }
             
             return cell
         }
