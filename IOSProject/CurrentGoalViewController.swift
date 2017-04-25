@@ -43,6 +43,17 @@ class CurrentGoalViewController: UIViewController {
             }
         }
         
+        if gotGoal {
+            currentLbl.text = "Current Goal: \(goal.name!)"
+            durationLbl.text = "\(goal.duration)"
+            detailsLbl.text = "\(goal.details!)"
+        } else {
+            self.currentLbl.text = "No goal scheduled for today"
+            
+            self.durationLbl.isHidden = true
+            self.detailsLbl.isHidden = true
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,16 +64,7 @@ class CurrentGoalViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if gotGoal {            
-            currentLbl.text = "Current Task: \(goal.name!)"
-            durationLbl.text = "\(goal.duration)"
-            detailsLbl.text = "\(goal.details!)"
-        } else {
-            self.currentLbl.text = "No task scheduled for today"
-            
-            self.durationLbl.isHidden = true
-            self.detailsLbl.isHidden = true
-        }
+        
         
     }
     
