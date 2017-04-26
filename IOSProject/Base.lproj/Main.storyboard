@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eke-25-VR4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eke-25-VR4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1462,43 +1462,47 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP3-0c-f0m">
-                                            <rect key="frame" x="33" y="19" width="66" height="36"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="66" id="99O-xU-iPs"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <state key="normal" title="Back"/>
-                                            <connections>
-                                                <segue destination="PDu-tO-7kf" kind="show" identifier="backToWeekView" id="pxP-vW-uux"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTw-xX-i4h">
-                                            <rect key="frame" x="85" y="26" width="209" height="21"/>
+                                            <rect key="frame" x="0.0" y="27" width="329" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="209" id="skf-lM-7fi"/>
+                                                <constraint firstAttribute="width" constant="329" id="skf-lM-7fi"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fP3-0c-f0m">
+                                            <rect key="frame" x="8" y="18" width="66" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="66" id="99O-xU-iPs"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <state key="normal" title="Back">
+                                                <color key="titleColor" red="0.3719653785" green="0.0018840361149999999" blue="0.52581518890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="PDu-tO-7kf" kind="show" identifier="backToWeekView" id="pxP-vW-uux"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFz-NE-4ax">
-                                            <rect key="frame" x="337" y="17" width="30" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                            <state key="normal" title="+"/>
+                                            <rect key="frame" x="337" y="22" width="30" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                            <state key="normal" title="+">
+                                                <color key="titleColor" red="0.3719653785" green="0.0018840361149999999" blue="0.52581518890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                             <connections>
                                                 <segue destination="42P-yp-bja" kind="show" id="9ld-hv-aE9"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="fP3-0c-f0m" firstAttribute="centerY" secondItem="oTw-xX-i4h" secondAttribute="centerY" id="GpV-aC-jts"/>
-                                        <constraint firstItem="fP3-0c-f0m" firstAttribute="top" secondItem="m1U-Sf-lJi" secondAttribute="topMargin" constant="11" id="K04-TX-NTl"/>
+                                        <constraint firstItem="fP3-0c-f0m" firstAttribute="centerY" secondItem="oTw-xX-i4h" secondAttribute="centerY" constant="-1.5" id="GpV-aC-jts"/>
+                                        <constraint firstItem="fP3-0c-f0m" firstAttribute="top" secondItem="m1U-Sf-lJi" secondAttribute="topMargin" constant="10" id="K04-TX-NTl"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="gFz-NE-4ax" secondAttribute="trailing" id="lnQ-ac-Qkl"/>
-                                        <constraint firstItem="fP3-0c-f0m" firstAttribute="leading" secondItem="m1U-Sf-lJi" secondAttribute="leadingMargin" constant="25" id="pKo-8R-UhV"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="gFz-NE-4ax" secondAttribute="bottom" constant="4.5" id="uVQ-0n-RKF"/>
-                                        <constraint firstItem="gFz-NE-4ax" firstAttribute="leading" secondItem="oTw-xX-i4h" secondAttribute="trailing" constant="43" id="wuc-0L-pyC"/>
-                                        <constraint firstItem="gFz-NE-4ax" firstAttribute="top" secondItem="m1U-Sf-lJi" secondAttribute="topMargin" constant="9" id="x5S-wq-k9R"/>
+                                        <constraint firstItem="fP3-0c-f0m" firstAttribute="leading" secondItem="m1U-Sf-lJi" secondAttribute="leadingMargin" id="pKo-8R-UhV"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gFz-NE-4ax" secondAttribute="bottom" id="uVQ-0n-RKF"/>
+                                        <constraint firstItem="gFz-NE-4ax" firstAttribute="leading" secondItem="oTw-xX-i4h" secondAttribute="trailing" constant="8" id="wuc-0L-pyC"/>
+                                        <constraint firstItem="gFz-NE-4ax" firstAttribute="top" secondItem="m1U-Sf-lJi" secondAttribute="topMargin" constant="14" id="x5S-wq-k9R"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1640,11 +1644,11 @@
         <image name="rsz_weekicon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="k7c-uG-a76"/>
         <segue reference="pxP-vW-uux"/>
-        <segue reference="Ugz-5Z-muE"/>
-        <segue reference="Hkw-gY-SAn"/>
         <segue reference="RCH-ts-bry"/>
         <segue reference="9ld-hv-aE9"/>
+        <segue reference="k7c-uG-a76"/>
+        <segue reference="Ugz-5Z-muE"/>
+        <segue reference="Hkw-gY-SAn"/>
     </inferredMetricsTieBreakers>
 </document>
