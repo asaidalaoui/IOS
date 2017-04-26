@@ -10,8 +10,6 @@ import UIKit
 
 class AddTaskViewController: UIViewController, UITextViewDelegate {
 
-    @IBOutlet weak var lblDuration: UILabel!
-    @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var taskGoalSeg: UISegmentedControl!
     @IBOutlet weak var txtTaskName: UITextField!
     @IBOutlet weak var dayPickerView: UIPickerView!
@@ -21,6 +19,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var remainingHrsLbl: UILabel!
+    @IBOutlet weak var design1: UIButton!
     
     let datePicker = UIDatePicker()
     var remainingHours:Int = 0
@@ -50,6 +49,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        design1.layer.cornerRadius = 10.0
         
         self.taskGoalSeg.selectedSegmentIndex = segControlIndex
         self.taskGoalSeg.isEnabled = enableSegControl
@@ -62,6 +62,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
         txtDescription.shouldHidePlaceholderText = true
         var currentDate: NSDate = NSDate()
         txtDescription.text = "Enter any notes necessary for this task"
+        txtDescription.textColor = UIColor(red: 169.0/255.0, green: 170.0/255.0, blue: 176.0/255.0, alpha: 1.0)
         
         if(isTaskEdit){
             self.title = "Edit Task"
@@ -70,6 +71,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             txtDescription.text = task.details!
             currentDate = task.date!
             timeDatePicker.date = task.date! as Date
+            txtDescription.textColor = UIColor.black
         } else if (isGoalEdit) {
             self.title = "Edit Goal"
             txtTaskName.text = goal.name!
@@ -77,6 +79,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             txtDescription.text = goal.details!
             currentDate = goal.date!
             timeDatePicker.date = goal.date! as Date
+            txtDescription.textColor = UIColor.black
         }
         
         //set the minimum and maximum date for the date picker.
@@ -95,23 +98,20 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
+        txtDescription.textColor = UIColor.black
         if !isTaskEdit && !isGoalEdit {
             txtDescription.text = nil
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-//        if txtDescription.text.isEmpty {
-//            if (self.taskGoalSeg.selectedSegmentIndex == 0) {
-//                txtDescription.text = "No notes entered for this task"
-//            } else {
-//                txtDescription.text = "No notes entered for this goal"
-//            }
-//        }
-        
-//        if txtDescription.text == "No notes entered for this task" {
-//            
-//        }
+        if txtDescription.text.isEmpty {
+            if (self.taskGoalSeg.selectedSegmentIndex == 0) {
+                txtDescription.text = "No notes entered for this task"
+            } else {
+                txtDescription.text = "No notes entered for this goal"
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -171,6 +171,12 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
         } else {
             
             hourDuration = Double(txtDuration.text!)!
+            if txtDescription.text == "Enter any notes necessary for this task" {
+                txtDescription.text = "No notes entered for this task"
+            } else if txtDescription.text == "Enter any notes necessary for this goal" {
+                    txtDescription.text = "No notes entered for this goal"
+            }
+
             
             //need to combine date and time? and then all these variables are to be saved to core data
             let name = txtTaskName.text!
@@ -229,13 +235,19 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             self.txtTaskName.placeholder = "Enter task name"
             self.txtDuration.placeholder = "Enter task duration"
             if self.txtDescription.text == "Enter any notes necessary for this goal" {
+                txtDescription.textColor = UIColor(red: 169.0/255.0, green: 170.0/255.0, blue: 176.0/255.0, alpha: 1.0)
                 self.txtDescription.text = "Enter any notes necessary for this task"
+            } else if self.txtDescription.text == "No notes entered for this goal" {
+                self.txtDescription.text = "No notes entered for this task"
             }
         } else {
             self.txtTaskName.placeholder = "Enter goal name"
             self.txtDuration.placeholder = "Enter goal duration"
             if self.txtDescription.text == "Enter any notes necessary for this task" {
+                txtDescription.textColor = UIColor(red: 169.0/255.0, green: 170.0/255.0, blue: 176.0/255.0, alpha: 1.0)
                 self.txtDescription.text = "Enter any notes necessary for this goal"
+            } else if self.txtDescription.text == "No notes entered for this task" {
+                self.txtDescription.text = "No notes entered for this goal"
             }
         }
     }
