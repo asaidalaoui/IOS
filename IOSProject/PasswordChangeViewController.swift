@@ -13,12 +13,14 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var oldPassword: UITextField!
     @IBOutlet weak var newPassFst: UITextField!
     @IBOutlet weak var newPassScd: UITextField!
+    @IBOutlet weak var design1: UIButton!
     
     var alertController: UIAlertController? = nil
     var didPressCancel = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        design1.layer.cornerRadius = 10.0
         
         self.oldPassword.delegate = self
         self.oldPassword.isSecureTextEntry = true
