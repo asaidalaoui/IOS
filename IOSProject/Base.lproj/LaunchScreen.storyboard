@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,19 +22,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="slothSunglasses" translatesAutoresizingMaskIntoConstraints="NO" id="CiB-N8-eKl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slothSunglasses" translatesAutoresizingMaskIntoConstraints="NO" id="CiB-N8-eKl">
                                 <rect key="frame" x="67" y="97" width="240" height="250"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="4oJ-3H-hmO"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PROcrastinator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO6-yy-Pof">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROcrastinator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO6-yy-Pof">
                                 <rect key="frame" x="16" y="375" width="343" height="109"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.38072168830000003" green="0.1665634215" blue="0.52664422990000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CiB-N8-eKl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6tK-rJ-mRL"/>
+                            <constraint firstItem="NO6-yy-Pof" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="8tq-e9-LDG"/>
+                            <constraint firstItem="CiB-N8-eKl" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="77" id="FCC-87-Xcf"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="NO6-yy-Pof" secondAttribute="bottom" constant="183" id="Jsg-Qf-mSs"/>
+                            <constraint firstItem="NO6-yy-Pof" firstAttribute="top" secondItem="CiB-N8-eKl" secondAttribute="bottom" constant="28" id="WCj-bD-hjd"/>
+                            <constraint firstItem="CiB-N8-eKl" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="51" id="tjF-Dr-4ll"/>
+                            <constraint firstItem="NO6-yy-Pof" firstAttribute="centerX" secondItem="CiB-N8-eKl" secondAttribute="centerX" id="w85-eg-lKT"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
