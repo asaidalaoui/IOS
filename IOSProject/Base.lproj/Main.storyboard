@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eke-25-VR4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eke-25-VR4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -613,14 +613,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONh-UY-VDS">
-                                <rect key="frame" x="329" y="28" width="30" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="19" id="VsZ-wp-5I2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="+"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ky4-uG-Csx">
                                 <rect key="frame" x="128" y="514" width="118" height="44"/>
                                 <constraints>
@@ -665,10 +657,8 @@
                             <constraint firstItem="vLV-Rt-iE6" firstAttribute="top" secondItem="XMq-Hi-o5t" secondAttribute="bottom" constant="2" id="2Z4-zn-eKE"/>
                             <constraint firstAttribute="bottom" secondItem="Ky4-uG-Csx" secondAttribute="bottom" constant="109" id="4ua-2T-TT8"/>
                             <constraint firstItem="XMq-Hi-o5t" firstAttribute="top" secondItem="s6F-JB-FAo" secondAttribute="bottom" constant="8" symbolic="YES" id="7j6-cy-wKy"/>
-                            <constraint firstItem="s6F-JB-FAo" firstAttribute="trailing" secondItem="ONh-UY-VDS" secondAttribute="trailing" id="BQy-Sp-4Nf"/>
                             <constraint firstItem="s6F-JB-FAo" firstAttribute="top" secondItem="yJ5-V9-KGM" secondAttribute="bottom" constant="22" id="GGj-ss-MSY"/>
                             <constraint firstItem="s6F-JB-FAo" firstAttribute="trailing" secondItem="X57-En-JDw" secondAttribute="trailingMargin" id="ISU-uq-VsA"/>
-                            <constraint firstItem="ONh-UY-VDS" firstAttribute="top" secondItem="bJf-ld-ix9" secondAttribute="bottom" constant="8" symbolic="YES" id="RLb-D0-0Bo"/>
                             <constraint firstItem="Wpw-nN-hCA" firstAttribute="centerX" secondItem="Ky4-uG-Csx" secondAttribute="centerX" id="SbP-9r-m7i"/>
                             <constraint firstItem="XMq-Hi-o5t" firstAttribute="leading" secondItem="s6F-JB-FAo" secondAttribute="leading" id="Sp0-TT-DOh"/>
                             <constraint firstItem="s6F-JB-FAo" firstAttribute="top" secondItem="X57-En-JDw" secondAttribute="top" constant="126" id="d9A-yf-Gtw"/>
@@ -1253,7 +1243,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Z5-4H-TIH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Goal" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Z5-4H-TIH">
                                 <rect key="frame" x="16" y="86" width="343" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="TSc-3t-tXm"/>
@@ -1363,11 +1353,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yu4-MX-Nij">
-                                <rect key="frame" x="329" y="28" width="30" height="19"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="+"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKI-sD-4VL">
                                 <rect key="frame" x="128" y="471" width="118" height="44"/>
                                 <constraints>
@@ -1415,10 +1400,7 @@
                             <constraint firstItem="dKI-sD-4VL" firstAttribute="top" secondItem="ZgQ-bM-0l4" secondAttribute="bottom" constant="8" symbolic="YES" id="JVB-56-SUj"/>
                             <constraint firstItem="mbc-yn-xVw" firstAttribute="centerX" secondItem="dKI-sD-4VL" secondAttribute="centerX" id="K1j-Rp-8MO"/>
                             <constraint firstItem="mbc-yn-xVw" firstAttribute="top" secondItem="dKI-sD-4VL" secondAttribute="bottom" constant="8" symbolic="YES" id="Kjz-Y4-EYc"/>
-                            <constraint firstItem="ewF-tg-TUB" firstAttribute="top" secondItem="yu4-MX-Nij" secondAttribute="bottom" constant="36" id="VVi-Ai-jCm"/>
-                            <constraint firstItem="yu4-MX-Nij" firstAttribute="top" secondItem="P4L-uS-rTZ" secondAttribute="bottom" constant="8" symbolic="YES" id="bT7-qX-WnQ"/>
                             <constraint firstItem="dKI-sD-4VL" firstAttribute="centerX" secondItem="ZgQ-bM-0l4" secondAttribute="centerX" id="bh8-7M-TRI"/>
-                            <constraint firstItem="yu4-MX-Nij" firstAttribute="trailing" secondItem="ewF-tg-TUB" secondAttribute="trailing" id="jru-vF-bK3"/>
                             <constraint firstItem="ewF-tg-TUB" firstAttribute="top" secondItem="mks-Jc-JYe" secondAttribute="top" constant="83" id="kzG-Ep-gaO"/>
                             <constraint firstItem="ZgQ-bM-0l4" firstAttribute="centerX" secondItem="ewF-tg-TUB" secondAttribute="centerX" id="o2H-cf-YLM"/>
                             <constraint firstItem="ewF-tg-TUB" firstAttribute="leading" secondItem="mks-Jc-JYe" secondAttribute="leadingMargin" id="uzc-c0-aX5"/>
@@ -1671,11 +1653,11 @@
         <image name="rsz_weekicon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6k2-rW-RPM"/>
         <segue reference="Bry-iD-bh1"/>
-        <segue reference="Ugz-5Z-muE"/>
-        <segue reference="Hkw-gY-SAn"/>
+        <segue reference="13L-0q-Hkp"/>
         <segue reference="RCH-ts-bry"/>
         <segue reference="k7c-uG-a76"/>
+        <segue reference="Ugz-5Z-muE"/>
+        <segue reference="Hkw-gY-SAn"/>
     </inferredMetricsTieBreakers>
 </document>
