@@ -15,6 +15,8 @@ class SelectedDAyTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        headerLbl.textColor = UIColor.white
+        headerLbl.font = UIFont(name:"HelveticaNeue-Bold", size: 18.0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

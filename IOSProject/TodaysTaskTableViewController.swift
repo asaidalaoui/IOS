@@ -83,15 +83,31 @@ class TodaysTaskTableViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath) as! SelectedDAyTableViewCell
                 cell.headerLbl.text = "\(dayOfWeek)"
                 fromWeekly = false
+                cell.backgroundColor = UIColor.clear
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath)
+                cell.backgroundColor = UIColor.clear
                 return cell
             }
         }
         
         if taskArray.count == 0 && goalArray.count == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "emptySchedule", for: indexPath)
+            
+            let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 9, width: self.view.frame.size.width - 20, height: 115))
+            whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
+            
+            whiteRoundedView.layer.masksToBounds = false
+            whiteRoundedView.layer.cornerRadius = 10.0
+            whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
+            whiteRoundedView.layer.shadowOpacity = 0.75
+            
+            cell.contentView.addSubview(whiteRoundedView)
+            cell.contentView.sendSubview(toBack: whiteRoundedView)
+            
+            cell.backgroundColor = UIColor.clear
+            
             return cell
         } else if taskArray.count != 0 && indexPath.row < taskArray.count + 1 {
             //generate the cell with the task's details button
@@ -117,6 +133,19 @@ class TodaysTaskTableViewController: UITableViewController {
                 cell.taskSwitch.setOn(false, animated: true)
             }
             
+            let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 9, width: self.view.frame.size.width - 20, height: 60))
+            whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
+            
+            whiteRoundedView.layer.masksToBounds = false
+            whiteRoundedView.layer.cornerRadius = 10.0
+            whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
+            whiteRoundedView.layer.shadowOpacity = 0.75
+            
+            cell.contentView.addSubview(whiteRoundedView)
+            cell.contentView.sendSubview(toBack: whiteRoundedView)
+            
+            cell.backgroundColor = UIColor.clear
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as! TodaysGoalTableViewCell
@@ -132,6 +161,19 @@ class TodaysTaskTableViewController: UITableViewController {
             } else {
                 cell.goalSwitch.setOn(false, animated: true)
             }
+            
+            let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 9, width: self.view.frame.size.width - 20, height: 60))
+            whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
+            
+            whiteRoundedView.layer.masksToBounds = false
+            whiteRoundedView.layer.cornerRadius = 10.0
+            whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
+            whiteRoundedView.layer.shadowOpacity = 0.75
+            
+            cell.contentView.addSubview(whiteRoundedView)
+            cell.contentView.sendSubview(toBack: whiteRoundedView)
+            
+            cell.backgroundColor = UIColor.clear
             
             return cell
         }
