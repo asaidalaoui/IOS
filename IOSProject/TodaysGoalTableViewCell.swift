@@ -14,6 +14,7 @@ class TodaysGoalTableViewCell: UITableViewCell {
     @IBOutlet weak var goalName: UILabel!
     
     var goal = Goal()
+    var tile = UIView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +23,6 @@ class TodaysGoalTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

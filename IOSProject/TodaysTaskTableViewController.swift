@@ -175,6 +175,8 @@ class TodaysTaskTableViewController: UITableViewController {
             
             cell.backgroundColor = UIColor.clear
             
+            cell.tile = whiteRoundedView
+            
             return cell
         }
     }
