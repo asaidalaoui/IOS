@@ -23,7 +23,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if index != 0 {
-            self.selectedIndex = 2
+            self.selectedIndex = index
             index = 0
         }
         // Do any additional setup after loading the view.

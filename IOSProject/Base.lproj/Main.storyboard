@@ -515,7 +515,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <segue destination="ZRz-LT-PZu" kind="show" id="0P6-Ri-1Tw"/>
+                                    <segue destination="PDu-tO-7kf" kind="show" identifier="cancelSeg" id="NI1-fN-rkR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1568,12 +1568,11 @@
         <image name="rsz_weekicon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QTX-kk-eeM"/>
-        <segue reference="Ugz-5Z-muE"/>
-        <segue reference="7nU-M2-YFJ"/>
-        <segue reference="Hkw-gY-SAn"/>
+        <segue reference="pxP-vW-uux"/>
         <segue reference="9ld-hv-aE9"/>
         <segue reference="k7c-uG-a76"/>
         <segue reference="RCH-ts-bry"/>
+        <segue reference="Ugz-5Z-muE"/>
+        <segue reference="Hkw-gY-SAn"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,7 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var newPassScd: UITextField!
     
     var alertController: UIAlertController? = nil
+    var didPressCancel = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,10 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         print("pw change: prepare")
+        if (segue.identifier == "cancelSeg") {
+            let destVC = segue.destination as! TabBarViewController
+            destVC.index = 3
+        }
     }
  
     
@@ -96,6 +101,7 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+   
     
     //dismissing the keyboard when pressing anywhere else on the screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
