@@ -126,13 +126,6 @@ class TodaysTaskTableViewController: UITableViewController {
             let convertedDate = dateFormatter.string(from: time as Date)
             cell.taskTimeLbl.text = "Start @ "+convertedDate
             
-            if(task.isChecked){
-                cell.taskSwitch.setOn(true, animated: true)
-            }
-            else{
-                cell.taskSwitch.setOn(false, animated: true)
-            }
-            
             let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 9, width: self.view.frame.size.width - 20, height: 60))
             whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
             
@@ -147,6 +140,15 @@ class TodaysTaskTableViewController: UITableViewController {
             cell.backgroundColor = UIColor.clear
             
             cell.tile = whiteRoundedView
+            
+            if(task.isChecked){
+                cell.taskSwitch.setOn(true, animated: true)
+                cell.tile.alpha = 1
+            }
+            else{
+                cell.taskSwitch.setOn(false, animated: true)
+                cell.tile.alpha = 0.2
+            }
             
             return cell
         } else {
@@ -158,12 +160,6 @@ class TodaysTaskTableViewController: UITableViewController {
             cell.goal = goal
             cell.goalName.text = goal.name!
             
-            if (goal.isChecked) {
-                cell.goalSwitch.setOn(true, animated: true)
-            } else {
-                cell.goalSwitch.setOn(false, animated: true)
-            }
-            
             let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 9, width: self.view.frame.size.width - 20, height: 60))
             whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
             
@@ -178,6 +174,14 @@ class TodaysTaskTableViewController: UITableViewController {
             cell.backgroundColor = UIColor.clear
             
             cell.tile = whiteRoundedView
+            
+            if (goal.isChecked) {
+                cell.goalSwitch.setOn(true, animated: true)
+                cell.tile.alpha = 1
+            } else {
+                cell.goalSwitch.setOn(false, animated: true)
+                cell.tile.alpha = 0.2
+            }
             
             return cell
         }
