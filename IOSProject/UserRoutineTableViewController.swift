@@ -278,6 +278,9 @@ class UserRoutineTableViewController: UITableViewController {
         if !(fromConfig!) {
             UserDefaults.standard.set(username!, forKey: "curUser")
             UserEntity().add(name: username!, password: password!)
+        } else {
+            let destVC = segue.destination as! TabBarViewController
+            destVC.index = 3
         }
         //tableView.indexPathsForVisibleRows: returns an array of indexpath objects which will help access the cell object.
         //tableView.cellForRow(at: <#T##IndexPath#>): returns the cell object given an indexpath reference.

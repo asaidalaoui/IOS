@@ -73,8 +73,7 @@ class PasswordChangeViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        print("pw change: prepare")
-        if (segue.identifier == "cancelSeg") {
+        if (segue.identifier == "cancelSeg" || segue.identifier == "pwSavedSeg") {
             let destVC = segue.destination as! TabBarViewController
             destVC.index = 3
         }

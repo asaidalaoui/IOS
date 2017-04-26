@@ -27,9 +27,12 @@ class TodaysGoalTableViewCell: UITableViewCell {
     }
 
     @IBAction func switchTapped(_ sender: Any) {
+        let goalEnt = GoalEntity(goal: goal)
         if goalSwitch.isOn {
+            goalEnt.setChecked(isChecked: true)
             tile.alpha = 1
         } else {
+            goalEnt.setChecked(isChecked: false)
             tile.alpha = 0.2
         }
     }

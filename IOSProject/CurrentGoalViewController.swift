@@ -32,11 +32,39 @@ class CurrentGoalViewController: UIViewController {
         let dayOfWeek = dateFormatter.string(from: date as Date)
         let dayEntity = DayEntity(day: dayOfWeek)
         dayArray = dayEntity.getGoals()
+//        
+//        if !dayArray.isEmpty {
+//            for dayGoal in dayArray {
+//                if dayGoal.isChecked {
+//                    goal = dayGoal
+//                    self.gotGoal = true
+//                    break
+//                }
+//            }
+//        }
+//        
+//        if gotGoal {
+//            currentLbl.text = "Current Goal: \(goal.name!)"
+//            durationLbl.text = "\(goal.duration)"
+//            detailsLbl.text = "\(goal.details!)"
+//        } else {
+//            self.currentLbl.text = "No goal scheduled for today"
+//            
+//            self.durationLbl.isHidden = true
+//            self.detailsLbl.isHidden = true
+//        }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print(dayArray.count)
         if !dayArray.isEmpty {
-            for dayGoal in dayArray {
-                if dayGoal.isChecked {
-                    goal = dayGoal
+            for dayTask in dayArray {
+                self.gotGoal = false
+                if dayTask.isChecked {
+                    goal = dayTask
                     self.gotGoal = true
                     break
                 }
@@ -49,9 +77,8 @@ class CurrentGoalViewController: UIViewController {
             detailsLbl.text = "\(goal.details!)"
         } else {
             self.currentLbl.text = "No goal scheduled for today"
-            
-            self.durationLbl.isHidden = true
-            self.detailsLbl.isHidden = true
+            durationLbl.text = ""
+            detailsLbl.text = ""
         }
         
     }
@@ -63,9 +90,6 @@ class CurrentGoalViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
-        
     }
     
 

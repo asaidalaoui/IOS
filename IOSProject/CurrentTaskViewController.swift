@@ -33,15 +33,7 @@ class CurrentTaskViewController: UIViewController {
         let dayEntity = DayEntity(day: dayOfWeek)
         dayArray = dayEntity.getTasks()
         
-        if !dayArray.isEmpty {
-            for dayTask in dayArray {
-                if dayTask.isChecked {
-                    task = dayTask
-                    self.gotTask = true
-                    break
-                }
-            }
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +43,41 @@ class CurrentTaskViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+//        if gotTask {
+//            let time = task.date!
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "HH:mm"
+//            let convertedDate = dateFormatter.string(from: time as Date)
+//            
+//            lblCurrent.text = "Current Task: \(task.name!)"
+//            timeLbl.text = "\(convertedDate)"
+//            durationLbl.text = "\(task.duration)"
+//            detailsLbl.text = "\(task.details!)"
+//            
+//        } else {
+//            self.lblCurrent.text = "No task scheduled for today"
+//            
+//            self.timeLbl.text = ""
+//            self.durationLbl.text = ""
+//            self.detailsLbl.text = ""
+//        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !dayArray.isEmpty {
+            for dayTask in dayArray {
+                self.gotTask = false
+                if dayTask.isChecked {
+                    task = dayTask
+                    self.gotTask = true
+                    break
+                }
+            }
+        }
         
         if gotTask {
             let time = task.date!
@@ -62,12 +89,13 @@ class CurrentTaskViewController: UIViewController {
             timeLbl.text = "\(convertedDate)"
             durationLbl.text = "\(task.duration)"
             detailsLbl.text = "\(task.details!)"
+            
         } else {
             self.lblCurrent.text = "No task scheduled for today"
             
-            self.timeLbl.isHidden = true
-            self.durationLbl.isHidden = true
-            self.detailsLbl.isHidden = true
+            self.timeLbl.text = ""
+            self.durationLbl.text = ""
+            self.detailsLbl.text = ""
         }
         
     }
