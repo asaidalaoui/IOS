@@ -146,6 +146,8 @@ class TodaysTaskTableViewController: UITableViewController {
             
             cell.backgroundColor = UIColor.clear
             
+            cell.tile = whiteRoundedView
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as! TodaysGoalTableViewCell

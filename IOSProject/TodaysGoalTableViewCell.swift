@@ -26,4 +26,11 @@ class TodaysGoalTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func switchTapped(_ sender: Any) {
+        if goalSwitch.isOn {
+            tile.alpha = 1
+        } else {
+            tile.alpha = 0.2
+        }
+    }
 }

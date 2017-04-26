@@ -15,6 +15,7 @@ class TodaysTaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskNameLbl: UILabel!
     
     var task = Task()
+    var tile = UIView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,9 +31,11 @@ class TodaysTaskTableViewCell: UITableViewCell {
         let taskEnt = TaskEntity(task: task)
         if(taskSwitch.isOn){
             taskEnt.setChecked(isChecked: true)
+            tile.alpha = 1
         }
         else{
             taskEnt.setChecked(isChecked: false)
+            tile.alpha = 0.2
         }
     }
 }
