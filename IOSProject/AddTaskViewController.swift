@@ -53,13 +53,15 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
         
         self.taskGoalSeg.selectedSegmentIndex = segControlIndex
         self.taskGoalSeg.isEnabled = enableSegControl
-
+        segContSelctd(self)
+        
         // Do any additional setup after loading the view.
         self.title = "Add Task"
         txtDuration?.keyboardType = UIKeyboardType.decimalPad
         txtDescription.delegate = self
         txtDescription.shouldHidePlaceholderText = true
         var currentDate: NSDate = NSDate()
+        txtDescription.text = "Enter any notes necessary for this task"
         
         if(isTaskEdit){
             self.title = "Edit Task"
@@ -99,9 +101,17 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if txtDescription.text.isEmpty {
-            txtDescription.text = "No notes entered for this task"
-        }
+//        if txtDescription.text.isEmpty {
+//            if (self.taskGoalSeg.selectedSegmentIndex == 0) {
+//                txtDescription.text = "No notes entered for this task"
+//            } else {
+//                txtDescription.text = "No notes entered for this goal"
+//            }
+//        }
+        
+//        if txtDescription.text == "No notes entered for this task" {
+//            
+//        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -216,11 +226,17 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
     @IBAction func segContSelctd(_ sender: Any) {
     
         if (self.taskGoalSeg.selectedSegmentIndex == 0) {
-            self.lblName.text = "Task Name:"
-            self.lblDuration.text = "Task Duration:"
+            self.txtTaskName.placeholder = "Enter task name"
+            self.txtDuration.placeholder = "Enter task duration"
+            if self.txtDescription.text == "Enter any notes necessary for this goal" {
+                self.txtDescription.text = "Enter any notes necessary for this task"
+            }
         } else {
-            self.lblName.text = "Goal Name:"
-            self.lblDuration.text = "Goal Duration:"
+            self.txtTaskName.placeholder = "Enter goal name"
+            self.txtDuration.placeholder = "Enter goal duration"
+            if self.txtDescription.text == "Enter any notes necessary for this task" {
+                self.txtDescription.text = "Enter any notes necessary for this goal"
+            }
         }
     }
     
