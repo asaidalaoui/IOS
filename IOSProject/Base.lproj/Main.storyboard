@@ -515,7 +515,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <segue destination="PDu-tO-7kf" kind="show" identifier="cancelSeg" id="NI1-fN-rkR"/>
+                                    <segue destination="PDu-tO-7kf" kind="show" id="NI1-fN-rkR"/>
                                 </connections>
                             </button>
                         </subviews>
