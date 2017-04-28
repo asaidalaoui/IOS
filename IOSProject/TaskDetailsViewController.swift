@@ -21,7 +21,7 @@ class TaskDetailsViewController: UIViewController {
         super.viewDidLoad()
         lblTaskName.text = task.name!
         lblTaskDue.text = "Duration: \(task.duration) hours"
-        txtvwTaskNotes.text = "Notes: \(task.details!)"
+        txtvwTaskNotes.text = "\(task.details!)"
         
         let date = NSDate()
         let dateFormatter = DateFormatter()
