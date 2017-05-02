@@ -1,16 +1,18 @@
 1. Implementation Contributions: 
 Ali Darwiche - 33%
-+Updated core data with auto-update functionality
-+Front-end design for login/create account screens
++Created core data for a goal
++Updated core data for only one goal per day
++Edited majority of the front-end design of the screens
 
 Abderrahman Said-Alaoui - 33%
-+Available time left view feature (aka progress bar in weekly view)
-+WeeklyTaskTableViewControl
++Some of the goal functionality to the Add/Edit/Remove screen
++Some of the goal functionality to the current and detailed goals screens
++Edited some of the front-end design of the screens
 
 Keith Wong - 33%
-+Update available time feature
-+WeeklyTasksTableViewController and WeeklyTasksTableViewCell
-+Added icon images on the tab bar controller
++Some of the goal functionality to the Add/Edit/Remove screen
++Some of the goal functionality to the current and detailed goals screens
++Added application icon image
 
 Coffee - 1%
 +Stay Awake feature
@@ -23,7 +25,8 @@ Coffee - 120%
 
 3. Differences:
 
-+The available time left view is implemented onto the WeeklyTasksTableViewController.
++The bucket list has been implemented inside the goals functionality.
++The available time left view portion was already implemented in the beta version of the application.
 
 4. Special Instructions: Any special instructions needed to make sure your app can be built and run. For example, if you use CocoaPods - the minimum version to use.
 This project uses IQKeyboardManagerSwift cocoapod. The minimum are iOS 8.0 and Xcode 7.3. The used IQKeyboardManager version used for this version is 4.0.2 (latest).
