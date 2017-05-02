@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eke-25-VR4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eke-25-VR4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1179,7 +1179,9 @@
                                     <constraint firstAttribute="height" constant="19" id="LY0-X4-Tx0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="+"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.38072168830000003" green="0.1665634215" blue="0.52664422990000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="42P-yp-bja" kind="show" identifier="createTask" id="isb-nD-tUW"/>
                                 </connections>
@@ -1196,19 +1198,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jwt-Nj-9JJ">
-                                <rect key="frame" x="16" y="610" width="343" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;any user details&gt;" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RL4-TT-njI">
                                 <rect key="frame" x="159" y="330" width="200" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jwt-Nj-9JJ">
+                                <rect key="frame" x="16" y="572" width="343" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.38072168830000003" green="0.1665634215" blue="0.52664422990000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uOO-Uf-Mqu" firstAttribute="top" secondItem="Bhy-N5-8LM" secondAttribute="bottom" constant="37" id="0Ka-OW-gY8"/>
                             <constraint firstItem="jwt-Nj-9JJ" firstAttribute="leading" secondItem="Bhy-N5-8LM" secondAttribute="leading" id="0hW-bS-RcU"/>
@@ -1234,8 +1236,8 @@
                             <constraint firstItem="Bhy-N5-8LM" firstAttribute="baseline" secondItem="HUZ-mN-Lyy" secondAttribute="baseline" id="gPZ-ye-zPe"/>
                             <constraint firstItem="jwt-Nj-9JJ" firstAttribute="leading" secondItem="vI6-s7-Mq3" secondAttribute="leadingMargin" id="iV5-Y7-otg"/>
                             <constraint firstItem="xg2-ie-l2g" firstAttribute="leading" secondItem="HUZ-mN-Lyy" secondAttribute="leading" id="iph-jc-ECf"/>
-                            <constraint firstAttribute="bottom" secondItem="jwt-Nj-9JJ" secondAttribute="bottom" constant="20" symbolic="YES" id="lRG-3m-46K"/>
                             <constraint firstItem="jwt-Nj-9JJ" firstAttribute="trailing" secondItem="xg2-ie-l2g" secondAttribute="trailing" id="nxh-zE-yJe"/>
+                            <constraint firstItem="arx-bU-jsz" firstAttribute="top" secondItem="jwt-Nj-9JJ" secondAttribute="bottom" constant="58" id="rwO-nF-HvK"/>
                             <constraint firstItem="Bhy-N5-8LM" firstAttribute="trailing" secondItem="uOO-Uf-Mqu" secondAttribute="trailing" id="vwi-Pl-XHM"/>
                             <constraint firstItem="Nxu-AP-eca" firstAttribute="top" secondItem="6Ww-aa-OOF" secondAttribute="bottom" constant="52" id="xtq-v6-qlv"/>
                         </constraints>
@@ -1286,11 +1288,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Ly-0x-qS7">
-                                <rect key="frame" x="15" y="622" width="344" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;duration info&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxW-bp-leL">
                                 <rect key="frame" x="128" y="195.5" width="231" height="21"/>
                                 <constraints>
@@ -1312,18 +1309,25 @@
                                     <constraint firstAttribute="height" constant="19" id="6el-sm-8HN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="+"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.38072168830000003" green="0.1665634215" blue="0.52664422990000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="42P-yp-bja" kind="show" identifier="createGoal" id="Bry-iD-bh1"/>
                                 </connections>
                             </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Ly-0x-qS7">
+                                <rect key="frame" x="15" y="564" width="344" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.38072168830000003" green="0.1665634215" blue="0.52664422990000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Jgd-0b-hP5" firstAttribute="leading" secondItem="BE0-iM-RpF" secondAttribute="leading" id="4Rj-ot-2z5"/>
                             <constraint firstItem="7Ly-0x-qS7" firstAttribute="trailing" secondItem="LxW-bp-leL" secondAttribute="trailing" id="4W5-Vy-AhC"/>
                             <constraint firstItem="5Z5-4H-TIH" firstAttribute="top" secondItem="t1K-8n-Csj" secondAttribute="bottom" constant="5" id="6aH-Mi-fOn"/>
-                            <constraint firstItem="hhI-zU-6s3" firstAttribute="top" secondItem="7Ly-0x-qS7" secondAttribute="bottom" constant="8" symbolic="YES" id="7yQ-jG-adg"/>
+                            <constraint firstItem="hhI-zU-6s3" firstAttribute="top" secondItem="7Ly-0x-qS7" secondAttribute="bottom" constant="66" id="7yQ-jG-adg"/>
                             <constraint firstItem="BE0-iM-RpF" firstAttribute="top" secondItem="Jgd-0b-hP5" secondAttribute="bottom" constant="38" id="8DT-64-3AK"/>
                             <constraint firstItem="Jgd-0b-hP5" firstAttribute="top" secondItem="UPF-pE-itp" secondAttribute="bottom" constant="176" id="CU5-Gt-GMC"/>
                             <constraint firstItem="LxW-bp-leL" firstAttribute="leading" secondItem="2wE-0t-6QL" secondAttribute="leading" id="ExS-fk-Iqi"/>
@@ -1462,7 +1466,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RXM-jp-T2Q" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="r9q-EI-TfN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="r9q-EI-TfN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1675,11 +1679,11 @@
         <image name="rsz_weekicon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ugz-5Z-muE"/>
-        <segue reference="FoP-qX-cQ2"/>
-        <segue reference="RCH-ts-bry"/>
-        <segue reference="k7c-uG-a76"/>
-        <segue reference="pg5-oN-WRt"/>
+        <segue reference="Bry-iD-bh1"/>
+        <segue reference="Aki-es-vhq"/>
         <segue reference="Hkw-gY-SAn"/>
+        <segue reference="Ugz-5Z-muE"/>
+        <segue reference="k7c-uG-a76"/>
+        <segue reference="RCH-ts-bry"/>
     </inferredMetricsTieBreakers>
 </document>

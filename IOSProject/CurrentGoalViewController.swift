@@ -32,27 +32,17 @@ class CurrentGoalViewController: UIViewController {
         let dayOfWeek = dateFormatter.string(from: date as Date)
         let dayEntity = DayEntity(day: dayOfWeek)
         dayArray = dayEntity.getGoals()
-//        
-//        if !dayArray.isEmpty {
-//            for dayGoal in dayArray {
-//                if dayGoal.isChecked {
-//                    goal = dayGoal
-//                    self.gotGoal = true
-//                    break
-//                }
-//            }
-//        }
-//        
-//        if gotGoal {
-//            currentLbl.text = "Current Goal: \(goal.name!)"
-//            durationLbl.text = "\(goal.duration)"
-//            detailsLbl.text = "\(goal.details!)"
-//        } else {
-//            self.currentLbl.text = "No goal scheduled for today"
-//            
-//            self.durationLbl.isHidden = true
-//            self.detailsLbl.isHidden = true
-//        }
+        
+        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 50, width: self.view.frame.size.width - 20, height: self.view.frame.size.height - 125))
+        whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
+        
+        whiteRoundedView.layer.masksToBounds = false
+        whiteRoundedView.layer.cornerRadius = 10.0
+        whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
+        whiteRoundedView.layer.shadowOpacity = 0.75
+        
+        self.view.addSubview(whiteRoundedView)
+        self.view.sendSubview(toBack: whiteRoundedView)
         
     }
     

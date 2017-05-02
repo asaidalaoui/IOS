@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class CurrentTaskViewController: UIViewController {
 
@@ -19,11 +20,14 @@ class CurrentTaskViewController: UIViewController {
     var task = Task()
     var dayArray = [Task]()
     var gotTask = false
+    var isGrantedNotificationAccess:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pvController.numberOfPages = 2
         pvController.currentPage = 0
+        pvController.pageIndicatorTintColor = UIColor.lightGray
+        pvController.currentPageIndicatorTintColor = UIColor.purple
 
         // Do any additional setup after loading the view.
         let date = NSDate()
@@ -33,7 +37,16 @@ class CurrentTaskViewController: UIViewController {
         let dayEntity = DayEntity(day: dayOfWeek)
         dayArray = dayEntity.getTasks()
         
+        let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 50, width: self.view.frame.size.width - 20, height: self.view.frame.size.height - 125))
+        whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])
         
+        whiteRoundedView.layer.masksToBounds = false
+        whiteRoundedView.layer.cornerRadius = 10.0
+        whiteRoundedView.layer.shadowOffset = CGSize(width: -1, height: 1)
+        whiteRoundedView.layer.shadowOpacity = 0.75
+        
+        self.view.addSubview(whiteRoundedView)
+        self.view.sendSubview(toBack: whiteRoundedView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,26 +56,6 @@ class CurrentTaskViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        if gotTask {
-//            let time = task.date!
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateFormat = "HH:mm"
-//            let convertedDate = dateFormatter.string(from: time as Date)
-//            
-//            lblCurrent.text = "Current Task: \(task.name!)"
-//            timeLbl.text = "\(convertedDate)"
-//            durationLbl.text = "\(task.duration)"
-//            detailsLbl.text = "\(task.details!)"
-//            
-//        } else {
-//            self.lblCurrent.text = "No task scheduled for today"
-//            
-//            self.timeLbl.text = ""
-//            self.durationLbl.text = ""
-//            self.detailsLbl.text = ""
-//        }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
