@@ -89,9 +89,9 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
         
         components.day = +6
         
-        let maxDate: NSDate = gregorian.date(byAdding: components as DateComponents, to: currentDate as Date, options: NSCalendar.Options(rawValue: 0))! as NSDate
+        let maxDate: NSDate = gregorian.date(byAdding: components as DateComponents, to: NSDate() as Date, options: NSCalendar.Options(rawValue: 0))! as NSDate
         
-        self.timeDatePicker.minimumDate = currentDate as Date
+        self.timeDatePicker.minimumDate = NSDate() as Date
         self.timeDatePicker.maximumDate = maxDate as Date
         
         _ = getHoursForDay()
