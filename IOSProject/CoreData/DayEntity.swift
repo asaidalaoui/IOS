@@ -213,6 +213,13 @@ class DayEntity {
         return goals
     }
     
+    func hasGoal() -> Bool {
+        if (day.goals?.count)! > 0 {
+            return true
+        }
+        return false
+    }
+    
     func getGoal(name:String) -> Goal{
         access()
         let goals = getGoals()
@@ -224,6 +231,8 @@ class DayEntity {
         return Goal(context: managedContext)
     }
     
+    //Returns false if goal name is already taken, no name provided, or fails to save
+    //Returns true if successfully saves goal
     func addGoal(name:String, date:NSDate, duration:Double, details:String) -> Bool{
         access()
         let goal = getGoal(name:name)
@@ -242,11 +251,17 @@ class DayEntity {
         return false
     }
     
-    func addGoal(goal:Goal) {
+    //Returns false if goal name is already taken, no name provided, or fails to save
+    //Returns true if successfully saves goal
+    func addGoal(goal:Goal) -> Bool {
         access()
-        day.spentHours += goal.duration
-        day.addToGoals(goal)
-        _ = save()
+        let temp = getGoal(name:goal.name!)
+        if temp.name != goal.name && goal.name != "" {
+            day.spentHours += goal.duration
+            day.addToGoals(goal)
+            return save()
+        }
+        return false
     }
     
     func removeGoal(goal:Goal) -> Bool{

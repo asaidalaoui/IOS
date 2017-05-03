@@ -169,7 +169,6 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             showAlert(errorMsg: "Value entered for duration much higher than time left for that day")
             self.performedSave = false
         } else {
-            
             hourDuration = Double(txtDuration.text!)!
             if txtDescription.text == "Enter any notes necessary for this task" {
                 txtDescription.text = "No notes entered for this task"
@@ -199,12 +198,19 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             } else if (isGoalEdit && taskGoalSeg.selectedSegmentIndex == 1) {
                 print("EDITNG A GOAL")
                 let goalEnt = GoalEntity(goal: goal)
-                goalEnt.setName(name: name)
-                goalEnt.setDate(date: date as NSDate)
-                goalEnt.setDetails(details: details)
-                goalEnt.setDuration(duration: duration!)
-                goalEnt.setChecked(isChecked: true)
-                taskSaved = true
+                
+                //need to check if date is still the same day, if so allow there to be a goal
+                //in that day cause that goal is the goal we are editting
+                if (goalEnt.setDate(date: date as NSDate)){
+                    goalEnt.setName(name: name)
+                    goalEnt.setDetails(details: details)
+                    goalEnt.setDuration(duration: duration!)
+                    goalEnt.setChecked(isChecked: true)
+                    taskSaved = true
+                } else {
+                    showAlert(errorMsg: "New date already has a goal")
+                    self.performedSave = false
+                }
             } else{
                 let finalDay = DayEntity(day: dayOfWeek)
                 if (taskGoalSeg.selectedSegmentIndex == 0) {
@@ -213,7 +219,12 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
                 } else {
                     print("ADDING NEW GOAL")
 //                    print("\(name) \(duration) \(details)")
-                    taskSaved = finalDay.addGoal(name: name, date: date as NSDate, duration: duration!, details: details)
+                    if finalDay.hasGoal() {
+                        showAlert(errorMsg: "Selected date already has a goal")
+                        self.performedSave = false
+                    } else {
+                        taskSaved = finalDay.addGoal(name: name, date: date as NSDate, duration: duration!, details: details)
+                    }
                 }
             }
             

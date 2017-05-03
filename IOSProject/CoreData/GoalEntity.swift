@@ -70,7 +70,9 @@ class GoalEntity {
         return goal.date as! Date
     }
     
-    func setDate(date:NSDate) {
+    //Returns false if the day we are trying to assign goal to already has a goal
+    //Returns true otherwise
+    func setDate(date:NSDate) -> Bool {
         access()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
@@ -79,16 +81,20 @@ class GoalEntity {
             goal.date = date
             save()
         } else {
+            let newDay = DayEntity(day:dayOfWeek)
+            if (newDay.hasGoal()){
+                return false
+            }
             _ = DayEntity(day:day).removeGoal(goal:goal)
             goal.date = date
-            DayEntity(day:dayOfWeek).addGoal(goal:goal)
-            
+            _ = newDay.addGoal(goal:goal)
             day = goal.day  //If this causes an error, it will add the same day to day,
             //instead of updating day with the new day. This means that
             //doing addGoal didn't alter our current instance of day
             //and that we have to create a getDay method for DayEntity
             //and alter the day ourselves
         }
+        return true
     }
     
     func getDuration() -> Double {
