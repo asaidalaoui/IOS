@@ -124,7 +124,7 @@ class TodaysTaskTableViewController: UITableViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm"
             let convertedDate = dateFormatter.string(from: time as Date)
-            cell.taskTimeLbl.text = "Start @ "+convertedDate
+            cell.taskTimeLbl.text = "Due @ "+convertedDate
             
             let whiteRoundedView : UIView = UIView(frame: CGRect(x: 10, y: 9, width: self.view.frame.size.width - 20, height: 60))
             whiteRoundedView.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 0.9])

@@ -12,15 +12,25 @@ class TaskDetailsViewController: UIViewController {
     
     @IBOutlet weak var lblTaskName: UILabel!
     @IBOutlet weak var lblTaskDue: UILabel!
+    @IBOutlet weak var lblTaskDuration: UILabel!
     @IBOutlet weak var txtvwTaskNotes: UITextView!
+    @IBOutlet weak var design1: UIButton!
     
     var task = Task()
     var day: DayEntity!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        design1.layer.cornerRadius = 10.0
         lblTaskName.text = task.name!
-        lblTaskDue.text = "Duration: \(task.duration) hours"
+        
+        let time = task.date!
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        let convertedDate = timeFormatter.string(from: time as Date)
+        lblTaskDue.text = convertedDate
+
+        lblTaskDuration.text = "\(task.duration) hours"
         txtvwTaskNotes.text = "\(task.details!)"
         
         let date = NSDate()

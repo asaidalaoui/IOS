@@ -13,15 +13,18 @@ class GoalDetailsViewController: UIViewController {
     @IBOutlet weak var goalTitleLbl: UILabel!
     @IBOutlet weak var durationLbl: UILabel!
     @IBOutlet weak var goalNotesTxtVw: UITextView!
+    @IBOutlet weak var design1: UIButton!
     
     var goal = Goal()
     var day: DayEntity!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        design1.layer.cornerRadius = 10.0
+        
         self.goalTitleLbl.text = goal.name!
         self.durationLbl.text = String(goal.duration) + " Hours"
-        self.goalNotesTxtVw.text = "Notes \(goal.details!)"
+        self.goalNotesTxtVw.text = "\(goal.details!)"
         
         let date = NSDate()
         let dateFormatter = DateFormatter()
