@@ -72,19 +72,20 @@ class GoalEntity {
     
     //Returns false if the day we are trying to assign goal to already has a goal
     //Returns true otherwise
-    func setDate(date:NSDate) -> Bool {
+    func setDate(date:NSDate) {
         access()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         let dayOfWeek = dateFormatter.string(from: date as Date)
+        print("\(day.name) == \(dayOfWeek)")
         if day.name == dayOfWeek {
             goal.date = date
             save()
         } else {
             let newDay = DayEntity(day:dayOfWeek)
-            if (newDay.hasGoal()){
-                return false
-            }
+//            if (newDay.hasGoal()){
+//                return false
+//            }
             _ = DayEntity(day:day).removeGoal(goal:goal)
             goal.date = date
             _ = newDay.addGoal(goal:goal)
@@ -94,7 +95,7 @@ class GoalEntity {
             //and that we have to create a getDay method for DayEntity
             //and alter the day ourselves
         }
-        return true
+//        return true
     }
     
     func getDuration() -> Double {

@@ -198,10 +198,12 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             } else if (isGoalEdit && taskGoalSeg.selectedSegmentIndex == 1) {
                 print("EDITNG A GOAL")
                 let goalEnt = GoalEntity(goal: goal)
-                
+                let oldDay = dateFormatter.string(from: goal.date as! Date)
                 //need to check if date is still the same day, if so allow there to be a goal
                 //in that day cause that goal is the goal we are editting
-                if (goalEnt.setDate(date: date as NSDate)){
+                let dayEnt = DayEntity(day: dayOfWeek)
+                if (!dayEnt.hasGoal() || dayOfWeek == oldDay) {
+                    goalEnt.setDate(date: date as NSDate)
                     goalEnt.setName(name: name)
                     goalEnt.setDetails(details: details)
                     goalEnt.setDuration(duration: duration!)
@@ -211,7 +213,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
                     showAlert(errorMsg: "New date already has a goal")
                     self.performedSave = false
                 }
-            } else{
+            } else {
                 let finalDay = DayEntity(day: dayOfWeek)
                 if (taskGoalSeg.selectedSegmentIndex == 0) {
 //                    print("\(name) \(duration) \(details)")

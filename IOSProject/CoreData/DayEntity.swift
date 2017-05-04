@@ -242,6 +242,7 @@ class DayEntity {
             goal.date = date
             goal.duration = duration
             goal.details = details
+//            goal.day = day
             goal.isChecked = true
             day.spentHours += duration      //Adding hours goal takes to our spentHours count
             day.addToGoals(goal)
