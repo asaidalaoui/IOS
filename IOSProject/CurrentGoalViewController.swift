@@ -82,8 +82,6 @@ class CurrentGoalViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -96,5 +94,4 @@ class CurrentGoalViewController: UIViewController {
         }
     }
     
-
 }

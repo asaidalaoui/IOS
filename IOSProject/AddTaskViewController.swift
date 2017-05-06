@@ -129,17 +129,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //need to grab the remaining hours for that day[row] and set it to remainingHours
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let dayOfWeek = dateFormatter.string(from: date as Date)
-        
-        lblHours.text = "\(day[row]) remaining hours: \(remainingHours)"
-        daySelected = day[row]
-    }*/
+
     @IBAction func datePicker(_ sender: Any) {
         _ = getHoursForDay()
     }
@@ -176,7 +166,6 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
                     txtDescription.text = "No notes entered for this goal"
             }
 
-            
             //need to combine date and time? and then all these variables are to be saved to core data
             let name = txtTaskName.text!
             let details = txtDescription.text!
@@ -216,11 +205,8 @@ class AddTaskViewController: UIViewController, UITextViewDelegate {
             } else {
                 let finalDay = DayEntity(day: dayOfWeek)
                 if (taskGoalSeg.selectedSegmentIndex == 0) {
-//                    print("\(name) \(duration) \(details)")
                     taskSaved = finalDay.addTask(name: name, date: date as NSDate, duration: duration!, details: details)
                 } else {
-                    print("ADDING NEW GOAL")
-//                    print("\(name) \(duration) \(details)")
                     if finalDay.hasGoal() {
                         showAlert(errorMsg: "Selected date already has a goal")
                         self.performedSave = false

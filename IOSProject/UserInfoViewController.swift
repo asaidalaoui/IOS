@@ -49,8 +49,6 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
     
     //Perform checks prior to prepare for segue.
     override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
-        //might be unecessary check since we only have one segue for now
-        //keep it for now in case we add more in the future.
         if let ident = identifier {
             if ident == "routineSetupSeg" {
                 let errorMsg = performChecks()
@@ -71,7 +69,6 @@ class UserInfoViewController: UIViewController, UITextFieldDelegate {
          */
         if let pw1 = fstPwEntryTxtLbl.text, let pw2 = scdPwEntryTxtLbl.text, let name = userNameTxtFld.text {
             if name == "" {
-                //TODO: include check of user name against previously registered values in core data
                 return "Invalid username"
             } else if name == UserEntity().get(name: name).name {
                 return "Username already taken"

@@ -38,7 +38,6 @@ class TodaysTaskTableViewController: UITableViewController {
         
         //Two possible cases. Either we are checking today's tasks list, or the day
         //corresponding to the selected day on the weekly view
-        //Logic might need to be improved.
         if showtoday {
             dayOfWeek = dateFormatter.string(from: date as Date)
         } else {

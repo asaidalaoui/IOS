@@ -104,10 +104,6 @@ class WeeklyTasksTableViewController: UITableViewController {
             backgroundView.backgroundColor = UIColor.lightGray
             cell.selectedBackgroundView = backgroundView
             
-//            if day == getDayOfWeek() {
-//                cell.backgroundColor = UIColor(red: 222/255.0, green: 207/255.0, blue: 226/255.0, alpha: 1)
-//            }
-            
             return cell
         }
         

@@ -92,7 +92,6 @@ class CurrentTaskViewController: UIViewController {
         }
         
     }
-
     
     // MARK: - Navigation
 
@@ -107,5 +106,4 @@ class CurrentTaskViewController: UIViewController {
         }
     }
     
-
 }
